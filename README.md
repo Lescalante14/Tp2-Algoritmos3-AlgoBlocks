@@ -10,7 +10,7 @@ Trabajo Práctico número 2 de la materia Algoritmos y Programación III de FIUB
 
 * **Integrante 1** - [Luis Escalante](https://github.com/Lescalante14)
 * **Integrante 2** - [Camila Belen Carlocchia](https://github.com/camola98)
-* **Integrante 3** - [integrante3](https://github.com/integrante3)
+* **Integrante 3** - [Santiago Curetti](https://github.com/SantiC8)
 * **Integrante 4** - [integrante4](https://github.com/integrante4)
 
 Corrector: **{Corrector}**
