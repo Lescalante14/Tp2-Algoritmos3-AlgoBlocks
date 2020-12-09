@@ -2,11 +2,11 @@
 
 
 
-# TP2 Algoritmos 3: {AlgoBlocks}
+# TP2 Algoritmos 3: AlgoBlocks
 
 Trabajo Práctico número 2 de la materia Algoritmos y Programación III de FIUBA
 
-## Grupo {N3}
+## Grupo N3
 
 * **Integrante 1** - [Luis Escalante](https://github.com/Lescalante14)
 * **Integrante 2** - [Camila Belen Carlocchia](https://github.com/camola98)
@@ -40,6 +40,24 @@ Este comando crea el reporte de cobertura para CI y el reporte HTML que pueden a
 ## Ejecutando la aplicación
 
 Explicación de como ejecutar la aplicación
+
+## Convenciones
+
+- **Commits:**
+    - docs: Documentación
+    - feat: Nueva funcionalidad
+    - fix: Arreglo de algún bug
+    - refactor
+    - style: Podría usarse cuando trabajemos con JavaFX
+    - test
+    - chore: Cualquier otra que no clasifique en las anteriores
+      
+[Referencia](http://karma-runner.github.io/0.10/dev/git-commit-msg.html)
+
+- **Archivos:**
+    - Evitar subir archivos binarios(ex: imagenes) a GitHub.
+    - No subir archivos de ningún IDE
+    
 
 ## Licencia
 
