@@ -1,0 +1,81 @@
+@startuml
+
+class AlgoBlocks{
++ iniciar(): void
+}
+
+class Personaje{
+- dibulo: int
+- miPosicion: Posicion
++ iniciar(): void
+- guardarPosicion(nuevaPosicion: Posicion): void
+}
+
+class Bloque{
++ agregarAlgoritmos(): void
++ ejecutar(): void
+}
+
+class DeMovimiento {
++ ejecutar(): void
+}
+
+class MoverAIzquierda {
++ ejecutar(): void
+}
+
+class MoverArriba {
++ ejecutar(): void
+}
+
+class MoverAbajo {
+    + ejecutar(): void
+}
+
+class MoverADerecha {
+    + ejecutar(): void
+}
+
+interface EstadoLapiz {
+    + dibujar(): void
+}
+
+class Activado {
+    + dibujar(): void
+}
+
+class Desactivado {
+    + dibujar(): void
+}
+
+AlgoBlocks "1" *-- Tablero
+AlgoBlocks "1" *--left Bloque
+AlgoBlocks "1" *-- Personaje
+Bloque <|.. DeMovimiento
+DeMovimiento <|-- MoverAbajo
+DeMovimiento <|-- MoverADerecha
+DeMovimiento <|-- MoverAIzquierda
+DeMovimiento <|-- MoverArriba
+Personaje *-- EstadoLapiz
+EstadoLapiz <|.. Activado
+EstadoLapiz <|.. Desactivado
+
+class Algoritmo {
+    - bloques : Collection
+    + agregarBloque(unBloque: Bloque): void
+    + run(): void
+}
+
+class Posicion {
+
+}
+
+class BloquesDisponibles {
+    - bloques : Collection
+}
+
+class Dibujo {
+
+}
+
+@enduml
