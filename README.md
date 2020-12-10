@@ -6,14 +6,14 @@
 
 Trabajo Práctico número 2 de la materia Algoritmos y Programación III de FIUBA
 
-## Grupo N3
+## Grupo N-03
 
 * **Integrante 1** - [Luis Escalante](https://github.com/Lescalante14)
 * **Integrante 2** - [Camila Belen Carlocchia](https://github.com/camola98)
 * **Integrante 3** - [Santiago Curetti](https://github.com/SantiC8)
 * **Integrante 4** - [Andrés Zambrano](https://github.com/andrezszambrano)
 
-Corrector: **{Corrector}**
+**Corrector:** [Joaquin Gómez](https://github.com/joaqogomez)
 
 ### Pre-requisitos
 
