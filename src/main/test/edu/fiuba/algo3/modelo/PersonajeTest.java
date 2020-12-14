@@ -28,5 +28,20 @@ public class PersonajeTest {
 
     }
 
+    @Test
+    public void desactivarLápiz()
+    {
+
+        Personaje personaje = new Personaje();
+
+        personaje.ejecutarBloque(new BloqueBajarLapiz());
+
+        assertEquals(personaje.estadoLapiz(), "ESTADO ACTIVADO");
+
+        personaje.ejecutarBloque(new BloqueSubirLapiz());
+
+        assertEquals(personaje.estadoLapiz(), "ESTADO DESACTIVADO");
+
+    }
 
 }
