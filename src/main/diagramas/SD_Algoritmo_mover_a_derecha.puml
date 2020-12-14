@@ -1,0 +1,20 @@
+@startuml
+
+actor User
+hide footbox
+
+User -> Algoritmos: 1:run()
+
+Algoritmos -> ":Personaje": 1.1:ejecutarBloque(elBloque): void
+
+":Personaje" -> "elBloque:MoverADerecha": 1.1.1: ejecutar(miPosicion): Posicion
+
+"elBloque:MoverADerecha" --> ":Personaje": nuevaPosicion
+
+":Personaje" -> ":Personaje": 1.1.2: guardarPosicion(nuevaPosicion)
+
+entity ":EstadoLapiz"
+
+":Personaje" -> ":EstadoLapiz": 1.1.2.1: dibujar(): void
+
+@enduml

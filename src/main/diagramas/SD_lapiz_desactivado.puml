@@ -1,0 +1,7 @@
+@startuml
+
+hide footbox
+
+":Personaje" -> "lapiz : Activado":  1:dibujar(): void
+
+@enduml
