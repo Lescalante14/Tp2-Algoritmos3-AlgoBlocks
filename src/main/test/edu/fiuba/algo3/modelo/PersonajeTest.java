@@ -2,8 +2,7 @@ package edu.fiuba.algo3.modelo;
 
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class PersonajeTest {
 
@@ -13,7 +12,7 @@ public class PersonajeTest {
 
         Personaje personaje = new Personaje();
 
-        assertFalse(personaje.lapiz());
+        assertEquals(personaje.estadoLapiz(), "ESTADO DESACTIVADO");
 
     }
 
@@ -23,10 +22,11 @@ public class PersonajeTest {
 
         Personaje personaje = new Personaje();
 
-        personaje.activarLapiz();
+        personaje.ejecutarBloque(new BloqueBajarLapiz());
 
-        assertTrue(personaje.lapiz());
+        assertEquals(personaje.estadoLapiz(), "ESTADO ACTIVADO");
 
     }
+
 
 }
