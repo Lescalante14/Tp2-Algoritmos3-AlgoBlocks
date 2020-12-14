@@ -16,7 +16,10 @@ public class Personaje {
         estado = new EstadoActivado();
     }
 
-    public void ejecutarBloque(BloqueBajarLapiz unBloque){
+    public void ejecutarBloque(Bloque unBloque){
         unBloque.ejecutar(this);
+    }
+
+    public void desactivarLapiz() { estado = new EstadoDesactivado();
     }
 }
