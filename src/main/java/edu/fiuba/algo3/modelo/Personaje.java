@@ -3,9 +3,10 @@ package edu.fiuba.algo3.modelo;
 public class Personaje {
 
     private EstadoLapiz estado;
-
+    private Posicion posicion;
     public Personaje(){
         estado = new EstadoDesactivado();
+        posicion = new Posicion(0,0);
     }
 
     public String estadoLapiz(){
@@ -20,6 +21,11 @@ public class Personaje {
         unBloque.ejecutar(this);
     }
 
-    public void desactivarLapiz() { estado = new EstadoDesactivado();
+    public void desactivarLapiz() {
+        estado = new EstadoDesactivado();
+    }
+
+    public Posicion getPosicion(){
+        return posicion;
     }
 }

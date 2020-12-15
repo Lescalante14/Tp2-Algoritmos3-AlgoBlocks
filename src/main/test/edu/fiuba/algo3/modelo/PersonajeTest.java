@@ -17,6 +17,18 @@ public class PersonajeTest {
     }
 
     @Test
+    public void posicionDeUnPersonajeRecienCreadoEsLaCorrespondiente(){
+
+        Personaje personaje = new Personaje();
+
+        Posicion posicionCero = new Posicion(0,0);
+
+        assertEquals(personaje.getPosicion().esIgualA(posicionCero), true);
+
+
+    }
+
+    @Test
     public void activarLápiz()
     {
 
@@ -41,6 +53,19 @@ public class PersonajeTest {
         personaje.ejecutarBloque(new BloqueSubirLapiz());
 
         assertEquals(personaje.estadoLapiz(), "ESTADO DESACTIVADO");
+
+    }
+
+    @Test
+    public void desactivarLápiz()
+    {
+
+        Personaje personaje = new Personaje();
+
+        personaje.ejecutarBloque(new BloqueMoverDerecha());
+
+        assertEquals(//Se compara la posición actual con dónde debería estar el personaje después de moverse a derecha);
+
 
     }
 
