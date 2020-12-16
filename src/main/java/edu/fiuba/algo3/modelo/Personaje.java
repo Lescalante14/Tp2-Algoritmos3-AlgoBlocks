@@ -22,4 +22,5 @@ public class Personaje {
 
     public void desactivarLapiz() { estado = new EstadoDesactivado();
     }
+
 }
