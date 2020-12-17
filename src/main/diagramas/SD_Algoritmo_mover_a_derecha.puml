@@ -2,19 +2,24 @@
 
 actor User
 hide footbox
+create Personaje
+User -> Personaje: new()
+Personaje -> Personaje: new Posicion(0, 0)
 
-User -> Algoritmos: 1:run()
 
-Algoritmos -> ":Personaje": 1.1:ejecutarBloque(elBloque): void
+User -> Personaje: ejecutarBloque(new BloqueMoverDerecha)
+create BloqueMoverDerecha
+Personaje -> BloqueMoverDerecha: new()
 
-":Personaje" -> "elBloque:MoverADerecha": 1.1.1: ejecutar(miPosicion): Posicion
+Personaje -> BloqueMoverDerecha:  //ejecutar//(unPersonaje)
 
-"elBloque:MoverADerecha" --> ":Personaje": nuevaPosicion
+BloqueMoverDerecha --> Personaje: moverADerecha()
 
-":Personaje" -> ":Personaje": 1.1.2: guardarPosicion(nuevaPosicion)
+Personaje -> ":unaPosicion": //derechaDe//(unaPosicion: Posicion)
 
-entity ":EstadoLapiz"
+":unaPosicion" --> Personaje: nuevaPosicion
 
-":Personaje" -> ":EstadoLapiz": 1.1.2.1: dibujar(): void
+Personaje -> Personaje: guardarPosicion(nuevaPosicion)
+
 
 @enduml

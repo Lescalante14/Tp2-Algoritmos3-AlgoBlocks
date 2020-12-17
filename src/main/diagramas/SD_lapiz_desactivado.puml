@@ -1,7 +1,15 @@
 @startuml
 
 hide footbox
+actor User
 
-":Personaje" -> "lapiz : Activado":  1:dibujar(): void
+create Personaje
+User -> Personaje: new()
+User -> Personaje: estadoLapiz()
+
+Personaje -> ":EstadoLapiz": dameEstado()
+
+":EstadoLapiz" --> Personaje: "ESTADO DESACTIVADO"
+Personaje --> User: "ESTADO DESACTIVADO"
 
 @enduml
