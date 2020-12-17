@@ -1,74 +1,81 @@
 @startuml
 
-class AlgoBlocks{
-+ iniciar(): void
-}
-
 class Personaje{
-- dibulo: int
-- miPosicion: Posicion
-+ iniciar(): void
-- guardarPosicion(nuevaPosicion: Posicion): void
+    + estadoLapiz(): String
+    + ejecutarBloque(unBloque): void
+    + activarLapiz(): void
+    + desactivarLapiz(): void
+    + moverADerecha(): void
+    + moverAIzquierda(): void
+    + moverArriba(): void
+    + moverAbajo(): void
 }
 
-class Bloque{
-+ agregarAlgoritmos(): void
-+ ejecutar(): void
+abstract Bloque{
+     + {abstract} ejecutar(Personaje unPersonaje): void
 }
 
-class DeMovimiento {
-+ ejecutar(): void
+class BloqueMoverIzquierda {
+    + ejecutar(unPersonaje): void
 }
 
-class MoverAIzquierda {
-+ ejecutar(): void
+class BloqueMoverADerecha {
+    + ejecutar(unPersonaje): void
 }
 
-class MoverArriba {
-+ ejecutar(): void
+class BloqueMoverAbajo {
+    + ejecutar(unPersonaje): void
 }
 
-class MoverAbajo {
-    + ejecutar(): void
+class BloqueMoverArriba {
+    + ejecutar(unPersonaje): void
 }
 
-class MoverADerecha {
-    + ejecutar(): void
+class BloqueBajarLapiz {
+    + ejecutar(unPersonaje): void
+}
+
+class BloqueSubirLapiz {
+    + ejecutar(unPersonaje): void
 }
 
 interface EstadoLapiz {
-    + dibujar(): void
+    + {abstract} dameEstado(): String
 }
 
-class Activado {
-    + dibujar(): void
+class EstadoActivado {
+    + dameEstado(): String
 }
 
-class Desactivado {
-    + dibujar(): void
-}
-
-AlgoBlocks "1" *-- Tablero
-AlgoBlocks "1" *--left Bloque
-AlgoBlocks "1" *-- Personaje
-Bloque <|.. DeMovimiento
-DeMovimiento <|-- MoverAbajo
-DeMovimiento <|-- MoverADerecha
-DeMovimiento <|-- MoverAIzquierda
-DeMovimiento <|-- MoverArriba
-Personaje *-- EstadoLapiz
-EstadoLapiz <|.. Activado
-EstadoLapiz <|.. Desactivado
-
-class Algoritmo {
-    - bloques : Collection
-    + agregarBloque(unBloque: Bloque): void
-    + run(): void
+class EstadoDesactivado {
+    + dameEstado(): String
 }
 
 class Posicion {
-
+    coordenadaX: int
+    coordenadaY: int
+    + compararPosiciones(posicion1, posicion2): boolean
+    + {static} derechaDe(unaPosicion): Posicion
+    + {static} izquierdaDe(unaPosicion): Posicion
+    + {static} arribaDe(unaPosicion): Posicion
+    + {static} abajoDe(unaPosicion): Posicion
 }
+
+Personaje <.. Bloque
+Personaje "1" *-- "1" EstadoLapiz
+Personaje "1" *-- "1" Posicion
+
+Bloque <|-- BloqueMoverADerecha
+Bloque <|--left BloqueMoverIzquierda
+Bloque <|-- BloqueMoverAbajo
+Bloque <|-- BloqueMoverArriba
+Bloque <|-- BloqueBajarLapiz
+Bloque <|--right BloqueSubirLapiz
+
+EstadoLapiz <|.. EstadoActivado
+EstadoLapiz <|.. EstadoDesactivado
+
+@enduml
 
 class BloquesDisponibles {
     - bloques : Collection
