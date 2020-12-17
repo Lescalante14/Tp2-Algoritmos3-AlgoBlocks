@@ -52,4 +52,5 @@ public class Personaje {
         //estado.dibujarDesdeHasta(posicion, posicionNueva);
         posicion = posicionNueva;
     }
+
 }
