@@ -3,14 +3,19 @@
 hide footbox
 actor User
 
+activate User
 create Personaje
 User -> Personaje: new()
 User -> Personaje: activarLapiz()
+
+activate Personaje
 User -> Personaje: estadoLapiz()
 
 Personaje -> ":EstadoLapiz": dameEstado()
-
+activate ":EstadoLapiz"
 ":EstadoLapiz" --> Personaje: "ESTADO ACTIVADO"
+deactivate ":EstadoLapiz"
 Personaje --> User: "ESTADO ACTIVADO"
-
+deactivate Personaje
+deactivate User
 @enduml

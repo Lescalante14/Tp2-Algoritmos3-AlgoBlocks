@@ -1,13 +1,18 @@
 @startuml
 
 class Personaje{
-
-    + cambiarPosicion(): void
+    + estadoLapiz(): String
     + ejecutarBloque(unBloque): void
+    + activarLapiz(): void
+    + desactivarLapiz(): void
+    + moverADerecha(): void
+    + moverAIzquierda(): void
+    + moverArriba(): void
+    + moverAbajo(): void
 }
 
 abstract Bloque{
-     + ejecutar(Personaje unPersonaje): void
+     + {abstract} ejecutar(Personaje unPersonaje): void
 }
 
 class BloqueMoverIzquierda {
@@ -35,7 +40,7 @@ class BloqueSubirLapiz {
 }
 
 interface EstadoLapiz {
-    + dameEstado(): String
+    + {abstract} dameEstado(): String
 }
 
 class EstadoActivado {
@@ -47,15 +52,34 @@ class EstadoDesactivado {
 }
 
 class Posicion {
-    + derechaDe(unaPosicion): static Posicion
-    + izquierdaDe(unaPosicion): static Posicion
-    + arribaDe(unaPosicion): static Posicion
-    + abajoDe(unaPosicion): static Posicion
+    coordenadaX: int
+    coordenadaY: int
+    + compararPosiciones(posicion1, posicion2): boolean
+    + {static} derechaDe(unaPosicion): Posicion
+    + {static} izquierdaDe(unaPosicion): Posicion
+    + {static} arribaDe(unaPosicion): Posicion
+    + {static} abajoDe(unaPosicion): Posicion
 }
 
-Personaje o-- Bloque
+Personaje <.. Bloque
 Personaje "1" *-- "1" EstadoLapiz
 Personaje "1" *-- "1" Posicion
+
+Bloque <|-- BloqueMoverADerecha
+Bloque <|--left BloqueMoverIzquierda
+Bloque <|-- BloqueMoverAbajo
+Bloque <|-- BloqueMoverArriba
+Bloque <|-- BloqueBajarLapiz
+Bloque <|--right BloqueSubirLapiz
+
+EstadoLapiz <|.. EstadoActivado
+EstadoLapiz <|.. EstadoDesactivado
+
+@enduml
+
+class BloquesDisponibles {
+    - bloques : Collection
+}
 
 Bloque <|-- BloqueMoverADerecha
 Bloque <|--left BloqueMoverIzquierda
