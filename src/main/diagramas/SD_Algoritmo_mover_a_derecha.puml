@@ -1,20 +1,12 @@
 @startuml
 
-actor User
 hide footbox
+actor User
 
-User -> Algoritmos: 1:run()
+create Personaje
+User -> Personaje: new()
+User -> Personaje: moverADerecha()
 
-Algoritmos -> ":Personaje": 1.1:ejecutarBloque(elBloque): void
-
-":Personaje" -> "elBloque:MoverADerecha": 1.1.1: ejecutar(miPosicion): Posicion
-
-"elBloque:MoverADerecha" --> ":Personaje": nuevaPosicion
-
-":Personaje" -> ":Personaje": 1.1.2: guardarPosicion(nuevaPosicion)
-
-entity ":EstadoLapiz"
-
-":Personaje" -> ":EstadoLapiz": 1.1.2.1: dibujar(): void
+Personaje -> ":Posicion": derechaDe(unaPosicion: Posicion)
 
 @enduml
