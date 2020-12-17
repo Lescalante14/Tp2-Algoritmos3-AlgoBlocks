@@ -2,24 +2,25 @@
 
 actor User
 hide footbox
+activate User
 create Personaje
 User -> Personaje: new()
-Personaje -> Personaje: new Posicion(0, 0)
 
+Personaje -> Personaje: new Posicion(0, 0)
+activate Personaje
 
 User -> Personaje: ejecutarBloque(new BloqueMoverDerecha)
 create BloqueMoverDerecha
 Personaje -> BloqueMoverDerecha: new()
 
 Personaje -> BloqueMoverDerecha:  //ejecutar//(unPersonaje)
-
+activate BloqueMoverDerecha
 BloqueMoverDerecha --> Personaje: moverADerecha()
+deactivate BloqueMoverDerecha
+Personaje -> ":Posicion": //derechaDe//(unaPosicion)
 
-Personaje -> ":unaPosicion": //derechaDe//(unaPosicion: Posicion)
-
-":unaPosicion" --> Personaje: nuevaPosicion
-
-Personaje -> Personaje: guardarPosicion(nuevaPosicion)
-
+":Posicion" --> Personaje: nuevaPosicion
+deactivate Personaje
 
 @enduml
+
