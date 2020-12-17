@@ -1,81 +1,70 @@
 @startuml
 
-class AlgoBlocks{
-+ iniciar(): void
-}
-
 class Personaje{
-- dibulo: int
-- miPosicion: Posicion
-+ iniciar(): void
-- guardarPosicion(nuevaPosicion: Posicion): void
+
+    + cambiarPosicion(): void
+    + ejecutarBloque(unBloque): void
 }
 
-class Bloque{
-+ agregarAlgoritmos(): void
-+ ejecutar(): void
+abstract Bloque{
+     + ejecutar(Personaje unPersonaje): void
 }
 
-class DeMovimiento {
-+ ejecutar(): void
+class BloqueMoverIzquierda {
+    + ejecutar(unPersonaje): void
 }
 
-class MoverAIzquierda {
-+ ejecutar(): void
+class BloqueMoverADerecha {
+    + ejecutar(unPersonaje): void
 }
 
-class MoverArriba {
-+ ejecutar(): void
+class BloqueMoverAbajo {
+    + ejecutar(unPersonaje): void
 }
 
-class MoverAbajo {
-    + ejecutar(): void
+class BloqueMoverArriba {
+    + ejecutar(unPersonaje): void
 }
 
-class MoverADerecha {
-    + ejecutar(): void
+class BloqueBajarLapiz {
+    + ejecutar(unPersonaje): void
+}
+
+class BloqueSubirLapiz {
+    + ejecutar(unPersonaje): void
 }
 
 interface EstadoLapiz {
-    + dibujar(): void
+    + dameEstado(): String
 }
 
-class Activado {
-    + dibujar(): void
+class EstadoActivado {
+    + dameEstado(): String
 }
 
-class Desactivado {
-    + dibujar(): void
-}
-
-AlgoBlocks "1" *-- Tablero
-AlgoBlocks "1" *--left Bloque
-AlgoBlocks "1" *-- Personaje
-Bloque <|.. DeMovimiento
-DeMovimiento <|-- MoverAbajo
-DeMovimiento <|-- MoverADerecha
-DeMovimiento <|-- MoverAIzquierda
-DeMovimiento <|-- MoverArriba
-Personaje *-- EstadoLapiz
-EstadoLapiz <|.. Activado
-EstadoLapiz <|.. Desactivado
-
-class Algoritmo {
-    - bloques : Collection
-    + agregarBloque(unBloque: Bloque): void
-    + run(): void
+class EstadoDesactivado {
+    + dameEstado(): String
 }
 
 class Posicion {
-
+    + derechaDe(unaPosicion): static Posicion
+    + izquierdaDe(unaPosicion): static Posicion
+    + arribaDe(unaPosicion): static Posicion
+    + abajoDe(unaPosicion): static Posicion
 }
 
-class BloquesDisponibles {
-    - bloques : Collection
-}
+Personaje o-- Bloque
+Personaje "1" *-- "1" EstadoLapiz
+Personaje "1" *-- "1" Posicion
 
-class Dibujo {
+Bloque <|-- BloqueMoverADerecha
+Bloque <|--left BloqueMoverIzquierda
+Bloque <|-- BloqueMoverAbajo
+Bloque <|-- BloqueMoverArriba
+Bloque <|-- BloqueBajarLapiz
+Bloque <|--right BloqueSubirLapiz
 
-}
+EstadoLapiz <|.. EstadoActivado
+EstadoLapiz <|.. EstadoDesactivado
 
 @enduml
