@@ -17,15 +17,39 @@ public class Personaje {
         estado = new EstadoActivado();
     }
 
-    public void ejecutarBloque(Bloque unBloque){
-        unBloque.ejecutar(this);
-    }
-
     public void desactivarLapiz() {
         estado = new EstadoDesactivado();
     }
 
+    public void ejecutarBloque(Bloque unBloque){
+        unBloque.ejecutar(this);
+    }
+
     public Posicion getPosicion(){
         return posicion;
+    }
+
+    public void moverADerecha() {
+        Posicion posicionNueva = Posicion.derechaDe(posicion);
+        //estado.dibujarDesdeHasta(posicion, posicionNueva);
+        posicion = posicionNueva;
+    }
+
+    public void moverAIzquierda() {
+        Posicion posicionNueva = Posicion.izquierdaDe(posicion);
+        //estado.dibujarDesdeHasta(posicion, posicionNueva);
+        posicion = posicionNueva;
+    }
+
+    public void moverArriba() {
+        Posicion posicionNueva = Posicion.arribaDe(posicion);
+        //estado.dibujarDesdeHasta(posicion, posicionNueva);
+        posicion = posicionNueva;
+    }
+
+    public void moverAbajo() {
+        Posicion posicionNueva = Posicion.abajoDe(posicion);
+        //estado.dibujarDesdeHasta(posicion, posicionNueva);
+        posicion = posicionNueva;
     }
 }
