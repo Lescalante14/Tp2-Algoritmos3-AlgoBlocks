@@ -15,7 +15,7 @@ Personaje -> BloqueMoverDerecha: new()
 
 Personaje -> BloqueMoverDerecha:  //ejecutar//(unPersonaje)
 activate BloqueMoverDerecha
-BloqueMoverDerecha --> Personaje: moverADerecha()
+BloqueMoverDerecha -> Personaje: moverADerecha()
 deactivate BloqueMoverDerecha
 Personaje -> ":Posicion": //derechaDe//(unaPosicion)
 
@@ -29,7 +29,7 @@ Personaje -> BloqueMoverAbajo: new()
 
 Personaje -> BloqueMoverAbajo:  //ejecutar//(unPersonaje)
 activate BloqueMoverAbajo
-BloqueMoverAbajo --> Personaje: moverAbajo()
+BloqueMoverAbajo -> Personaje: moverAbajo()
 deactivate BloqueMoverAbajo
 Personaje -> ":Posicion": //abajoDe//(unaPosicion)
 
