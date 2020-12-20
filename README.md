@@ -12,7 +12,7 @@ Trabajo Práctico número 2 de la materia Algoritmos y Programación III de FIUB
 * **Integrante 2** - [Camila Belen Carlocchia](https://github.com/camola98)
 * **Integrante 3** - [Santiago Curetti](https://github.com/SantiC8)
 * **Integrante 4** - [Andrés Zambrano](https://github.com/andrezszambrano)
-* **Integrante 4** - [Jose Ramirez](https://github.com/Jose897)
+* **Integrante 5** - [Jose Ramirez](https://github.com/Jose897)
 
 **Corrector:** [Joaquin Gómez](https://github.com/joaqogomez)
 
