@@ -81,8 +81,14 @@ class BloquesDisponibles {
     - bloques : Collection
 }
 
-class Dibujo {
+Bloque <|-- BloqueMoverADerecha
+Bloque <|--left BloqueMoverIzquierda
+Bloque <|-- BloqueMoverAbajo
+Bloque <|-- BloqueMoverArriba
+Bloque <|-- BloqueBajarLapiz
+Bloque <|--right BloqueSubirLapiz
 
-}
+EstadoLapiz <|.. EstadoActivado
+EstadoLapiz <|.. EstadoDesactivado
 
 @enduml

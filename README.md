@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/fiuba/algo3_proyecto_base_tp2.svg?branch=master)](https://travis-ci.org/fiuba/algo3_proyecto_base_tp2) [![codecov](https://codecov.io/gh/fiuba/algo3_proyecto_base_tp2/branch/master/graph/badge.svg)](https://codecov.io/gh/fiuba/algo3_proyecto_base_tp2)
+[![Build Status](https://travis-ci.com/Lescalante14/Tp2-Algoritmos3-AlgoBlocks.svg?branch=main)](https://travis-ci.com/github/Lescalante14/Tp2-Algoritmos3-AlgoBlocks) [![codecov](https://codecov.io/gh/Lescalante14/Tp2-Algoritmos3-AlgoBlocks/branch/main/graph/badge.svg?token=CGXMU0B4OB)](https://codecov.io/gh/Lescalante14/Tp2-Algoritmos3-AlgoBlocks)
 
 
 
