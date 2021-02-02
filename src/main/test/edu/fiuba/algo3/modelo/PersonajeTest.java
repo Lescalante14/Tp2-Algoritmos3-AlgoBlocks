@@ -7,12 +7,12 @@ import static org.junit.jupiter.api.Assertions.*;
 public class PersonajeTest {
 
     @Test
-    public void creacióndelPersonajeConElLápizArriba()
+    public void creacióndelPersonajeConElLápizDesactivado()
     {
 
         Personaje personaje = new Personaje();
 
-        assertEquals(personaje.estadoLapiz(), "ESTADO DESACTIVADO");
+        assertFalse(personaje.estadoLapiz().estaActivado());
 
     }
 
@@ -33,9 +33,9 @@ public class PersonajeTest {
 
         Personaje personaje = new Personaje();
 
-        personaje.ejecutarBloque(new BloqueBajarLapiz());
+        personaje.ejecutarBloque(new BloqueActivarLapiz());
 
-        assertEquals(personaje.estadoLapiz(), "ESTADO ACTIVADO");
+        assertTrue(personaje.estadoLapiz().estaActivado());
 
     }
 
@@ -45,13 +45,13 @@ public class PersonajeTest {
 
         Personaje personaje = new Personaje();
 
-        personaje.ejecutarBloque(new BloqueBajarLapiz());
+        personaje.ejecutarBloque(new BloqueActivarLapiz());
 
-        assertEquals(personaje.estadoLapiz(), "ESTADO ACTIVADO");
+        assertTrue(personaje.estadoLapiz().estaActivado());
 
-        personaje.ejecutarBloque(new BloqueSubirLapiz());
+        personaje.ejecutarBloque(new BloqueDesactivarLapiz());
 
-        assertEquals(personaje.estadoLapiz(), "ESTADO DESACTIVADO");
+        assertFalse(personaje.estadoLapiz().estaActivado());
 
     }
 

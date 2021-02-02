@@ -9,8 +9,8 @@ public class Personaje {
         posicion = new Posicion(0,0);
     }
 
-    public String estadoLapiz(){
-        return this.estado.dameEstado();
+    public EstadoLapiz estadoLapiz(){
+        return this.estado;
     }
 
     public void activarLapiz(){
