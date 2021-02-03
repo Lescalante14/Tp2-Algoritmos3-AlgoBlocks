@@ -30,7 +30,7 @@ public class Personaje {
 
     public void moverADerecha() {
         Posicion posicionNueva = Posicion.derechaDe(posicion);
-        //estado.dibujarDesdeHasta(posicion, posicionNueva);
+        //lapiz.dibujarDesdeHasta(posicion, posicionNueva);
         posicion = posicionNueva;
     }
 
