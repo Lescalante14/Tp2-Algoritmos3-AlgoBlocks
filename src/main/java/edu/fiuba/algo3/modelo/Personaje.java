@@ -2,27 +2,26 @@ package edu.fiuba.algo3.modelo;
 
 public class Personaje {
 
-    private EstadoLapiz estado;
+    private Lapiz lapiz;
     private Posicion posicion;
+    
     public Personaje(){
-        estado = new EstadoDesactivado();
+        lapiz = new Lapiz();
         posicion = new Posicion(0,0);
     }
 
     public EstadoLapiz estadoLapiz(){
-        return this.estado;
+        return this.lapiz.estado();
     }
 
     public void activarLapiz(){
-        estado = new EstadoActivado();
+        this.lapiz.activar();
+
     }
 
     public void desactivarLapiz() {
-        estado = new EstadoDesactivado();
-    }
+        this.lapiz.desactivar();
 
-    public void ejecutarBloque(Bloque unBloque){
-        unBloque.ejecutar(this);
     }
 
     public Posicion getPosicion(){

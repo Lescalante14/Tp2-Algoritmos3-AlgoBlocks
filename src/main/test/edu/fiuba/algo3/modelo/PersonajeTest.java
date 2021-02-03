@@ -28,16 +28,18 @@ public class PersonajeTest {
     }
 
     @Test
-    public void alAplicarBloqueBajarLapizseActivaElLapiz()
+    public void alAplicarBloqueActivarLapizseActivaElLapiz()
     {
 
         Personaje personaje = new Personaje();
 
-        personaje.ejecutarBloque(new BloqueActivarLapiz());
 
+        personaje.activarLapiz();
         assertTrue(personaje.estadoLapiz().estaActivado());
 
     }
+
+
 
     @Test
     public void alAplicarBloqueSubirLapizseDesactivaElLapiz()
@@ -45,11 +47,11 @@ public class PersonajeTest {
 
         Personaje personaje = new Personaje();
 
-        personaje.ejecutarBloque(new BloqueActivarLapiz());
+        personaje.activarLapiz();
 
         assertTrue(personaje.estadoLapiz().estaActivado());
 
-        personaje.ejecutarBloque(new BloqueDesactivarLapiz());
+        personaje.desactivarLapiz();
 
         assertFalse(personaje.estadoLapiz().estaActivado());
 
@@ -61,8 +63,7 @@ public class PersonajeTest {
 
         Personaje personaje = new Personaje();
         Posicion posicionInicial = personaje.getPosicion();
-        personaje.ejecutarBloque(new BloqueMoverDerecha());
-
+        personaje.moverADerecha();
         assertTrue(Posicion.compararPosiciones(personaje.getPosicion(), Posicion.derechaDe(posicionInicial)));
 
     }
@@ -73,7 +74,7 @@ public class PersonajeTest {
 
         Personaje personaje = new Personaje();
         Posicion posicionInicial = personaje.getPosicion();
-        personaje.ejecutarBloque(new BloqueMoverIzquierda());
+        personaje.moverAIzquierda();
 
         assertTrue(Posicion.compararPosiciones(personaje.getPosicion(), Posicion.izquierdaDe(posicionInicial)));
 
@@ -85,7 +86,7 @@ public class PersonajeTest {
 
         Personaje personaje = new Personaje();
         Posicion posicionInicial = personaje.getPosicion();
-        personaje.ejecutarBloque(new BloqueMoverArriba());
+        personaje.moverArriba();
 
         assertTrue(Posicion.compararPosiciones(personaje.getPosicion(), Posicion.arribaDe(posicionInicial)));
 
@@ -97,7 +98,7 @@ public class PersonajeTest {
 
         Personaje personaje = new Personaje();
         Posicion posicionInicial = personaje.getPosicion();
-        personaje.ejecutarBloque(new BloqueMoverAbajo());
+        personaje.moverAbajo();
 
         assertTrue(Posicion.compararPosiciones(personaje.getPosicion(), Posicion.abajoDe(posicionInicial)));
 
@@ -109,8 +110,8 @@ public class PersonajeTest {
 
         Personaje personaje = new Personaje();
         Posicion posicionInicial = personaje.getPosicion();
-        personaje.ejecutarBloque(new BloqueMoverDerecha());
-        personaje.ejecutarBloque(new BloqueMoverAbajo());
+        personaje.moverADerecha();
+        personaje.moverAbajo();
 
         assertTrue(Posicion.compararPosiciones(personaje.getPosicion() ,
                    Posicion.abajoDe(Posicion.derechaDe(posicionInicial) )));
@@ -123,8 +124,8 @@ public class PersonajeTest {
 
         Personaje personaje = new Personaje();
         Posicion posicionInicial = personaje.getPosicion();
-        personaje.ejecutarBloque(new BloqueMoverArriba());
-        personaje.ejecutarBloque(new BloqueMoverIzquierda());
+        personaje.moverArriba();
+        personaje.moverAIzquierda();
 
         assertTrue(Posicion.compararPosiciones(personaje.getPosicion() ,
                 Posicion.izquierdaDe(Posicion.arribaDe(posicionInicial) )));
