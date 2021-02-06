@@ -1,8 +1,8 @@
-package edu.fiuba.algo3.modelo;
+package edu.fiuba.algo3.modelo.bloque;
 
-import edu.fiuba.algo3.modelo.bloque.Bloque;
+import edu.fiuba.algo3.modelo.Personaje;
 
-public class BloqueMoverArriba extends Bloque {
+public class BloqueMoverArriba implements Bloque {
     @Override
     public void ejecutar(Personaje unPersonaje) {
         unPersonaje.moverArriba();

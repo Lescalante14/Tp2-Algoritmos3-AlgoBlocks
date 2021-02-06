@@ -1,6 +1,8 @@
-package edu.fiuba.algo3.modelo;
+package edu.fiuba.algo3.modelo.bloque;
 
-public class BloqueActivarLapiz extends Bloque{
+import edu.fiuba.algo3.modelo.Personaje;
+
+public class BloqueActivarLapiz implements Bloque {
 
     @Override
     public void ejecutar(Personaje unPersonaje){
