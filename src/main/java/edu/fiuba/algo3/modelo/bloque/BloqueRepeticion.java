@@ -8,9 +8,9 @@ public class BloqueRepeticion implements Bloque{
     private int iteraciones;
     private Algoritmo algoritmo;
 
-    public BloqueRepeticion(int iteraciones, Algoritmo algoritmo) {
+    public BloqueRepeticion(int iteraciones) {
         this.iteraciones = iteraciones;
-        this.algoritmo = algoritmo;
+        this.algoritmo = new Algoritmo();
     }
 
     @Override
@@ -18,6 +18,12 @@ public class BloqueRepeticion implements Bloque{
         for (int i = 0; i<iteraciones; i++){
             algoritmo.ejecutarAlgoritmo(unPersonaje);
         }
+    }
+
+    public void agregarBloque(Bloque bloqueAgregar){
+
+        this.algoritmo.agregarBloque(bloqueAgregar);
+
     }
 
 }
