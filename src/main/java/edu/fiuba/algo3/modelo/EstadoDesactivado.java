@@ -9,4 +9,8 @@ public class EstadoDesactivado implements EstadoLapiz {
         return false;
     }
 
+    public void dibujarDesdeHasta(SectorDeDibujo sectorDeDibujo, Posicion posicionVieja, Posicion posicionNueva){
+
+
+    }
 }

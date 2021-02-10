@@ -131,4 +131,40 @@ public class PersonajeTest {
                 Posicion.izquierdaDe(Posicion.arribaDe(posicionInicial) )));
 
     }
+
+    @Test
+    public void AlMoverIzquierdaElSectorDeDibujoTienePintadaLaCantidadDeCasillasCorrespondiente(){
+
+        Personaje personaje = new Personaje();
+        personaje.activarLapiz();
+        personaje.moverAIzquierda();
+
+        assertEquals(1,personaje.totalDeCasillasPintadas());
+
+    }
+
+    @Test
+    public void AlMoverArribaYADerechaElSectorDeDibujoTienePintadaLaCantidadDeCasillasCorrespondiente(){
+
+        Personaje personaje = new Personaje();
+        personaje.activarLapiz();
+        personaje.moverArriba();
+        personaje.moverADerecha();
+
+        assertEquals(2,personaje.totalDeCasillasPintadas());
+
+    }
+
+    @Test
+    public void AlMoverDerechaAbajoYALaIZquierdaElSectorDeDibujoTienePintadaLaCantidadDeCasillasCorrespondiente(){
+
+        Personaje personaje = new Personaje();
+        personaje.activarLapiz();
+        personaje.moverADerecha();
+        personaje.moverAbajo();
+        personaje.moverAIzquierda();
+
+        assertEquals(3,personaje.totalDeCasillasPintadas());
+
+    }
 }

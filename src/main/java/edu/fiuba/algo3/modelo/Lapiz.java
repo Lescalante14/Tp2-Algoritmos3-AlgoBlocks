@@ -25,9 +25,14 @@ public class Lapiz {
         return this.estado.estaActivado();
     }
 
-    public void dibujarDesdeHasta(SectorDeDibujo sector, Posicion posicionVieja, Posicion posicionNueva) {
+    public void dibujarDesdeHasta(Posicion posicionVieja, Posicion posicionNueva) {
+
+        estado.dibujarDesdeHasta(sectorDeDibujo, posicionVieja, posicionNueva);
 
 
+    }
 
+    public int totalDeCasillasPintadas() {
+        return sectorDeDibujo.totalDeCasillasDibujadas();
     }
 }

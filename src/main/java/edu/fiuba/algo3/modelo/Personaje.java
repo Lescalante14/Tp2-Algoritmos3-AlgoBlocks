@@ -30,26 +30,32 @@ public class Personaje {
 
     public void moverADerecha() {
         Posicion posicionNueva = Posicion.derechaDe(posicion);
-        //lapiz.dibujarDesdeHasta(posicion, posicionNueva);
-        posicion = posicionNueva;
+        realizarMovimiento(posicionNueva);
     }
 
     public void moverAIzquierda() {
         Posicion posicionNueva = Posicion.izquierdaDe(posicion);
-        //estado.dibujarDesdeHasta(posicion, posicionNueva);
-        posicion = posicionNueva;
+        realizarMovimiento(posicionNueva);
     }
 
     public void moverArriba() {
         Posicion posicionNueva = Posicion.arribaDe(posicion);
-        //estado.dibujarDesdeHasta(posicion, posicionNueva);
-        posicion = posicionNueva;
+        realizarMovimiento(posicionNueva);
     }
 
     public void moverAbajo() {
         Posicion posicionNueva = Posicion.abajoDe(posicion);
-        //estado.dibujarDesdeHasta(posicion, posicionNueva);
-        posicion = posicionNueva;
+        realizarMovimiento(posicionNueva);
     }
 
+    private void realizarMovimiento(Posicion posicionNueva){
+
+        lapiz.dibujarDesdeHasta(posicion, posicionNueva);
+        posicion = posicionNueva;
+
+    }
+
+    public int totalDeCasillasPintadas() {
+        return lapiz.totalDeCasillasPintadas();
+    }
 }

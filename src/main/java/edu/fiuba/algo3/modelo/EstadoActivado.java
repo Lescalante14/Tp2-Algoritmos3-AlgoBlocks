@@ -10,6 +10,12 @@ public class EstadoActivado implements EstadoLapiz {
         return true;
     }
 
+    public void dibujarDesdeHasta(SectorDeDibujo sectorDeDibujo, Posicion posicionVieja, Posicion posicionNueva){
+
+        sectorDeDibujo.dibujarDesdeHasta(posicionVieja, posicionNueva);
+
+    }
+
 }
 
 
