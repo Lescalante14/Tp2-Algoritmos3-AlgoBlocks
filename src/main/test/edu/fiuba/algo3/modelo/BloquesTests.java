@@ -80,7 +80,7 @@ public class BloquesTests {
     }
 
     @Test
-    public void bloqueDeMoverAAbajoCambiaLaPosicionDelPersonajeCorrespondientemente()
+    public void bloqueDeMoverAAbajoCambiaLaPosicionDelPersonajeCorrespondiente()
     {
 
         Personaje personaje = new Personaje();
@@ -90,6 +90,74 @@ public class BloquesTests {
 
         bloqueAbajo.ejecutar(personaje);
         assertTrue(Posicion.compararPosiciones(personaje.getPosicion(), Posicion.abajoDe(posicionInicial)));
+
+    }
+
+    @Test
+    public void repiteUnBloqueCambiaLaPosicionDelPersonajeCorrespondiente()
+    {
+        Personaje personaje = new Personaje();
+        Posicion posicionFinal = new Posicion(-3,0);
+        Algoritmo algoritmo = new Algoritmo();
+
+        algoritmo.agregarBloque(new BloqueMoverIzquierda());
+        BloqueRepeticion bloqueRepeticion = new BloqueRepeticion(3, algoritmo);
+        bloqueRepeticion.ejecutar(personaje);
+
+        assertTrue(Posicion.compararPosiciones(personaje.getPosicion(), posicionFinal));
+
+    }
+
+    @Test
+    public void bloqueDeRepeticionDobleCambiaLaPosicionDelPersonajeCorrespondiente()
+    {
+        Personaje personaje = new Personaje();
+        Posicion posicionFinal = new Posicion(2,0);
+        Algoritmo algoritmo = new Algoritmo();
+
+        algoritmo.agregarBloque(new BloqueActivarLapiz());
+        algoritmo.agregarBloque(new BloqueDesactivarLapiz());
+        algoritmo.agregarBloque(new BloqueMoverDerecha());
+        BloqueRepeticion bloqueRepeticion = new BloqueRepeticion(2, algoritmo);
+        bloqueRepeticion.ejecutar(personaje);
+
+        assertFalse(personaje.estadoLapiz().estaActivado());
+        assertTrue(Posicion.compararPosiciones(personaje.getPosicion(), posicionFinal));
+
+    }
+
+    @Test
+    public void bloqueDeRepeticionTripleCambiaLaPosicionDelPersonajeCorrespondiente()
+    {
+        Personaje personaje = new Personaje();
+        Posicion posicionFinal = new Posicion(3,-3);
+        Algoritmo algoritmo = new Algoritmo();
+
+        algoritmo.agregarBloque(new BloqueMoverDerecha());
+        algoritmo.agregarBloque(new BloqueMoverAbajo());
+        BloqueRepeticion bloqueRepeticion = new BloqueRepeticion(3, algoritmo);
+        bloqueRepeticion.ejecutar(personaje);
+
+        assertTrue(Posicion.compararPosiciones(personaje.getPosicion(), posicionFinal));
+
+    }
+
+    @Test
+    public void repiteUnBloquePersonalizado()
+    {
+        Personaje personaje = new Personaje();
+        Posicion posicionFinal = new Posicion(2,-2);
+        Algoritmo algoritmo = new Algoritmo();
+
+        algoritmo.agregarBloque(new BloqueMoverDerecha());
+        algoritmo.agregarBloque(new BloqueMoverAbajo());
+        BloquePersonalizado bloquePersonalizado = algoritmo.guardaAlgoritmoPersonalizado("escalera");
+        algoritmo.agregarBloque(bloquePersonalizado);
+
+        BloqueRepeticion bloqueRepeticion = new BloqueRepeticion(2, algoritmo);
+        bloqueRepeticion.ejecutar(personaje);
+
+        assertTrue(Posicion.compararPosiciones(personaje.getPosicion(), posicionFinal));
 
     }
 

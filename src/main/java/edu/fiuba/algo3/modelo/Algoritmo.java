@@ -1,7 +1,6 @@
 package edu.fiuba.algo3.modelo;
 
 import edu.fiuba.algo3.modelo.bloque.Bloque;
-import edu.fiuba.algo3.modelo.Personaje;
 import edu.fiuba.algo3.modelo.bloque.BloquePersonalizado;
 
 import java.util.ArrayList;
@@ -37,9 +36,9 @@ public class Algoritmo {
         }
     }
 
-    public Bloque guardaAlgoritmoPersonalizado(String nombre) {
+    public BloquePersonalizado guardaAlgoritmoPersonalizado(String nombre) {
 
-        Bloque personalizado = new BloquePersonalizado(nombre, secuenciaBloques);
+        BloquePersonalizado personalizado = new BloquePersonalizado(nombre, secuenciaBloques);
 
         secuenciaBloques = new ArrayList<Bloque>();
 
