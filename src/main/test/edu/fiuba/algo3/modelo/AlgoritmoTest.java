@@ -1,9 +1,6 @@
 package edu.fiuba.algo3.modelo;
 
-import edu.fiuba.algo3.modelo.bloque.BloqueActivarLapiz;
-import edu.fiuba.algo3.modelo.bloque.BloqueDesactivarLapiz;
-import edu.fiuba.algo3.modelo.bloque.BloqueMoverDerecha;
-import edu.fiuba.algo3.modelo.bloque.Bloque;
+import edu.fiuba.algo3.modelo.bloque.*;
 import javafx.geometry.Pos;
 import org.junit.jupiter.api.Test;
 
@@ -80,5 +77,28 @@ public class AlgoritmoTest {
         assertFalse(personaje.estadoLapiz().estaActivado());
         assertTrue(Posicion.compararPosiciones(Posicion.derechaDe(posicionInicial), personaje.getPosicion()));
     }
+
+    @Test
+    public void algoritmoConBloqueDeRepeticion()
+    {
+        Algoritmo algoritmo = new Algoritmo();
+        algoritmo.agregarBloque(new BloqueMoverDerecha());
+        algoritmo.agregarBloque(new BloqueMoverAbajo());
+        Personaje personaje = new Personaje();
+        Posicion posicionInicial = personaje.getPosicion();
+        Posicion posicionFinal = new Posicion(2,-2);
+
+
+        BloquePersonalizado personalizado = algoritmo.guardaAlgoritmoPersonalizado("nombre");
+        BloqueRepeticion bloqueRepeticion = new BloqueRepeticion(2);
+        bloqueRepeticion.agregarBloque(personalizado);
+        algoritmo.agregarBloque(bloqueRepeticion);
+        algoritmo.ejecutarAlgoritmo(personaje);
+
+        assertFalse(personaje.estadoLapiz().estaActivado());
+        assertTrue(Posicion.compararPosiciones(personaje.getPosicion(), posicionFinal));
+    }
+
 }
+
 
