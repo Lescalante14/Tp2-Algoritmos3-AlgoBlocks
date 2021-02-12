@@ -93,7 +93,7 @@ public class BloquesTests {
 
     }
 
-    @Test
+    /*@Test
     public void repiteUnBloqueCambiaLaPosicionDelPersonajeCorrespondiente()
     {
         Personaje personaje = new Personaje();
@@ -105,9 +105,9 @@ public class BloquesTests {
 
         assertTrue(Posicion.compararPosiciones(personaje.getPosicion(), posicionFinal));
 
-    }
+    }*/
 
-    @Test
+    /*@Test
     public void bloqueDeRepeticionDobleCambiaLaPosicionDelPersonajeCorrespondiente()
     {
         Personaje personaje = new Personaje();
@@ -122,9 +122,9 @@ public class BloquesTests {
         assertFalse(personaje.estadoLapiz().estaActivado());
         assertTrue(Posicion.compararPosiciones(personaje.getPosicion(), posicionFinal));
 
-    }
+    }*/
 
-    @Test
+    /*@Test
     public void bloqueDeRepeticionTripleCambiaLaPosicionDelPersonajeCorrespondiente()
     {
         Personaje personaje = new Personaje();
@@ -137,9 +137,9 @@ public class BloquesTests {
 
         assertTrue(Posicion.compararPosiciones(personaje.getPosicion(), posicionFinal));
 
-    }
+    }*/
 
-    @Test
+   /*@Test
     public void repiteUnBloquePersonalizado()
     {
         Personaje personaje = new Personaje();
@@ -156,6 +156,6 @@ public class BloquesTests {
 
         assertTrue(Posicion.compararPosiciones(personaje.getPosicion(), posicionFinal));
 
-    }
+    }*/
 
 }

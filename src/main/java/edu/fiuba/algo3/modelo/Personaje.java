@@ -28,6 +28,12 @@ public class Personaje {
         return posicion;
     }
 
+
+    public void mover(Posicion posicionNueva){
+    	posicion = posicionNueva;
+    }
+
+/*
     public void moverADerecha() {
         Posicion posicionNueva = Posicion.derechaDe(posicion);
         realizarMovimiento(posicionNueva);
@@ -54,7 +60,7 @@ public class Personaje {
         posicion = posicionNueva;
 
     }
-
+*/
     public int totalDeCasillasPintadas() {
         return lapiz.totalDeCasillasPintadas();
     }

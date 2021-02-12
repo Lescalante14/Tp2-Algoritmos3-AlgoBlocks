@@ -78,7 +78,7 @@ public class AlgoritmoTest {
         assertTrue(Posicion.compararPosiciones(Posicion.derechaDe(posicionInicial), personaje.getPosicion()));
     }
 
-    @Test
+    /*@Test
     public void algoritmoConBloqueDeRepeticion()
     {
         Algoritmo algoritmo = new Algoritmo();
@@ -97,7 +97,7 @@ public class AlgoritmoTest {
 
         assertFalse(personaje.estadoLapiz().estaActivado());
         assertTrue(Posicion.compararPosiciones(personaje.getPosicion(), posicionFinal));
-    }
+    }*/
 
 }
 
