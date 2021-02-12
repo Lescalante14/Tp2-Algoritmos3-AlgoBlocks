@@ -5,8 +5,7 @@ import edu.fiuba.algo3.modelo.Posicion;
 import edu.fiuba.algo3.modelo.bloque.*;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class BloquesTests {
 
@@ -48,6 +47,24 @@ public class BloquesTests {
 
         bloqueDerecha.ejecutar(personaje);
         assertTrue(Posicion.compararPosiciones(personaje.getPosicion(), Posicion.derechaDe(posicionInicial)));
+
+    }
+
+    @Test
+    public void bloqueDeMoverADerechaCambiaLaPosicionDelPersonajeCorrespondientementeConLapizActivado()
+    {
+
+        Personaje personaje = new Personaje();
+        Posicion posicionInicial = personaje.getPosicion();
+
+        BloqueActivarLapiz bloqueActivaLapices = new BloqueActivarLapiz();
+        bloqueActivaLapices.ejecutar(personaje);
+
+        BloqueMoverDerecha bloqueDerecha = new BloqueMoverDerecha();
+        bloqueDerecha.ejecutar(personaje);
+
+        assertTrue(Posicion.compararPosiciones(personaje.getPosicion(), Posicion.derechaDe(posicionInicial)));
+        assertEquals(1, personaje.totalDeCasillasPintadas());
 
     }
 
