@@ -20,7 +20,7 @@ public class BloquePersonalizado implements Bloque {
     @Override
     public void ejecutar(Personaje unPersonaje){
         for(Bloque unBloque : secuenciaBloques){
-				unBloque.ejecutar(unPersonaje);
+			unBloque.ejecutar(unPersonaje);
     	}
 	}
 
@@ -30,5 +30,11 @@ public class BloquePersonalizado implements Bloque {
 
 	public void cambiarNombre(String nombreNuevo){
 			nombreBloque = nombreNuevo;
+	}
+
+	public void invertirPosicion(){
+		for(Bloque unBloque : secuenciaBloques){
+			unBloque.invertirPosicion();
+		}
 	}
 }

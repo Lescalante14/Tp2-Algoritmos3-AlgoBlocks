@@ -27,7 +27,7 @@ public class Posicion {
         coordenadaX -= 1;
     }
 
-    public void aAarriba() {
+    public void aArriba() {
         coordenadaY += 1;
     }
 

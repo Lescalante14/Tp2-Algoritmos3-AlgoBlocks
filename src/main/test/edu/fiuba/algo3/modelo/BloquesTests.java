@@ -175,4 +175,38 @@ public class BloquesTests {
 
     }
 
+    @Test
+    public void bloqueInvertirDeMoverAAbajoCambiaLaPosicionDelPersonajeCorrespondiente()
+    {
+
+        Personaje personaje = new Personaje();
+        Posicion posicionFinal = personaje.getPosicion();
+		posicionFinal.aArriba();
+
+		BloqueMoverAbajo bloqueAbajo = new BloqueMoverAbajo();
+		BloqueInvertir bloqueInvertir = new BloquesInvertir();
+        
+		bloqueInvertir.agregarBloque(bloqueAbajo);
+
+		bloqueInvertir.invertirPosicion();
+        bloqueInvertir.ejecutar(personaje);
+
+        assertTrue(posicionFinal.compararPosicion(personaje.getPosicion()));
+
+    }
+
+	@Test
+    public void bloqueInvertirDeRepiteUnBloqueCambiaLaPosicionDelPersonajeCorrespondiente()
+    {
+        Personaje personaje = new Personaje();
+        Posicion posicionFinal = new Posicion(-3,0);
+
+        BloqueRepeticion bloqueRepeticion = new BloqueRepeticion(3);
+        bloqueRepeticion.agregarBloque(new BloqueMoverIzquierda());
+        bloqueRepeticion.ejecutar(personaje);
+
+        assertTrue(posicionFinal.compararPosicion(personaje.getPosicion()));
+
+    }
+
 }

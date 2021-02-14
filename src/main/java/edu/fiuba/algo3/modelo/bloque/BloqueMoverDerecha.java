@@ -4,12 +4,22 @@ import edu.fiuba.algo3.modelo.Personaje;
 import edu.fiuba.algo3.modelo.Posicion;
 
 public class   BloqueMoverDerecha implements Bloque {
+	
+	private Posicion unaPosicion;
+
+	public BloqueMoverDerecha(){
+			unaPosicion = new Posicion();
+			unaPosicion.aDerecha();
+	}
 
     @Override
     public void ejecutar(Personaje unPersonaje) {
-	Posicion unaPosicion = new Posicion();
-	unaPosicion.aDerecha();
-	unPersonaje.mover(unaPosicion);
+		unPersonaje.mover(unaPosicion);
     }
+
+	public void invertirPosicion(){
+			unaPosicion = new Posicion();
+			unaPosicion.aIzquierda();
+	}
 
 }

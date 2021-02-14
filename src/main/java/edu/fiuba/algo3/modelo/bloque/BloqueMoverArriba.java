@@ -5,10 +5,21 @@ import edu.fiuba.algo3.modelo.Posicion;
 
 
 public class BloqueMoverArriba implements Bloque {
-    @Override
+   
+	private Posicion unaPosicion;   
+	
+	public BloqueMoverArriba(){
+			unaPosicion = new Posicion();
+			unaPosicion.aArriba();
+	}
+
+	@Override
     public void ejecutar(Personaje unPersonaje) {
-        //unPersonaje.moverArriba();
-	Posicion unaPosicion = new Posicion(0,1);
-	unPersonaje.mover(unaPosicion);
+		unPersonaje.mover(unaPosicion);
     }
+
+	public void invertirPosicion(){
+		unaPosicion = new Posicion();
+		unaPosicion.aAbajo();
+	}
 }
