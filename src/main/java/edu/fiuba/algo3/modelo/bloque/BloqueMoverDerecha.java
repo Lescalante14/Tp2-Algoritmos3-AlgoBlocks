@@ -7,8 +7,8 @@ public class   BloqueMoverDerecha implements Bloque {
 
     @Override
     public void ejecutar(Personaje unPersonaje) {
-        //unPersonaje.moverADerecha() ;
-	Posicion unaPosicion = new Posicion(1,0);
+	Posicion unaPosicion = new Posicion();
+	unaPosicion.aDerecha();
 	unPersonaje.mover(unaPosicion);
     }
 

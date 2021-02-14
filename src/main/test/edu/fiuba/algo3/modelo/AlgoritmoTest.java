@@ -43,7 +43,7 @@ public class AlgoritmoTest {
         assertTrue(personaje.estadoLapiz().estaActivado());
     }
 
-    @Test
+/*    @Test
     public void seAgreganBloquesYSeEjecutanCorrectamente()
     {
         Algoritmo algoritmo = new Algoritmo();

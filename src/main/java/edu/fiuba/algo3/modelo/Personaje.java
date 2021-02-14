@@ -7,7 +7,7 @@ public class Personaje {
     
     public Personaje(){
         lapiz = new Lapiz();
-        posicion = new Posicion(0,0);
+        posicion = new Posicion();
     }
 
     public EstadoLapiz estadoLapiz(){
@@ -30,7 +30,8 @@ public class Personaje {
 
 
     public void mover(Posicion posicionNueva){
-    	posicion = posicionNueva;
+        //lapiz.dibujarDesdeHasta(posicion, posicionNueva);
+	posicion.sumar(posicionNueva);
     }
 
 /*

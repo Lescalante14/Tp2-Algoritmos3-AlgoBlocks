@@ -4,6 +4,10 @@ public class Posicion {
     int coordenadaX;
     int coordenadaY;
 
+    public Posicion(){
+	    coordenadaX = 0;
+	    coordenadaY = 0;
+    }
     public Posicion(int posicionEnX, int posicionEnY) {
 
         coordenadaX = posicionEnX;
@@ -11,24 +15,24 @@ public class Posicion {
         coordenadaY = posicionEnY;
     }
 
-    public static boolean compararPosiciones(Posicion posicion1, Posicion posicion2) {
-        return ((posicion1.getCoordenadaX() == posicion2.getCoordenadaX())&&(posicion1.getCoordenadaY() == posicion2.getCoordenadaY()));
+    public boolean compararPosicion(Posicion unaPosicion) {
+        return ((coordenadaX == unaPosicion.getCoordenadaX()) && (coordenadaY == unaPosicion.getCoordenadaY()) );
     }
 
-    public static Posicion derechaDe(Posicion posicion) {
-        return (new Posicion(posicion.coordenadaX + 1, posicion.coordenadaY));
+    public void aDerecha() {
+        coordenadaX += 1 ;
     }
 
-    public static Posicion izquierdaDe(Posicion posicion) {
-        return (new Posicion(posicion.coordenadaX -1 , posicion.coordenadaY));
+    public void aIzquierda() {
+        coordenadaX -= 1;
     }
 
-    public static Posicion arribaDe(Posicion posicion) {
-        return (new Posicion(posicion.coordenadaX, posicion.coordenadaY + 1));
+    public void aAarriba() {
+        coordenadaY += 1;
     }
 
-    public static Posicion abajoDe(Posicion posicion) {
-        return (new Posicion(posicion.coordenadaX, posicion.coordenadaY - 1));
+    public void aAbajo() {
+        coordenadaY -= 1;
     }
 
     public int getCoordenadaX() {
@@ -36,6 +40,10 @@ public class Posicion {
     }
     public int  getCoordenadaY(){
         return coordenadaY;
+    }
+    public void sumar(Posicion unaPosicion){
+	coordenadaX += unaPosicion.getCoordenadaX();
+	coordenadaY += unaPosicion.getCoordenadaY();    
     }
 
 }

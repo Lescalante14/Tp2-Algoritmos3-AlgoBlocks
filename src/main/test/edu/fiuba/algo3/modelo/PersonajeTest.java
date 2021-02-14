@@ -6,7 +6,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class PersonajeTest {
 
-    @Test
+/*    @Test
     public void creacióndelPersonajeConElLápizDesactivado()
     {
 
