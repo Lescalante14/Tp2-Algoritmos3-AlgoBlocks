@@ -17,7 +17,7 @@ public class   BloqueMoverDerecha implements Bloque {
 		unPersonaje.mover(unaPosicion);
     }
 
-	public void invertirPosicion(){
+	public void invertir(){
 			unaPosicion = new Posicion();
 			unaPosicion.aIzquierda();
 	}

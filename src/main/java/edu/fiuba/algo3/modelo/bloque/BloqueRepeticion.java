@@ -28,4 +28,10 @@ public class BloqueRepeticion implements Bloque{
             this.listaBloques.add(bloqueAgregar);
     	}
     }
+
+	@Override
+	public void invertir(){
+
+			;
+	}
 }

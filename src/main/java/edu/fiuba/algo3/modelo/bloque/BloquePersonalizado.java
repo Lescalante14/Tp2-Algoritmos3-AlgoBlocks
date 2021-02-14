@@ -31,10 +31,11 @@ public class BloquePersonalizado implements Bloque {
 	public void cambiarNombre(String nombreNuevo){
 			nombreBloque = nombreNuevo;
 	}
-
-	public void invertirPosicion(){
+	
+	@Override
+	public void invertir(){
 		for(Bloque unBloque : secuenciaBloques){
-			unBloque.invertirPosicion();
+			unBloque.invertir();
 		}
 	}
 }

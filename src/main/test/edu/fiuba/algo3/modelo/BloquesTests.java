@@ -184,11 +184,11 @@ public class BloquesTests {
 		posicionFinal.aArriba();
 
 		BloqueMoverAbajo bloqueAbajo = new BloqueMoverAbajo();
-		BloqueInvertir bloqueInvertir = new BloquesInvertir();
+		BloqueInvertir bloqueInvertir = new BloqueInvertir();
         
 		bloqueInvertir.agregarBloque(bloqueAbajo);
 
-		bloqueInvertir.invertirPosicion();
+		bloqueInvertir.invertir();
         bloqueInvertir.ejecutar(personaje);
 
         assertTrue(posicionFinal.compararPosicion(personaje.getPosicion()));
@@ -200,10 +200,16 @@ public class BloquesTests {
     {
         Personaje personaje = new Personaje();
         Posicion posicionFinal = new Posicion(-3,0);
+			
+		BloqueInvertir bloqueInvertir = new BloqueInvertir();
 
         BloqueRepeticion bloqueRepeticion = new BloqueRepeticion(3);
         bloqueRepeticion.agregarBloque(new BloqueMoverIzquierda());
-        bloqueRepeticion.ejecutar(personaje);
+        
+		bloqueInvertir.agregarBloque(bloqueRepeticion);
+		
+		bloqueInvertir.invertir();
+		bloqueInvertir.ejecutar(personaje);
 
         assertTrue(posicionFinal.compararPosicion(personaje.getPosicion()));
 

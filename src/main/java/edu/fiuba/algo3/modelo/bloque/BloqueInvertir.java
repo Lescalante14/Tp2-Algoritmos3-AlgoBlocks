@@ -25,11 +25,12 @@ public class BloqueInvertir implements Bloque {
 			unBloque.ejecutar(unPersonaje);
 		}	
     }
-
-	public void invertirPosicion(){
+	
+	@Override
+	public void invertir(){
 	
 		for(Bloque unBloque : listaAInvertirBloques){
-			unBloque.invertirPosicion();
+			unBloque.invertir();
 		}
 
 	}
