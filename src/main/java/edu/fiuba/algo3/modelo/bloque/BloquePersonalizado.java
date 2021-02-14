@@ -8,17 +8,27 @@ import java.util.List;
 
 public class BloquePersonalizado implements Bloque {
 
-    private Algoritmo algoritmoPersonalizado;
-    private String nombreAlgortimo;
+    private String nombreBloque;
+	private List<Bloque> secuenciaBloques;
+
+    public BloquePersonalizado() {
+
+        secuenciaBloques = new ArrayList<Bloque>();
+        nombreBloque = "SinNombre";
+    }
 
     @Override
     public void ejecutar(Personaje unPersonaje){
-        algoritmoPersonalizado.ejecutarAlgoritmo(unPersonaje);
-    }
+        for(Bloque unBloque : secuenciaBloques){
+				unBloque.ejecutar(unPersonaje);
+    	}
+	}
 
-    public BloquePersonalizado(String nombre, List<Bloque> secuenciaBloques) {
+	public void agregarBloque(Bloque unBloque){
+		secuenciaBloques.add(unBloque);
+	}
 
-        algoritmoPersonalizado = new Algoritmo(secuenciaBloques);
-        nombreAlgortimo = nombre;
-    }
+	public void cambiarNombre(String nombreNuevo){
+			nombreBloque = nombreNuevo;
+	}
 }

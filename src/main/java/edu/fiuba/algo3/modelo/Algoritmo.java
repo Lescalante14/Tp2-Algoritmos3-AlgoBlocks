@@ -2,46 +2,43 @@ package edu.fiuba.algo3.modelo;
 
 import edu.fiuba.algo3.modelo.bloque.Bloque;
 import edu.fiuba.algo3.modelo.bloque.BloquePersonalizado;
+//
+import edu.fiuba.algo3.modelo.*;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class Algoritmo {
 
-    private List <Bloque> secuenciaBloques;
+	private BloquePersonalizado bloquePersonalizado;
 
     public Algoritmo(){
-        secuenciaBloques = new ArrayList<Bloque>();
+        bloquePersonalizado = new BloquePersonalizado();
     }
 
-    public Algoritmo(List <Bloque> secuencia){
+/*    public Algoritmo(List <Bloque> secuencia){
             secuenciaBloques = secuencia;
     }
-
+*/
     public void agregarBloque(Bloque bloqueAgregar){
 
-        this.secuenciaBloques.add(bloqueAgregar);
+        bloquePersonalizado.agregarBloque(bloqueAgregar);
 
     }
-
+/*
     public int cantidadBloques(){
         return this.secuenciaBloques.size();
     }
-
+*/
     public void ejecutarAlgoritmo(Personaje unPersonaje) {
 
-        for (Bloque unBLoque : secuenciaBloques) {
-
-            unBLoque.ejecutar(unPersonaje);
-        }
+        bloquePersonalizado.ejecutar(unPersonaje);
     }
 
     public BloquePersonalizado guardaAlgoritmoPersonalizado(String nombre) {
 
-        BloquePersonalizado personalizado = new BloquePersonalizado(nombre, secuenciaBloques);
+        bloquePersonalizado.cambiarNombre(nombre);
 
-        secuenciaBloques = new ArrayList<Bloque>();
-
-        return personalizado;
+        return bloquePersonalizado;
     }
 }

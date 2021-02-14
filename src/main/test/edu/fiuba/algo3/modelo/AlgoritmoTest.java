@@ -8,7 +8,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class AlgoritmoTest {
 
-    @Test
+/*    @Test
     public void seAgregaUnBloqueCorrectamente()
     {
         BloqueActivarLapiz bloqueActivaLapices = new BloqueActivarLapiz();
