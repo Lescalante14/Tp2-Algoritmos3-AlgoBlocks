@@ -6,7 +6,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class PersonajeTest {
 
-/*    @Test
+    @Test
     public void creacióndelPersonajeConElLápizDesactivado()
     {
 
@@ -23,7 +23,7 @@ public class PersonajeTest {
 
         Posicion posicionCero = new Posicion(0,0);
 
-        assertTrue(Posicion.compararPosiciones(posicionCero, personaje.getPosicion()));
+        assertTrue(posicionCero.compararPosicion(personaje.getPosicion()));
 
     }
 
@@ -57,7 +57,7 @@ public class PersonajeTest {
 
     }
 
-    /*@Test
+/*    @Test
     public void AlAplicarBloqueMoverDerechaSeMueveALaDerecha()
     {
 

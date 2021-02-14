@@ -11,9 +11,11 @@ import java.util.List;
 public class Algoritmo {
 
 	private BloquePersonalizado bloquePersonalizado;
+	private int cantidadBloques;
 
     public Algoritmo(){
         bloquePersonalizado = new BloquePersonalizado();
+		cantidadBloques = 0;
     }
 
 /*    public Algoritmo(List <Bloque> secuencia){
@@ -23,13 +25,14 @@ public class Algoritmo {
     public void agregarBloque(Bloque bloqueAgregar){
 
         bloquePersonalizado.agregarBloque(bloqueAgregar);
+		cantidadBloques++;
 
     }
-/*
+
     public int cantidadBloques(){
-        return this.secuenciaBloques.size();
+        return this.cantidadBloques;
     }
-*/
+
     public void ejecutarAlgoritmo(Personaje unPersonaje) {
 
         bloquePersonalizado.ejecutar(unPersonaje);
@@ -41,4 +44,9 @@ public class Algoritmo {
 
         return bloquePersonalizado;
     }
+
+	public void vaciarBloques(){
+			bloquePersonalizado = new BloquePersonalizado();
+			cantidadBloques = 0;
+	}
 }

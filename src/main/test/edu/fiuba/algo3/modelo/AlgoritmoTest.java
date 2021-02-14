@@ -8,7 +8,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class AlgoritmoTest {
 
-/*    @Test
+    @Test
     public void seAgregaUnBloqueCorrectamente()
     {
         BloqueActivarLapiz bloqueActivaLapices = new BloqueActivarLapiz();
@@ -43,7 +43,7 @@ public class AlgoritmoTest {
         assertTrue(personaje.estadoLapiz().estaActivado());
     }
 
-/*    @Test
+    @Test
     public void seAgreganBloquesYSeEjecutanCorrectamente()
     {
         Algoritmo algoritmo = new Algoritmo();
@@ -54,9 +54,10 @@ public class AlgoritmoTest {
         Posicion posicionInicial = personaje.getPosicion();
 
         algoritmo.ejecutarAlgoritmo(personaje);
+		posicionInicial.aDerecha();
 
         assertFalse(personaje.estadoLapiz().estaActivado());
-        assertTrue(Posicion.compararPosiciones(Posicion.derechaDe(posicionInicial), personaje.getPosicion()));
+        assertTrue(posicionInicial.compararPosicion(personaje.getPosicion()));
     }
 
     @Test
@@ -71,14 +72,17 @@ public class AlgoritmoTest {
 
 
         Bloque personalizado = algoritmo.guardaAlgoritmoPersonalizado("nombre");
-        algoritmo.agregarBloque(personalizado);
+        algoritmo.vaciarBloques();
+		algoritmo.agregarBloque(personalizado);
         algoritmo.ejecutarAlgoritmo(personaje);
 
+		posicionInicial.aDerecha();
+
         assertFalse(personaje.estadoLapiz().estaActivado());
-        assertTrue(Posicion.compararPosiciones(Posicion.derechaDe(posicionInicial), personaje.getPosicion()));
+        assertTrue(posicionInicial.compararPosicion(personaje.getPosicion()));
     }
 
-    /*@Test
+    @Test
     public void algoritmoConBloqueDeRepeticion()
     {
         Algoritmo algoritmo = new Algoritmo();
@@ -90,14 +94,18 @@ public class AlgoritmoTest {
 
 
         BloquePersonalizado personalizado = algoritmo.guardaAlgoritmoPersonalizado("nombre");
-        BloqueRepeticion bloqueRepeticion = new BloqueRepeticion(2);
-        bloqueRepeticion.agregarBloque(personalizado);
-        algoritmo.agregarBloque(bloqueRepeticion);
+		algoritmo.vaciarBloques();
+        
+		BloqueRepeticion bloqueRepeticion = new BloqueRepeticion(2);
+		algoritmo.agregarBloque(bloqueRepeticion);
+        
+		bloqueRepeticion.agregarBloque(personalizado);
+        
         algoritmo.ejecutarAlgoritmo(personaje);
 
         assertFalse(personaje.estadoLapiz().estaActivado());
-        assertTrue(Posicion.compararPosiciones(personaje.getPosicion(), posicionFinal));
-    }*/
+        assertTrue(posicionFinal.compararPosicion(personaje.getPosicion()));
+    }
 
 }
 
