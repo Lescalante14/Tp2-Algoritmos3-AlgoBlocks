@@ -12,7 +12,7 @@ public class PersonajeTest {
 
         Personaje personaje = new Personaje();
 
-        assertFalse(personaje.estadoLapiz().estaActivado());
+        assertTrue(personaje.obtenerLapiz().estado());
 
     }
 
@@ -32,10 +32,10 @@ public class PersonajeTest {
     {
 
         Personaje personaje = new Personaje();
+		LapizActivado unLapiz = new LapizActivado();
 
-
-        personaje.activarLapiz();
-        assertTrue(personaje.estadoLapiz().estaActivado());
+        personaje.cambiarLapiz(unLapiz);
+        assertTrue(personaje.obtenerLapiz().estado());
 
     }
 
@@ -47,13 +47,15 @@ public class PersonajeTest {
 
         Personaje personaje = new Personaje();
 
-        personaje.activarLapiz();
+		LapizActivado unLapiz = new LapizActivado();
+        personaje.cambiarLapiz(unLapiz);
 
-        assertTrue(personaje.estadoLapiz().estaActivado());
+        assertTrue(personaje.obtenerLapiz().estado());
 
-        personaje.desactivarLapiz();
+		LapizDesactivado otroLapiz = new LapizDesactivado();
+        personaje.cambiarLapiz(otroLapiz);
 
-        assertFalse(personaje.estadoLapiz().estaActivado());
+        assertFalse(personaje.obtenerLapiz().estado());
 
     }
 

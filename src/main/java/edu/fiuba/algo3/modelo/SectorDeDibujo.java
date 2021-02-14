@@ -1,28 +1,32 @@
 package edu.fiuba.algo3.modelo;
 
+import java.util.HashMap;
+
+
 public class SectorDeDibujo {
 
-    private int tamanioX;
-    private int tamanioY;
-    private int casillasDibujadas;
+	private HashMap<String,Integer> celdas;
 
     public SectorDeDibujo(){
-        tamanioX = 10;
-        tamanioY = 10;
-        casillasDibujadas = 0;
+
+		celdas = new HashMap<String,Integer>();
     }
 
-    public int tamanio() {
-        int cuadriculas = this.tamanioX * this.tamanioY;
-        return cuadriculas;
-    }
+	public void dibujarMovimiento(Personaje unPersonaje){
+		if(celdas.containsKey(unPersonaje.getPosicion().toString() )){
+			if( 0 == celdas.get(unPersonaje.getPosicion().toString())){
+				celdas.put(unPersonaje.getPosicion().toString(), unPersonaje.obtenerLapiz().obtenerDibujo());
+			}
+		}
+		celdas.put(unPersonaje.getPosicion().toString(), unPersonaje.obtenerLapiz().obtenerDibujo());		
 
-    public int totalDeCasillasDibujadas() {
-        return  this.casillasDibujadas;
+	}
 
-    }
-
-    public void dibujarDesdeHasta(Posicion posicionVieja, Posicion posicionNueva) {
-        this.casillasDibujadas += 1;
-    }
+	public Integer estaDibujado(Posicion unaPosicion){
+		if( celdas.containsKey(unaPosicion.toString()) ){
+			return celdas.get(unaPosicion.toString());	
+		}else{
+			return 0;
+		}
+	}
 }

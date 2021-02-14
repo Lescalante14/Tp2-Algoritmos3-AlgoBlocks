@@ -3,9 +3,47 @@ package edu.fiuba.algo3.modelo;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
+import edu.fiuba.algo3.modelo.bloque.*;
 
 public class LapizTest {
 
+    @Test
+    public void LapizRecienCreadoEstaActivado(){
+
+        Personaje unPersonaje = new Personaje();
+
+        assertTrue(unPersonaje.estadoLapiz());
+    }
+    
+	@Test
+    public void AlDesactivarElLapizEfectivamenteEstaDesactivado(){
+
+        Personaje unPersonaje = new Personaje();
+		
+		LapizDesactivado unLapizDesactivado = new LapizDesactivado();
+		
+		unPersonaje.cambiarLapiz(unLapizDesactivado);
+		
+        assertFalse(unPersonaje.obtenerLapiz().estado());
+    }
+
+    @Test
+    public void LapizRecienCreadoDibujaSobreElSectorUnaVezYLasCasillasPintadasSonLasCorrespondientes(){
+		
+		Personaje unPersonaje = new Personaje();
+		BloqueMoverAbajo bloqueAbajo = new BloqueMoverAbajo();
+	
+		SectorDeDibujo sector = new SectorDeDibujo();
+
+		bloqueAbajo.ejecutar(unPersonaje);
+
+		sector.dibujarMovimiento(unPersonaje);
+		
+		assertEquals(1,sector.estaDibujado(unPersonaje.getPosicion()));
+	}
+
+
+/*		
     @Test
     public void LapizRecienCreadoNoEstaActivado(){
 
@@ -31,7 +69,7 @@ public class LapizTest {
 
     }
 
-    @Test
+    			@Test
     public void LapizRecienCreadoDibujaSobreElSectorUnaVezYLasCasillasPintadasSonLasCorrespondientes(){
 
         Lapiz lapiz = new Lapiz();
@@ -73,6 +111,6 @@ public class LapizTest {
 
         assertEquals(3,lapiz.totalDeCasillasPintadas());
 
-    }
+    }*/
 
 }

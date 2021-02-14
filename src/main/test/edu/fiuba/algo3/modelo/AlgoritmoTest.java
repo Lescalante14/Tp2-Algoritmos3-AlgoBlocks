@@ -40,7 +40,7 @@ public class AlgoritmoTest {
 
         algoritmo.ejecutarAlgoritmo(personaje);
 
-        assertTrue(personaje.estadoLapiz().estaActivado());
+        assertTrue(personaje.obtenerLapiz().estado());
     }
 
     @Test
@@ -56,7 +56,7 @@ public class AlgoritmoTest {
         algoritmo.ejecutarAlgoritmo(personaje);
 		posicionInicial.aDerecha();
 
-        assertFalse(personaje.estadoLapiz().estaActivado());
+        assertFalse(personaje.obtenerLapiz().estado());
         assertTrue(posicionInicial.compararPosicion(personaje.getPosicion()));
     }
 
@@ -78,7 +78,7 @@ public class AlgoritmoTest {
 
 		posicionInicial.aDerecha();
 
-        assertFalse(personaje.estadoLapiz().estaActivado());
+        assertFalse(personaje.obtenerLapiz().estado());
         assertTrue(posicionInicial.compararPosicion(personaje.getPosicion()));
     }
 
@@ -103,7 +103,7 @@ public class AlgoritmoTest {
         
         algoritmo.ejecutarAlgoritmo(personaje);
 
-        assertFalse(personaje.estadoLapiz().estaActivado());
+        assertTrue(personaje.obtenerLapiz().estado());
         assertTrue(posicionFinal.compararPosicion(personaje.getPosicion()));
     }
 

@@ -6,23 +6,26 @@ public class Personaje {
     private Posicion posicion;
     
     public Personaje(){
-        lapiz = new Lapiz();
+        lapiz = new LapizActivado();
         posicion = new Posicion();
     }
 
-    public EstadoLapiz estadoLapiz(){
+    public boolean estadoLapiz(){
         return this.lapiz.estado();
     }
 
-    public void activarLapiz(){
+/*    public void activarLapiz(){
         this.lapiz.activar();
 
     }
 
     public void desactivarLapiz() {
         this.lapiz.desactivar();
-
-    }
+	}
+*/
+	public void cambiarLapiz(Lapiz unLapiz){
+		lapiz = unLapiz;
+	}
 
     public Posicion getPosicion(){
         return posicion;
@@ -30,9 +33,13 @@ public class Personaje {
 
 
     public void mover(Posicion posicionNueva){
-        lapiz.dibujarDesdeHasta(posicion, posicionNueva);
-	posicion.sumar(posicionNueva);
+        //lapiz.dibujar(posicionNueva);
+		posicion.sumar(posicionNueva);
     }
+
+	public Lapiz obtenerLapiz(){
+			return lapiz;
+	}
 
 /*
     public void moverADerecha() {
@@ -61,8 +68,8 @@ public class Personaje {
         posicion = posicionNueva;
 
     }
-*/
+
     public int totalDeCasillasPintadas() {
         return lapiz.totalDeCasillasPintadas();
-    }
+    }*/
 }
