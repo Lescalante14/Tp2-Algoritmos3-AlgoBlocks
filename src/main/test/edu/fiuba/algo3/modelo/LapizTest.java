@@ -44,7 +44,7 @@ public class LapizTest {
 
 
 /*		
-    @Test
+		    @Test
     public void LapizRecienCreadoNoEstaActivado(){
 
         Lapiz lapiz = new Lapiz();
@@ -52,7 +52,7 @@ public class LapizTest {
         assertFalse(lapiz.estaActivado());
     }
 
-    @Test
+    		@Test
     public void AlActivarLapizRecienCreadoEfectivamenteEstaActivado(){
 
         Lapiz lapiz = new Lapiz();

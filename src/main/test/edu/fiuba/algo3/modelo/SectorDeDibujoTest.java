@@ -6,12 +6,13 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class SectorDeDibujoTest {
 
-/*    @Test
+    @Test
     public void creacionDelSectorConTamanioEsperado(){
 
         SectorDeDibujo sector = new SectorDeDibujo();
+		Posicion unaPosicion = new Posicion();
 
-        assertEquals(100, sector.tamanio());
+        assertEquals(0, sector.estaDibujado(unaPosicion));
 
     }
 
@@ -19,10 +20,11 @@ public class SectorDeDibujoTest {
     public void sectorComienzaEnBlanco(){
 
         SectorDeDibujo sector = new SectorDeDibujo();
+		Posicion unaPosicion = new Posicion();
 
-        assertEquals(0,sector.totalDeCasillasDibujadas());
+        assertEquals(0,sector.estaDibujado(unaPosicion));
     }
-
+/*
     @Test
     public void totalDeCasillasPintadasCoincideConDespuesDeHaberDibujadoUnaVez(){
 
@@ -35,7 +37,7 @@ public class SectorDeDibujoTest {
         assertEquals(1, sector.totalDeCasillasDibujadas());
 
     }
-
+/*
     @Test
     public void totalDeCasillasPintadasCoincideConDespuesDeHaberDibujadoTresVeces(){
 

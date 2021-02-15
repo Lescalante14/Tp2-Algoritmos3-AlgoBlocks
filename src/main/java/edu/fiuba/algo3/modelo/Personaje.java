@@ -14,15 +14,6 @@ public class Personaje {
         return this.lapiz.estado();
     }
 
-/*    public void activarLapiz(){
-        this.lapiz.activar();
-
-    }
-
-    public void desactivarLapiz() {
-        this.lapiz.desactivar();
-	}
-*/
 	public void cambiarLapiz(Lapiz unLapiz){
 		lapiz = unLapiz;
 	}
@@ -33,7 +24,6 @@ public class Personaje {
 
 
     public void mover(Posicion posicionNueva){
-        //lapiz.dibujar(posicionNueva);
 		posicion.sumar(posicionNueva);
     }
 
@@ -41,35 +31,4 @@ public class Personaje {
 			return lapiz;
 	}
 
-/*
-    public void moverADerecha() {
-        Posicion posicionNueva = Posicion.derechaDe(posicion);
-        realizarMovimiento(posicionNueva);
-    }
-
-    public void moverAIzquierda() {
-        Posicion posicionNueva = Posicion.izquierdaDe(posicion);
-        realizarMovimiento(posicionNueva);
-    }
-
-    public void moverArriba() {
-        Posicion posicionNueva = Posicion.arribaDe(posicion);
-        realizarMovimiento(posicionNueva);
-    }
-
-    public void moverAbajo() {
-        Posicion posicionNueva = Posicion.abajoDe(posicion);
-        realizarMovimiento(posicionNueva);
-    }
-
-    private void realizarMovimiento(Posicion posicionNueva){
-
-        lapiz.dibujarDesdeHasta(posicion, posicionNueva);
-        posicion = posicionNueva;
-
-    }
-
-    public int totalDeCasillasPintadas() {
-        return lapiz.totalDeCasillasPintadas();
-    }*/
 }

@@ -18,10 +18,6 @@ public class Algoritmo {
 		cantidadBloques = 0;
     }
 
-/*    public Algoritmo(List <Bloque> secuencia){
-            secuenciaBloques = secuencia;
-    }
-*/
     public void agregarBloque(Bloque bloqueAgregar){
 
         bloquePersonalizado.agregarBloque(bloqueAgregar);
