@@ -17,7 +17,7 @@ public class BloquesTests {
         BloqueActivarLapiz bloqueActivaLapices = new BloqueActivarLapiz();
 
         bloqueActivaLapices.ejecutar(personaje);
-        assertTrue(personaje.obtenerLapiz().estado());
+        assertEquals(1,personaje.obtenerLapiz().obtenerDibujo());
 
     }
 
@@ -28,12 +28,12 @@ public class BloquesTests {
         BloqueActivarLapiz bloqueActivaLapices = new BloqueActivarLapiz();
 
         bloqueActivaLapices.ejecutar(personaje);
-        assertTrue(personaje.obtenerLapiz().estado());
+        assertEquals(1,personaje.obtenerLapiz().obtenerDibujo());
 
         BloqueDesactivarLapiz bloqueDesactivaLapices = new BloqueDesactivarLapiz();
 
         bloqueDesactivaLapices.ejecutar(personaje);
-        assertFalse(personaje.obtenerLapiz().estado());
+        assertNotEquals(1,personaje.obtenerLapiz().obtenerDibujo());
     }
 
     @Test
@@ -140,7 +140,7 @@ public class BloquesTests {
         bloqueRepeticion.agregarBloque(new BloqueMoverDerecha());
         bloqueRepeticion.ejecutar(personaje);
 
-        assertFalse(personaje.obtenerLapiz().estado());
+        assertNotEquals(1,personaje.obtenerLapiz().obtenerDibujo());
         assertTrue(posicionFinal.compararPosicion(personaje.getPosicion()));
 
     }
@@ -169,7 +169,7 @@ public class BloquesTests {
 
         algoritmo.agregarBloque(new BloqueMoverDerecha());
         algoritmo.agregarBloque(new BloqueMoverAbajo());
-        BloquePersonalizado bloquePersonalizado = algoritmo.guardaAlgoritmoPersonalizado("escalera");
+        BloquePersonalizado bloquePersonalizado = algoritmo.guardaPersonalizado("escalera");
 
         BloqueRepeticion bloqueRepeticion = new BloqueRepeticion(2);
         bloqueRepeticion.agregarBloque(bloquePersonalizado);

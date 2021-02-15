@@ -5,19 +5,19 @@ import edu.fiuba.algo3.modelo.*;
 
 public class BloqueActivarLapiz implements Bloque {
 	
-	private Lapiz unLapiz;
+	private Lapiz lapiz;
 
 	public BloqueActivarLapiz(){
-			unLapiz = new LapizActivado();
+			lapiz = new LapizActivado();
 	}
 
     @Override
     public void ejecutar(Personaje unPersonaje){
-        unPersonaje.cambiarLapiz(unLapiz);
+        unPersonaje.cambiarLapiz(lapiz);
     }
 
 	@Override
 	public void invertir(){
-		unLapiz = new LapizDesactivado();
+		lapiz = new LapizDesactivado();
 	}
 }

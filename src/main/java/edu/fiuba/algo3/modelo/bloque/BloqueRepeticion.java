@@ -23,15 +23,17 @@ public class BloqueRepeticion implements Bloque{
         }
     }
 
-    public void agregarBloque(Bloque bloqueAgregar){	
+	@Override
+	public void invertir(){
+		for(Bloque unBloque : listaBloques){
+			unBloque.invertir();
+		}
+	}
+    
+	public void agregarBloque(Bloque bloqueAgregar){	
         for (int i = 0; i<iteraciones; i++){
             this.listaBloques.add(bloqueAgregar);
     	}
     }
 
-	@Override
-	public void invertir(){
-
-			;
-	}
 }

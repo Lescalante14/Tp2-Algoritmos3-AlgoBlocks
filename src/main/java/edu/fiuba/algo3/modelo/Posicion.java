@@ -35,15 +35,32 @@ public class Posicion {
         coordenadaY -= 1;
     }
 
-    public int getCoordenadaX() {
+    private int getCoordenadaX() {
         return coordenadaX;
     }
-    public int  getCoordenadaY(){
+    private int  getCoordenadaY(){
         return coordenadaY;
     }
+
     public void sumar(Posicion unaPosicion){
 	coordenadaX += unaPosicion.getCoordenadaX();
 	coordenadaY += unaPosicion.getCoordenadaY();    
     }
 
+	public void invertir(){
+
+		if( 0 == coordenadaX ) {
+			if( 1 == coordenadaY ){
+				coordenadaY -= 2;
+			}else{
+				coordenadaY += 2;
+			}
+		}else{
+			if( 1 == coordenadaX ){
+				coordenadaX -= 2;
+			}else{
+				coordenadaX += 2;
+			}
+		}
+	}
 }

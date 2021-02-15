@@ -18,7 +18,6 @@ public class BloqueMoverAbajo implements Bloque {
     }
 
 	public void invertir(){
-		posicion = new Posicion();
-		posicion.aArriba();
+		posicion.invertir();
 	}
 }

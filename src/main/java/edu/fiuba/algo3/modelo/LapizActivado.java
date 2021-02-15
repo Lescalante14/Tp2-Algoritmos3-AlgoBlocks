@@ -6,12 +6,6 @@ public class LapizActivado implements Lapiz {
     public int obtenerDibujo() {
 		return 1;
     }
-
-    @Override
-    public boolean estado(){
-        return true;
-	}
 }
-
 
 

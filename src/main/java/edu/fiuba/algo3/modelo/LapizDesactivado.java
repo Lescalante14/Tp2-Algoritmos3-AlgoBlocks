@@ -6,9 +6,4 @@ public class LapizDesactivado implements Lapiz {
 	public int obtenerDibujo() {
 		return 0;
     }
-	@Override
-    public boolean estado() {
-        return false;
-    }
-
 }

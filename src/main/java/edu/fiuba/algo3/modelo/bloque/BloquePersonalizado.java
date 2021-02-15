@@ -24,6 +24,13 @@ public class BloquePersonalizado implements Bloque {
     	}
 	}
 
+	@Override
+	public void invertir(){
+		for(Bloque unBloque : secuenciaBloques){
+			unBloque.invertir();
+		}
+	}
+	
 	public void agregarBloque(Bloque unBloque){
 		secuenciaBloques.add(unBloque);
 	}
@@ -32,10 +39,4 @@ public class BloquePersonalizado implements Bloque {
 			nombreBloque = nombreNuevo;
 	}
 	
-	@Override
-	public void invertir(){
-		for(Bloque unBloque : secuenciaBloques){
-			unBloque.invertir();
-		}
-	}
 }

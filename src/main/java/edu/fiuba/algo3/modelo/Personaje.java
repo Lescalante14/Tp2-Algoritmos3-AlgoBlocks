@@ -10,10 +10,6 @@ public class Personaje {
         posicion = new Posicion();
     }
 
-    public boolean estadoLapiz(){
-        return this.lapiz.estado();
-    }
-
 	public void cambiarLapiz(Lapiz unLapiz){
 		lapiz = unLapiz;
 	}
