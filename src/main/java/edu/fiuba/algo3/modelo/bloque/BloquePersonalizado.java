@@ -22,7 +22,7 @@ public class BloquePersonalizado implements Bloque {
         for(Bloque unBloque : secuenciaBloques){
 			unBloque.ejecutar(unPersonaje);
     	}
-	}
+    }
 
 	@Override
 	public void invertir(){

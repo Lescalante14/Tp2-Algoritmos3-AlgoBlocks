@@ -36,11 +36,11 @@ public class AlgoritmoTest {
     {
         Algoritmo algoritmo = new Algoritmo();
         Personaje personaje = new Personaje();
-        algoritmo.agregarBloque(new BloqueActivarLapiz());
+        algoritmo.agregarBloque(new BloqueDesactivarLapiz());
 
         algoritmo.ejecutar(personaje);
 
-        assertEquals(1,personaje.obtenerLapiz().obtenerDibujo());
+        assertEquals(0,personaje.obtenerLapiz().obtenerDibujo());
     }
 
     @Test
