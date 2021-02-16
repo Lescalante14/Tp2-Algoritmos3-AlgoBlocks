@@ -32,9 +32,10 @@ public class PersonajeTest {
     {
 
         Personaje personaje = new Personaje();
+        Lapiz lapizActivo = new Lapiz();
 
-
-        personaje.activarLapiz();
+        lapizActivo.activar();
+        personaje.cambiarLapiz(lapizActivo);
         assertTrue(personaje.estadoLapiz().estaActivado());
 
     }
@@ -46,12 +47,14 @@ public class PersonajeTest {
     {
 
         Personaje personaje = new Personaje();
+        Lapiz lapizActivo = new Lapiz();
+        lapizActivo.activar();
 
-        personaje.activarLapiz();
-
+        personaje.cambiarLapiz(lapizActivo);
         assertTrue(personaje.estadoLapiz().estaActivado());
 
-        personaje.desactivarLapiz();
+        lapizActivo.desactivar();
+        personaje.cambiarLapiz(lapizActivo);
 
         assertFalse(personaje.estadoLapiz().estaActivado());
 
@@ -63,7 +66,8 @@ public class PersonajeTest {
 
         Personaje personaje = new Personaje();
         Posicion posicionInicial = personaje.getPosicion();
-        personaje.moverADerecha();
+
+        personaje.mover(Posicion.derechaDe(personaje.getPosicion()));
         assertTrue(Posicion.compararPosiciones(personaje.getPosicion(), Posicion.derechaDe(posicionInicial)));
 
     }
@@ -74,7 +78,8 @@ public class PersonajeTest {
 
         Personaje personaje = new Personaje();
         Posicion posicionInicial = personaje.getPosicion();
-        personaje.moverAIzquierda();
+
+        personaje.mover(Posicion.izquierdaDe(personaje.getPosicion()));
 
         assertTrue(Posicion.compararPosiciones(personaje.getPosicion(), Posicion.izquierdaDe(posicionInicial)));
 
@@ -86,7 +91,8 @@ public class PersonajeTest {
 
         Personaje personaje = new Personaje();
         Posicion posicionInicial = personaje.getPosicion();
-        personaje.moverArriba();
+
+        personaje.mover(Posicion.arribaDe(personaje.getPosicion()));
 
         assertTrue(Posicion.compararPosiciones(personaje.getPosicion(), Posicion.arribaDe(posicionInicial)));
 
@@ -98,7 +104,8 @@ public class PersonajeTest {
 
         Personaje personaje = new Personaje();
         Posicion posicionInicial = personaje.getPosicion();
-        personaje.moverAbajo();
+
+        personaje.mover(Posicion.abajoDe(personaje.getPosicion()));
 
         assertTrue(Posicion.compararPosiciones(personaje.getPosicion(), Posicion.abajoDe(posicionInicial)));
 
@@ -110,8 +117,9 @@ public class PersonajeTest {
 
         Personaje personaje = new Personaje();
         Posicion posicionInicial = personaje.getPosicion();
-        personaje.moverADerecha();
-        personaje.moverAbajo();
+
+        personaje.mover(Posicion.derechaDe(personaje.getPosicion()));
+        personaje.mover(Posicion.abajoDe(personaje.getPosicion()));
 
         assertTrue(Posicion.compararPosiciones(personaje.getPosicion() ,
                    Posicion.abajoDe(Posicion.derechaDe(posicionInicial) )));
@@ -124,8 +132,9 @@ public class PersonajeTest {
 
         Personaje personaje = new Personaje();
         Posicion posicionInicial = personaje.getPosicion();
-        personaje.moverArriba();
-        personaje.moverAIzquierda();
+
+        personaje.mover(Posicion.arribaDe(personaje.getPosicion()));
+        personaje.mover(Posicion.izquierdaDe(personaje.getPosicion()));
 
         assertTrue(Posicion.compararPosiciones(personaje.getPosicion() ,
                 Posicion.izquierdaDe(Posicion.arribaDe(posicionInicial) )));
@@ -136,8 +145,11 @@ public class PersonajeTest {
     public void AlMoverIzquierdaElSectorDeDibujoTienePintadaLaCantidadDeCasillasCorrespondiente(){
 
         Personaje personaje = new Personaje();
-        personaje.activarLapiz();
-        personaje.moverAIzquierda();
+        Lapiz lapizActivo = new Lapiz();
+        lapizActivo.activar();
+
+        personaje.cambiarLapiz(lapizActivo);
+        personaje.mover(Posicion.izquierdaDe(personaje.getPosicion()));
 
         assertEquals(1,personaje.totalDeCasillasPintadas());
 
@@ -147,9 +159,12 @@ public class PersonajeTest {
     public void AlMoverArribaYADerechaElSectorDeDibujoTienePintadaLaCantidadDeCasillasCorrespondiente(){
 
         Personaje personaje = new Personaje();
-        personaje.activarLapiz();
-        personaje.moverArriba();
-        personaje.moverADerecha();
+        Lapiz lapizActivo = new Lapiz();
+        lapizActivo.activar();
+
+        personaje.cambiarLapiz(lapizActivo);
+        personaje.mover(Posicion.arribaDe(personaje.getPosicion()));
+        personaje.mover(Posicion.derechaDe(personaje.getPosicion()));
 
         assertEquals(2,personaje.totalDeCasillasPintadas());
 
@@ -159,10 +174,13 @@ public class PersonajeTest {
     public void AlMoverDerechaAbajoYALaIZquierdaElSectorDeDibujoTienePintadaLaCantidadDeCasillasCorrespondiente(){
 
         Personaje personaje = new Personaje();
-        personaje.activarLapiz();
-        personaje.moverADerecha();
-        personaje.moverAbajo();
-        personaje.moverAIzquierda();
+        Lapiz lapizActivo = new Lapiz();
+        lapizActivo.activar();
+
+        personaje.cambiarLapiz(lapizActivo);
+        personaje.mover(Posicion.derechaDe(personaje.getPosicion()));
+        personaje.mover(Posicion.abajoDe(personaje.getPosicion()));
+        personaje.mover(Posicion.izquierdaDe(personaje.getPosicion()));
 
         assertEquals(3,personaje.totalDeCasillasPintadas());
 
