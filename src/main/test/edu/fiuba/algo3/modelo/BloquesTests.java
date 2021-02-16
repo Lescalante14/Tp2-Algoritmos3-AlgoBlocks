@@ -266,5 +266,30 @@ public class BloquesTests {
         assertTrue(Posicion.compararPosiciones(personaje.getPosicion(), posicionFinal));
     }
 
+    @Test
+    public void seInvierteUnBloquePersonalizadoQueContieneABloqueRepeticion()
+    {
+        Personaje personaje = new Personaje();
+        Posicion posicionFinal = new Posicion(-2,2);
+		
+		Algoritmo algoritmo = new Algoritmo();
+		
+		BloqueRepeticion bloqueRepeticion = new BloqueRepeticion(2);
+
+        bloqueRepeticion.agregarBloque(new BloqueMoverDerecha());
+        bloqueRepeticion.agregarBloque(new BloqueMoverAbajo());
+
+        algoritmo.agregarBloque(bloqueRepeticion);
+		
+		BloquePersonalizado bloquePersonalizado = algoritmo.guardaAlgoritmoPersonalizado("NuevoBloque");	
+
+        BloqueInvertir bloque = new BloqueInvertir();
+        bloque.agregarBloque(bloquePersonalizado);
+
+        bloque.ejecutar(personaje);
+
+        assertTrue(Posicion.compararPosiciones(personaje.getPosicion(), posicionFinal));
+    }
+
 
 }
