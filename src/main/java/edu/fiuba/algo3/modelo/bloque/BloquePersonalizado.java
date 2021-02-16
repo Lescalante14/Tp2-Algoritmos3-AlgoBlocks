@@ -25,7 +25,7 @@ public class BloquePersonalizado implements Bloque {
     @Override
     public Bloque inverso(){
 
-        List<Bloque> bloques = algoritmoPersonalizado.invertirSecuenciaDeBloques();
+        ArrayList<Bloque> bloques = algoritmoPersonalizado.invertirSecuenciaDeBloques();
         BloquePersonalizado bloqueInverso = new BloquePersonalizado("el inverso", bloques);
         return bloqueInverso;
 
