@@ -26,4 +26,9 @@ public class BloqueRepeticion implements Bloque{
 
     }
 
+    @Override
+    public Bloque inverso(){
+
+    }
+
 }

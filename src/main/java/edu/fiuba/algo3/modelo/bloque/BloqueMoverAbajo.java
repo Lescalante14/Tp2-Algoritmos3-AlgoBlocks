@@ -7,4 +7,10 @@ public class BloqueMoverAbajo implements Bloque {
     public void ejecutar(Personaje unPersonaje) {
         unPersonaje.moverAbajo();
     }
+
+    @Override
+    public Bloque inverso(){
+        return new BloqueMoverArriba();
+    }
+
 }

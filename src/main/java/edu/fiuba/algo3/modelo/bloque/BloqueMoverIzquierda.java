@@ -8,4 +8,9 @@ public class BloqueMoverIzquierda implements Bloque {
     public void ejecutar(Personaje unPersonaje) {
         unPersonaje.moverAIzquierda();
     }
+
+    @Override
+    public Bloque inverso(){
+        return new BloqueMoverDerecha();
+    }
 }

@@ -8,4 +8,9 @@ public class BloqueActivarLapiz implements Bloque {
     public void ejecutar(Personaje unPersonaje){
         unPersonaje.activarLapiz();
     }
+
+    @Override
+    public Bloque inverso(){
+        return new BloqueDesactivarLapiz();
+    }
 }

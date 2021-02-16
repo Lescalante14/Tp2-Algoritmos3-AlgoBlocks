@@ -44,4 +44,16 @@ public class Algoritmo {
 
         return personalizado;
     }
+
+    public List<Bloque> invertirSecuenciaDeBloques() {
+
+        ArrayList<Bloque> bloquesInvertidos = new ArrayList<Bloque>();
+
+        for (Bloque unBLoque : secuenciaBloques) {
+            bloquesInvertidos.add(unBLoque.inverso());
+        }
+
+        return bloquesInvertidos;
+    }
+
 }
