@@ -7,15 +7,6 @@ import static org.junit.jupiter.api.Assertions.*;
 public class SectorDeDibujoTest {
 
     @Test
-    public void creacionDelSectorConTamanioEsperado(){
-
-        SectorDeDibujo sector = new SectorDeDibujo();
-
-        assertEquals(100, sector.tamanio());
-
-    }
-
-    @Test
     public void sectorComienzaEnBlanco(){
 
         SectorDeDibujo sector = new SectorDeDibujo();
