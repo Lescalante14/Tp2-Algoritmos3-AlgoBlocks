@@ -1,6 +1,8 @@
 package edu.fiuba.algo3.modelo;
 
 import edu.fiuba.algo3.modelo.bloque.Bloque;
+import javafx.geometry.Pos;
+import javafx.util.Pair;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -9,7 +11,7 @@ public class SectorDeDibujo {
 
     private int tamanioX;
     private int tamanioY;
-    private List <Posicion> posicionesDibujadas;
+    private List <Pair> posicionesDibujadas;
 
     public SectorDeDibujo(){
         tamanioX = 10;
@@ -22,6 +24,7 @@ public class SectorDeDibujo {
     }
 
     public void dibujarDesdeHasta(Posicion posicionVieja, Posicion posicionNueva) {
-        this.posicionesDibujadas.add(posicionVieja);
+        Pair<Posicion, Posicion> tupla = new Pair(posicionVieja, posicionNueva);
+        this.posicionesDibujadas.add(tupla);
     }
 }

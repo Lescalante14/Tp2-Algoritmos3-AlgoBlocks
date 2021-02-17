@@ -30,6 +30,13 @@
             <version>${mockito-mockito-core-version}</version>
             <scope>test</scope>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/org.javatuples/javatuples -->
+        <dependency>
+            <groupId>org.javatuples</groupId>
+            <artifactId>javatuples</artifactId>
+            <version>1.2</version>
+            <scope>compile</scope>
+        </dependency>
     </dependencies>
     <build>
         <testSourceDirectory>src/main/test</testSourceDirectory>
