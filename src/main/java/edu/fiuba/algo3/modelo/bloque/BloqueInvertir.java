@@ -11,10 +11,6 @@ public class BloqueInvertir {
         this.algoritmo = new Algoritmo();
     }
 
-    public BloqueInvertir(Algoritmo algoritmoPersonalizado){
-        algoritmo = algoritmoPersonalizado;
-    }
-
     public void ejecutar(Personaje unPersonaje){
         algoritmo.ejecutarAlgoritmo(unPersonaje);
     }

@@ -204,20 +204,24 @@ public class BloquesTests {
         bloque.agregarBloque(new BloqueDesactivarLapiz());
         bloque.ejecutar(personaje);
 
-        assertTrue(personaje.estadoLapiz().estaActivado());
+        personaje.mover(Posicion.derechaDe(personaje.getPosicion()));
+
+        assertEquals(1, personaje.totalDeCasillasPintadas());
     }
 
     @Test
     public void seDesactivaUnLapizActivadoConUnBloqueInvertir()
     {
         Personaje personaje = new Personaje();
-        personaje.activarLapiz();
+        personaje.cambiarEstadoLapiz(new EstadoActivado());
 
         BloqueInvertir bloque = new BloqueInvertir();
         bloque.agregarBloque(new BloqueActivarLapiz());
         bloque.ejecutar(personaje);
 
-        assertFalse(personaje.estadoLapiz().estaActivado());
+        personaje.mover(Posicion.derechaDe(personaje.getPosicion()));
+
+        assertEquals(0, personaje.totalDeCasillasPintadas());
     }
 
     @Test

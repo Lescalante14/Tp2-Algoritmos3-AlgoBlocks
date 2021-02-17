@@ -12,7 +12,7 @@ public class Posicion {
     }
 
     public static boolean compararPosiciones(Posicion posicion1, Posicion posicion2) {
-        return ((posicion1.getCoordenadaX() == posicion2.getCoordenadaX())&&(posicion1.getCoordenadaY() == posicion2.getCoordenadaY()));
+        return ((posicion1.coordenadaX == posicion2.coordenadaX)&&(posicion1.coordenadaY == posicion2.coordenadaY));
     }
 
     public static Posicion derechaDe(Posicion posicion) {
@@ -29,13 +29,6 @@ public class Posicion {
 
     public static Posicion abajoDe(Posicion posicion) {
         return (new Posicion(posicion.coordenadaX, posicion.coordenadaY - 1));
-    }
-
-    public int getCoordenadaX() {
-        return coordenadaX;
-    }
-    public int  getCoordenadaY(){
-        return coordenadaY;
     }
 
 }

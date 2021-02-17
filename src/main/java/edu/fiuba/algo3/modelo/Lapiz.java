@@ -10,19 +10,9 @@ public class Lapiz {
         sectorDeDibujo = new SectorDeDibujo();
     }
 
-    /*public void activar(){
-        estado = new EstadoActivado();
-    }
-
-    public void desactivar(){
-        estado = new EstadoDesactivado();
-    }*/
-
     public void dibujarDesdeHasta(Posicion posicionVieja, Posicion posicionNueva) {
 
         estado.dibujarDesdeHasta(sectorDeDibujo, posicionVieja, posicionNueva);
-
-
     }
 
     public int totalDeCasillasPintadas() {
