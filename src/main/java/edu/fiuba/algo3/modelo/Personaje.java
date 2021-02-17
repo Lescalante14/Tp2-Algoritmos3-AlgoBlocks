@@ -10,12 +10,9 @@ public class Personaje {
         posicion = new Posicion(0,0);
     }
 
-    public EstadoLapiz estadoLapiz(){
-        return this.lapiz.estado();
-    }
 
-    public void cambiarLapiz(Lapiz unLapiz){
-        lapiz = unLapiz;
+    public void cambiarEstadoLapiz(EstadoLapiz nuevoEstado){
+        lapiz.cambiarEstado(nuevoEstado);
     }
 
     public void mover(Posicion posicionNueva){

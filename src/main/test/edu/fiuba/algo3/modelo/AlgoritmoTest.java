@@ -36,11 +36,12 @@ public class AlgoritmoTest {
     {
         Algoritmo algoritmo = new Algoritmo();
         Personaje personaje = new Personaje();
-        algoritmo.agregarBloque(new BloqueActivarLapiz());
+        Posicion posicionInicial = personaje.getPosicion();
+        algoritmo.agregarBloque(new BloqueMoverDerecha());
 
         algoritmo.ejecutarAlgoritmo(personaje);
 
-        assertTrue(personaje.estadoLapiz().estaActivado());
+        assertTrue(Posicion.compararPosiciones(Posicion.derechaDe(posicionInicial), personaje.getPosicion()));
     }
 
     @Test
@@ -48,14 +49,14 @@ public class AlgoritmoTest {
     {
         Algoritmo algoritmo = new Algoritmo();
         Personaje personaje = new Personaje();
+        Posicion posicionInicial = personaje.getPosicion();
         algoritmo.agregarBloque(new BloqueActivarLapiz());
         algoritmo.agregarBloque(new BloqueDesactivarLapiz());
         algoritmo.agregarBloque(new BloqueMoverDerecha());
-        Posicion posicionInicial = personaje.getPosicion();
 
         algoritmo.ejecutarAlgoritmo(personaje);
 
-        assertFalse(personaje.estadoLapiz().estaActivado());
+        assertEquals(0 , personaje.totalDeCasillasPintadas());
         assertTrue(Posicion.compararPosiciones(Posicion.derechaDe(posicionInicial), personaje.getPosicion()));
     }
 
@@ -74,7 +75,8 @@ public class AlgoritmoTest {
         algoritmo.agregarBloque(personalizado);
         algoritmo.ejecutarAlgoritmo(personaje);
 
-        assertFalse(personaje.estadoLapiz().estaActivado());
+
+        assertEquals(0 , personaje.totalDeCasillasPintadas());
         assertTrue(Posicion.compararPosiciones(Posicion.derechaDe(posicionInicial), personaje.getPosicion()));
     }
 
@@ -85,7 +87,6 @@ public class AlgoritmoTest {
         algoritmo.agregarBloque(new BloqueMoverDerecha());
         algoritmo.agregarBloque(new BloqueMoverAbajo());
         Personaje personaje = new Personaje();
-        Posicion posicionInicial = personaje.getPosicion();
         Posicion posicionFinal = new Posicion(2,-2);
 
 
@@ -95,7 +96,7 @@ public class AlgoritmoTest {
         algoritmo.agregarBloque(bloqueRepeticion);
         algoritmo.ejecutarAlgoritmo(personaje);
 
-        assertFalse(personaje.estadoLapiz().estaActivado());
+        assertEquals(0 , personaje.totalDeCasillasPintadas());
         assertTrue(Posicion.compararPosiciones(personaje.getPosicion(), posicionFinal));
     }
 

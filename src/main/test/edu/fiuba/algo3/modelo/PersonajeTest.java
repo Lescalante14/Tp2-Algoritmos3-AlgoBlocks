@@ -7,12 +7,13 @@ import static org.junit.jupiter.api.Assertions.*;
 public class PersonajeTest {
 
     @Test
-    public void creacióndelPersonajeConElLápizDesactivado()
+    public void creacióndelPersonajeConElLápizDesactivadoNoDibuja()
     {
 
         Personaje personaje = new Personaje();
 
-        assertFalse(personaje.estadoLapiz().estaActivado());
+        personaje.mover(Posicion.abajoDe(personaje.getPosicion()));
+        assertEquals(0 , personaje.totalDeCasillasPintadas());
 
     }
 
@@ -28,37 +29,18 @@ public class PersonajeTest {
     }
 
     @Test
-    public void alAplicarBloqueActivarLapizseActivaElLapiz()
+    public void alAplicarBloqueActivarLapizseActivaElLapizYDibujaAlMover()
     {
 
         Personaje personaje = new Personaje();
-        Lapiz lapizActivo = new Lapiz();
 
-        lapizActivo.activar();
-        personaje.cambiarLapiz(lapizActivo);
-        assertTrue(personaje.estadoLapiz().estaActivado());
+        personaje.cambiarEstadoLapiz(new EstadoActivado());
+        personaje.mover(Posicion.arribaDe(personaje.getPosicion()));
 
-    }
-
-
-
-    @Test
-    public void alAplicarBloqueSubirLapizseDesactivaElLapiz()
-    {
-
-        Personaje personaje = new Personaje();
-        Lapiz lapizActivo = new Lapiz();
-        lapizActivo.activar();
-
-        personaje.cambiarLapiz(lapizActivo);
-        assertTrue(personaje.estadoLapiz().estaActivado());
-
-        lapizActivo.desactivar();
-        personaje.cambiarLapiz(lapizActivo);
-
-        assertFalse(personaje.estadoLapiz().estaActivado());
+        assertEquals(1 , personaje.totalDeCasillasPintadas());
 
     }
+
 
     @Test
     public void AlAplicarBloqueMoverDerechaSeMueveALaDerecha()
@@ -145,10 +127,8 @@ public class PersonajeTest {
     public void AlMoverIzquierdaElSectorDeDibujoTienePintadaLaCantidadDeCasillasCorrespondiente(){
 
         Personaje personaje = new Personaje();
-        Lapiz lapizActivo = new Lapiz();
-        lapizActivo.activar();
 
-        personaje.cambiarLapiz(lapizActivo);
+        personaje.cambiarEstadoLapiz(new EstadoActivado());
         personaje.mover(Posicion.izquierdaDe(personaje.getPosicion()));
 
         assertEquals(1,personaje.totalDeCasillasPintadas());
@@ -159,10 +139,9 @@ public class PersonajeTest {
     public void AlMoverArribaYADerechaElSectorDeDibujoTienePintadaLaCantidadDeCasillasCorrespondiente(){
 
         Personaje personaje = new Personaje();
-        Lapiz lapizActivo = new Lapiz();
-        lapizActivo.activar();
 
-        personaje.cambiarLapiz(lapizActivo);
+        personaje.cambiarEstadoLapiz(new EstadoActivado());
+
         personaje.mover(Posicion.arribaDe(personaje.getPosicion()));
         personaje.mover(Posicion.derechaDe(personaje.getPosicion()));
 
@@ -174,10 +153,9 @@ public class PersonajeTest {
     public void AlMoverDerechaAbajoYALaIZquierdaElSectorDeDibujoTienePintadaLaCantidadDeCasillasCorrespondiente(){
 
         Personaje personaje = new Personaje();
-        Lapiz lapizActivo = new Lapiz();
-        lapizActivo.activar();
 
-        personaje.cambiarLapiz(lapizActivo);
+        personaje.cambiarEstadoLapiz(new EstadoActivado());
+
         personaje.mover(Posicion.derechaDe(personaje.getPosicion()));
         personaje.mover(Posicion.abajoDe(personaje.getPosicion()));
         personaje.mover(Posicion.izquierdaDe(personaje.getPosicion()));
