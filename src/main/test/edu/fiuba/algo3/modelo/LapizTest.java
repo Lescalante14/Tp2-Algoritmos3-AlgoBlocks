@@ -7,25 +7,11 @@ import static org.junit.jupiter.api.Assertions.*;
 public class LapizTest {
 
     @Test
-    public void LapizRecienCreadoNoEstaActivado(){
-
-        Lapiz lapiz = new Lapiz();
-
-        assertFalse(lapiz.estaActivado());
-    }
-
-    @Test
-    public void AlActivarLapizRecienCreadoEfectivamenteEstaActivado(){
-
-        Lapiz lapiz = new Lapiz();
-        lapiz.activar();
-        assertTrue(lapiz.estaActivado());
-    }
-
-    @Test
     public void LapizRecienCreadoNoHaPintadoSobreElSector(){
 
         Lapiz lapiz = new Lapiz();
+
+        lapiz.dibujarDesdeHasta(new Posicion(0,0), new Posicion(0,1));
 
         assertEquals(0,lapiz.totalDeCasillasPintadas());
 
@@ -35,7 +21,8 @@ public class LapizTest {
     public void LapizRecienCreadoDibujaSobreElSectorUnaVezYLasCasillasPintadasSonLasCorrespondientes(){
 
         Lapiz lapiz = new Lapiz();
-        lapiz.activar();
+        lapiz.cambiarEstado(new EstadoActivado());
+
         Posicion posicionInicial = new Posicion(0,0);
         Posicion posicionFinal = new Posicion(1,0);
         lapiz.dibujarDesdeHasta(posicionInicial, posicionFinal);
@@ -61,7 +48,7 @@ public class LapizTest {
     public void LapizRecienCreadoDibujaSobreElSectorTresVecesYLasCasillasPintadasSonLasCorrespondientes(){
 
         Lapiz lapiz = new Lapiz();
-        lapiz.activar();
+        lapiz.cambiarEstado(new EstadoActivado());
         Posicion posicionPrimera = new Posicion(0,0);
         Posicion posicionSegunda = new Posicion(1,0);
         Posicion posicionTercera = new Posicion(2,0);

@@ -11,29 +11,35 @@ public class BloquesTests {
 
 
     @Test
-    public void bloqueDeActivarLapizEfectivamenteActivaElLapizDelPersonaje()
+    public void bloqueDeActivarLapizActivaElLapizDelPersonaje()
     {
         Personaje personaje = new Personaje();
         BloqueActivarLapiz bloqueActivaLapices = new BloqueActivarLapiz();
 
         bloqueActivaLapices.ejecutar(personaje);
-        assertTrue(personaje.estadoLapiz().estaActivado());
+        personaje.mover(Posicion.abajoDe(personaje.getPosicion()));
+
+        assertEquals(1 , personaje.totalDeCasillasPintadas());
 
     }
 
     @Test
-    public void bloqueDeDesactivarLapizEfectivamenteDesactivaElLapizDelPersonajeQueTeniaElLapizActivado()
+    public void bloqueDeDesactivarLapizDesactivaElLapizDelPersonajeQueTeniaElLapizActivado()
     {
         Personaje personaje = new Personaje();
         BloqueActivarLapiz bloqueActivaLapices = new BloqueActivarLapiz();
 
         bloqueActivaLapices.ejecutar(personaje);
-        assertTrue(personaje.estadoLapiz().estaActivado());
+        personaje.mover(Posicion.abajoDe(personaje.getPosicion()));
+
+        assertEquals(1 , personaje.totalDeCasillasPintadas());
 
         BloqueDesactivarLapiz bloqueDesactivaLapices = new BloqueDesactivarLapiz();
 
         bloqueDesactivaLapices.ejecutar(personaje);
-        assertFalse(personaje.estadoLapiz().estaActivado());
+        personaje.mover(Posicion.abajoDe(personaje.getPosicion()));
+
+        assertEquals(1 , personaje.totalDeCasillasPintadas());
     }
 
     @Test
@@ -136,7 +142,8 @@ public class BloquesTests {
         bloqueRepeticion.agregarBloque(new BloqueMoverDerecha());
         bloqueRepeticion.ejecutar(personaje);
 
-        assertFalse(personaje.estadoLapiz().estaActivado());
+
+        assertEquals(0 , personaje.totalDeCasillasPintadas());
         assertTrue(Posicion.compararPosiciones(personaje.getPosicion(), posicionFinal));
 
     }
