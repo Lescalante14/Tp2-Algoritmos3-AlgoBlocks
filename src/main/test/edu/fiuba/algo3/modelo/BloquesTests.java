@@ -1,7 +1,5 @@
 package edu.fiuba.algo3.modelo;
 
-import edu.fiuba.algo3.modelo.Personaje;
-import edu.fiuba.algo3.modelo.Posicion;
 import edu.fiuba.algo3.modelo.bloque.*;
 import org.junit.jupiter.api.Test;
 
