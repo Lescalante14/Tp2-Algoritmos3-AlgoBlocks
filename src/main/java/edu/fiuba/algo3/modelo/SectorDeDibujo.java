@@ -1,7 +1,5 @@
 package edu.fiuba.algo3.modelo;
 
-import edu.fiuba.algo3.modelo.bloque.Bloque;
-import javafx.geometry.Pos;
 import javafx.util.Pair;
 
 import java.util.ArrayList;
