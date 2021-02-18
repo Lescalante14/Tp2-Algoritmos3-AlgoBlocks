@@ -10,50 +10,20 @@ public class Personaje {
         posicion = new Posicion(0,0);
     }
 
-    public EstadoLapiz estadoLapiz(){
-        return this.lapiz.estado();
+
+    public void cambiarEstadoLapiz(EstadoLapiz nuevoEstado){
+        lapiz.cambiarEstado(nuevoEstado);
     }
 
-    public void activarLapiz(){
-        this.lapiz.activar();
-
-    }
-
-    public void desactivarLapiz() {
-        this.lapiz.desactivar();
-
+    public void mover(Posicion posicionNueva){
+        lapiz.dibujarDesdeHasta(posicion, posicionNueva);
+        posicion = posicionNueva;
     }
 
     public Posicion getPosicion(){
         return posicion;
     }
 
-    public void moverADerecha() {
-        Posicion posicionNueva = Posicion.derechaDe(posicion);
-        realizarMovimiento(posicionNueva);
-    }
-
-    public void moverAIzquierda() {
-        Posicion posicionNueva = Posicion.izquierdaDe(posicion);
-        realizarMovimiento(posicionNueva);
-    }
-
-    public void moverArriba() {
-        Posicion posicionNueva = Posicion.arribaDe(posicion);
-        realizarMovimiento(posicionNueva);
-    }
-
-    public void moverAbajo() {
-        Posicion posicionNueva = Posicion.abajoDe(posicion);
-        realizarMovimiento(posicionNueva);
-    }
-
-    private void realizarMovimiento(Posicion posicionNueva){
-
-        lapiz.dibujarDesdeHasta(posicion, posicionNueva);
-        posicion = posicionNueva;
-
-    }
 
     public int totalDeCasillasPintadas() {
         return lapiz.totalDeCasillasPintadas();

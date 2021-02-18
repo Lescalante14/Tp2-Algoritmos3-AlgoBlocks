@@ -1,7 +1,5 @@
 package edu.fiuba.algo3.modelo;
 
-import edu.fiuba.algo3.modelo.Personaje;
-import edu.fiuba.algo3.modelo.Posicion;
 import edu.fiuba.algo3.modelo.bloque.*;
 import org.junit.jupiter.api.Test;
 
@@ -11,29 +9,35 @@ public class BloquesTests {
 
 
     @Test
-    public void bloqueDeActivarLapizEfectivamenteActivaElLapizDelPersonaje()
+    public void bloqueDeActivarLapizActivaElLapizDelPersonaje()
     {
         Personaje personaje = new Personaje();
         BloqueActivarLapiz bloqueActivaLapices = new BloqueActivarLapiz();
 
         bloqueActivaLapices.ejecutar(personaje);
-        assertTrue(personaje.estadoLapiz().estaActivado());
+        personaje.mover(Posicion.abajoDe(personaje.getPosicion()));
+
+        assertEquals(1 , personaje.totalDeCasillasPintadas());
 
     }
 
     @Test
-    public void bloqueDeDesactivarLapizEfectivamenteDesactivaElLapizDelPersonajeQueTeniaElLapizActivado()
+    public void bloqueDeDesactivarLapizDesactivaElLapizDelPersonajeQueTeniaElLapizActivado()
     {
         Personaje personaje = new Personaje();
         BloqueActivarLapiz bloqueActivaLapices = new BloqueActivarLapiz();
 
         bloqueActivaLapices.ejecutar(personaje);
-        assertTrue(personaje.estadoLapiz().estaActivado());
+        personaje.mover(Posicion.abajoDe(personaje.getPosicion()));
+
+        assertEquals(1 , personaje.totalDeCasillasPintadas());
 
         BloqueDesactivarLapiz bloqueDesactivaLapices = new BloqueDesactivarLapiz();
 
         bloqueDesactivaLapices.ejecutar(personaje);
-        assertFalse(personaje.estadoLapiz().estaActivado());
+        personaje.mover(Posicion.abajoDe(personaje.getPosicion()));
+
+        assertEquals(1 , personaje.totalDeCasillasPintadas());
     }
 
     @Test
@@ -136,7 +140,8 @@ public class BloquesTests {
         bloqueRepeticion.agregarBloque(new BloqueMoverDerecha());
         bloqueRepeticion.ejecutar(personaje);
 
-        assertFalse(personaje.estadoLapiz().estaActivado());
+
+        assertEquals(0 , personaje.totalDeCasillasPintadas());
         assertTrue(Posicion.compararPosiciones(personaje.getPosicion(), posicionFinal));
 
     }
@@ -174,5 +179,126 @@ public class BloquesTests {
         assertTrue(Posicion.compararPosiciones(personaje.getPosicion(), posicionFinal));
 
     }
+
+    @Test
+    public void seInvierteUnBloqueDeMoverAArriba()
+    {
+        Personaje personaje = new Personaje();
+        Posicion posicionFinal = new Posicion(0,-1);
+
+        BloqueInvertir bloque = new BloqueInvertir();
+        bloque.agregarBloque(new BloqueMoverArriba());
+        bloque.ejecutar(personaje);
+
+        assertTrue(Posicion.compararPosiciones(personaje.getPosicion(), posicionFinal));
+    }
+
+    @Test
+    public void seActivaElLapizConUnBloqueInvertir()
+    {
+        Personaje personaje = new Personaje();
+
+        BloqueInvertir bloque = new BloqueInvertir();
+        bloque.agregarBloque(new BloqueDesactivarLapiz());
+        bloque.ejecutar(personaje);
+
+        personaje.mover(Posicion.derechaDe(personaje.getPosicion()));
+
+        assertEquals(1, personaje.totalDeCasillasPintadas());
+    }
+
+    @Test
+    public void seDesactivaUnLapizActivadoConUnBloqueInvertir()
+    {
+        Personaje personaje = new Personaje();
+        personaje.cambiarEstadoLapiz(new EstadoActivado());
+
+        BloqueInvertir bloque = new BloqueInvertir();
+        bloque.agregarBloque(new BloqueActivarLapiz());
+        bloque.ejecutar(personaje);
+
+        personaje.mover(Posicion.derechaDe(personaje.getPosicion()));
+
+        assertEquals(0, personaje.totalDeCasillasPintadas());
+    }
+
+    @Test
+    public void seInvierteUnosBloquesYElPersonajeEstaEnLaPosicionCorrespondiente()
+    {
+        Personaje personaje = new Personaje();
+        Posicion posicionFinal = new Posicion(1,0);
+
+        BloqueInvertir bloque = new BloqueInvertir();
+        bloque.agregarBloque(new BloqueMoverAbajo());
+        bloque.agregarBloque(new BloqueMoverIzquierda());
+        bloque.agregarBloque(new BloqueMoverArriba());
+        bloque.ejecutar(personaje);
+
+        assertTrue(Posicion.compararPosiciones(personaje.getPosicion(), posicionFinal));
+    }
+
+    @Test
+    public void seInvierteUnBoquePersonalizadoSeEjecutaYLaPosicionDelPersonajeEsLaCorrespondiente()
+    {
+        Personaje personaje = new Personaje();
+        Posicion posicionFinal = new Posicion(-1,1);
+
+        Algoritmo algoritmo = new Algoritmo();
+
+        algoritmo.agregarBloque(new BloqueMoverDerecha());
+        algoritmo.agregarBloque(new BloqueMoverAbajo());
+        BloquePersonalizado bloquePersonalizado = algoritmo.guardaAlgoritmoPersonalizado("escalera");
+
+        BloqueInvertir bloque = new BloqueInvertir();
+        bloque.agregarBloque(bloquePersonalizado);
+
+        bloque.ejecutar(personaje);
+
+        assertTrue(Posicion.compararPosiciones(personaje.getPosicion(), posicionFinal));
+    }
+
+    @Test
+    public void seInvierteUnBloqueDeRepeticionSeEjecutaYLaPosicionDelPersonajeEsLaCorrespondiente()
+    {
+        Personaje personaje = new Personaje();
+        Posicion posicionFinal = new Posicion(-3,3);
+
+        BloqueRepeticion bloqueRepeticion = new BloqueRepeticion(3);
+        bloqueRepeticion.agregarBloque(new BloqueMoverDerecha());
+        bloqueRepeticion.agregarBloque(new BloqueMoverAbajo());
+
+        BloqueInvertir bloque = new BloqueInvertir();
+        bloque.agregarBloque(bloqueRepeticion);
+
+        bloque.ejecutar(personaje);
+
+        assertTrue(Posicion.compararPosiciones(personaje.getPosicion(), posicionFinal));
+    }
+
+    @Test
+    public void seInvierteUnBloquePersonalizadoQueContieneABloqueRepeticion()
+    {
+        Personaje personaje = new Personaje();
+        Posicion posicionFinal = new Posicion(-2,2);
+		
+		Algoritmo algoritmo = new Algoritmo();
+		
+		BloqueRepeticion bloqueRepeticion = new BloqueRepeticion(2);
+
+        bloqueRepeticion.agregarBloque(new BloqueMoverDerecha());
+        bloqueRepeticion.agregarBloque(new BloqueMoverAbajo());
+
+        algoritmo.agregarBloque(bloqueRepeticion);
+		
+		BloquePersonalizado bloquePersonalizado = algoritmo.guardaAlgoritmoPersonalizado("NuevoBloque");	
+
+        BloqueInvertir bloque = new BloqueInvertir();
+        bloque.agregarBloque(bloquePersonalizado);
+
+        bloque.ejecutar(personaje);
+
+        assertTrue(Posicion.compararPosiciones(personaje.getPosicion(), posicionFinal));
+    }
+
 
 }
