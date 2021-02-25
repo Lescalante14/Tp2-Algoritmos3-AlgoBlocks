@@ -1,9 +1,10 @@
 package edu.fiuba.algo3.modelo.bloque;
 
-import edu.fiuba.algo3.modelo.Algoritmo;
-import edu.fiuba.algo3.modelo.Personaje;
+import edu.fiuba.algo3.modelo.algortimo.Algoritmo;
+import edu.fiuba.algo3.modelo.personaje.Personaje;
 
-public class BloqueInvertir {
+
+public class BloqueInvertir implements Bloque{
 
     private Algoritmo algoritmo;
 
@@ -19,4 +20,9 @@ public class BloqueInvertir {
 
         this.algoritmo.agregarBloque(bloque.inverso());
     }
+
+    public Bloque inverso(){
+        return this;
+    }
+
 }

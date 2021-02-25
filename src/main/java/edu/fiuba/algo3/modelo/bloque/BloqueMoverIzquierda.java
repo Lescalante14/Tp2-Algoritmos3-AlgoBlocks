@@ -1,7 +1,7 @@
 package edu.fiuba.algo3.modelo.bloque;
 
-import edu.fiuba.algo3.modelo.Personaje;
-import edu.fiuba.algo3.modelo.Posicion;
+import edu.fiuba.algo3.modelo.personaje.Personaje;
+import edu.fiuba.algo3.modelo.posicion.Posicion;
 
 public class BloqueMoverIzquierda implements Bloque {
 

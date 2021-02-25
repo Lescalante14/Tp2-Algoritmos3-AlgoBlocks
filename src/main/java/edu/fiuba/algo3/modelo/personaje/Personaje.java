@@ -1,4 +1,8 @@
-package edu.fiuba.algo3.modelo;
+package edu.fiuba.algo3.modelo.personaje;
+
+import edu.fiuba.algo3.modelo.lapiz.EstadoLapiz;
+import edu.fiuba.algo3.modelo.lapiz.Lapiz;
+import edu.fiuba.algo3.modelo.posicion.Posicion;
 
 public class Personaje {
 

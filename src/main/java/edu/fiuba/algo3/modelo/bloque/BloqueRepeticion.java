@@ -1,9 +1,8 @@
 package edu.fiuba.algo3.modelo.bloque;
 
-import edu.fiuba.algo3.modelo.Algoritmo;
-import edu.fiuba.algo3.modelo.Personaje;
+import edu.fiuba.algo3.modelo.algortimo.Algoritmo;
+import edu.fiuba.algo3.modelo.personaje.Personaje;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class BloqueRepeticion implements Bloque{
@@ -37,7 +36,7 @@ public class BloqueRepeticion implements Bloque{
     @Override
     public Bloque inverso(){
 
-        ArrayList <Bloque> secuenciaDeInversos = new ArrayList<Bloque>();
+        ArrayList <Bloque> secuenciaDeInversos = new ArrayList<>();
         secuenciaDeInversos = algoritmo.invertirSecuenciaDeBloques();
 
         BloqueRepeticion bloqueInverso = new BloqueRepeticion(iteraciones, secuenciaDeInversos);

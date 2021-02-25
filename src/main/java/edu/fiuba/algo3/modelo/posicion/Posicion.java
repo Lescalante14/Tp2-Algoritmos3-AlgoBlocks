@@ -1,4 +1,4 @@
-package edu.fiuba.algo3.modelo;
+package edu.fiuba.algo3.modelo.posicion;
 
 public class Posicion {
     int coordenadaX;
@@ -31,4 +31,11 @@ public class Posicion {
         return (new Posicion(posicion.coordenadaX, posicion.coordenadaY - 1));
     }
 
+    public double getX() {
+        return coordenadaX;
+    }
+
+    public double getY() {
+        return coordenadaY;
+    }
 }

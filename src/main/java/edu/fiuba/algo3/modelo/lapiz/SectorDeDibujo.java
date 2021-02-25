@@ -1,5 +1,6 @@
-package edu.fiuba.algo3.modelo;
+package edu.fiuba.algo3.modelo.lapiz;
 
+import edu.fiuba.algo3.modelo.posicion.Posicion;
 import javafx.util.Pair;
 
 import java.util.ArrayList;
@@ -7,13 +8,9 @@ import java.util.List;
 
 public class SectorDeDibujo {
 
-    private int tamanioX;
-    private int tamanioY;
     private List <Pair> posicionesDibujadas;
 
     public SectorDeDibujo(){
-        tamanioX = 10;
-        tamanioY = 10;
         posicionesDibujadas = new ArrayList<>();
     }
 

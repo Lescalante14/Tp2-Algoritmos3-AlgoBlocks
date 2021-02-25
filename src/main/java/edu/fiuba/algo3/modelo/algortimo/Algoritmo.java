@@ -1,7 +1,8 @@
-package edu.fiuba.algo3.modelo;
+package edu.fiuba.algo3.modelo.algortimo;
 
 import edu.fiuba.algo3.modelo.bloque.Bloque;
 import edu.fiuba.algo3.modelo.bloque.BloquePersonalizado;
+import edu.fiuba.algo3.modelo.personaje.Personaje;
 
 import java.util.ArrayList;
 import java.util.List;

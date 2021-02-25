@@ -1,7 +1,9 @@
 package edu.fiuba.algo3.modelo;
 
+import edu.fiuba.algo3.modelo.algortimo.Algoritmo;
 import edu.fiuba.algo3.modelo.bloque.*;
-import javafx.geometry.Pos;
+import edu.fiuba.algo3.modelo.personaje.Personaje;
+import edu.fiuba.algo3.modelo.posicion.Posicion;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;

@@ -1,4 +1,6 @@
-package edu.fiuba.algo3.modelo;
+package edu.fiuba.algo3.modelo.lapiz;
+
+import edu.fiuba.algo3.modelo.posicion.Posicion;
 
 public class EstadoActivado implements EstadoLapiz {
 
