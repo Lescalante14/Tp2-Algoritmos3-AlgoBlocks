@@ -2,6 +2,7 @@ package edu.fiuba.algo3.vistas;
 
 import edu.fiuba.algo3.modelo.Tablero;
 import edu.fiuba.algo3.modelo.personaje.Personaje;
+import javafx.css.Stylesheet;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.canvas.Canvas;
@@ -14,14 +15,14 @@ import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
 
-public class ContenedorPrincipal extends GridPane {
+public class ContenedorPrincipal extends BorderPane {
 
     BarraDeMenu menuBar;
     VistaTablero vistaTablero;
-    GridPane contenedorTablero;
+    GridPane pantallaDeJuego;
 
     public ContenedorPrincipal(Stage stage, Tablero tablero) {
-        this.setMenu(stage);
+        this.setEncabezado(stage);
         this.setCentro(tablero);
         //this.setConsola();
         //this.setBotonera(tablero);
@@ -47,20 +48,26 @@ public class ContenedorPrincipal extends GridPane {
 
     }*/
 
-    private void setMenu(Stage stage) {
+    private void setEncabezado(Stage stage) {
+        VBox encabezado = new VBox();
         this.menuBar = new BarraDeMenu(stage);
-        this.add(menuBar,0,0);
+        encabezado.getChildren().add(menuBar);
+        encabezado.getChildren().add(crearTitulo());
+        encabezado.setAlignment(Pos.TOP_CENTER);
+        this.setTop(encabezado);
+
     }
 
     private void setCentro(Tablero tablero) {
         vistaTablero = new VistaTablero(tablero);
+        pantallaDeJuego = vistaTablero.dibujarContenedores();
+        this.setCenter(pantallaDeJuego);
+    }
 
-        contenedorTablero = vistaTablero.dibujarContenedores();
-        /*Image imagen = new Image("file:src/vista/imagenes/fondo-verde.jpg");
-        BackgroundImage imagenDeFondo = new BackgroundImage(imagen, BackgroundRepeat.REPEAT, BackgroundRepeat.REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT);
-        contenedorCentral.setBackground(new Background(imagenDeFondo));*/
-
-        this.add(contenedorTablero, 0, 1);
+    private Label crearTitulo() {
+        Titulo titulo = new Titulo("ALGOBLOCKS");
+        titulo.setFont(Font.font(24));
+        return titulo;
     }
 
     /*private void setConsola() {
