@@ -1,6 +1,7 @@
 package edu.fiuba.algo3.vistas;
 
 import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
@@ -15,11 +16,8 @@ public class VistaBloques {
         this.bloques = bloques;
     }
 
-    public VBox dibujar() {
-        Image imagen = new Image("file:src/vista/resources/foto.jpg");
-        Rectangle sectorBloques = new Rectangle(100, 600, Color.RED);
-        bloques.setBackground(new Background(new BackgroundImage(imagen, BackgroundRepeat.REPEAT, BackgroundRepeat.REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT)));
-        bloques.getChildren().add(sectorBloques);
-        return bloques;
+    public void dibujar() {
+        ImageView imagen = new ImageView("file:" + System.getProperty("user.dir") + "/src/main/java/edu/fiuba/algo3/resources/fondoBloques.jpg");
+        bloques.getChildren().add(imagen);
     }
 }

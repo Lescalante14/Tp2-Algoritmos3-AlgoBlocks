@@ -14,11 +14,19 @@ public class VistaTablero {
     private Tablero tablero;
     private VistaPersonaje vistaPersonaje;
     private VistaBloques vistaBloques;
+    private VistaAlgoritmo vistaAlgoritmo;
     private GridPane contenedorTablero;
 
     public VistaTablero(Tablero tablero) {
         this.tablero = tablero;
         contenedorTablero = new GridPane();
+    }
+
+    public GridPane dibujarContenedores() {
+        contenedorTablero.add(crearVistaPersonaje(), 0,0);
+        contenedorTablero.add(crearVistaSectorBloques(), 1, 0);
+        contenedorTablero.add(crearVistaSectorAlgoritmo(), 2, 0);
+        return contenedorTablero;
     }
 
     private HBox crearVistaPersonaje(){
@@ -35,10 +43,15 @@ public class VistaTablero {
     }
 
 
-    public GridPane dibujarContenedores() {
-        contenedorTablero.add(crearVistaPersonaje(), 0,0);
-        contenedorTablero.add(crearVistaSectorBloques(), 1, 0);
-        return contenedorTablero;
+    private GridPane crearVistaSectorAlgoritmo() {
+        GridPane sectorAlgoritmo = new GridPane();
+        sectorAlgoritmo.setAlignment(Pos.TOP_LEFT);
+        sectorAlgoritmo.setPadding(new Insets(25));
+        vistaAlgoritmo = new VistaAlgoritmo(sectorAlgoritmo);
+        vistaAlgoritmo.dibujar();
+
+        return sectorAlgoritmo;
+
     }
 
     private VBox crearVistaSectorBloques() {
@@ -47,8 +60,9 @@ public class VistaTablero {
         bloques.setSpacing(20);
         bloques.setPadding(new Insets(25));
         vistaBloques = new VistaBloques(bloques);
+        vistaBloques.dibujar();
 
-        return vistaBloques.dibujar();
+        return bloques;
     }
 
 
