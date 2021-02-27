@@ -29,20 +29,32 @@ public class Algoritmo {
     }
 
     public void ejecutarAlgoritmo(Personaje unPersonaje) {
-
-        for (Bloque unBLoque : secuenciaBloques) {
-
-            unBLoque.ejecutar(unPersonaje);
-        }
-    }
+		//try{}catch{}
+		try{
+        	ValidaAlgoritmo.algoritmoValido(this.cantidadBloques());
+    		}
+		}catch(AlgoritmoVacioError){
+			//System.out.println("ErrorDeTry");
+		}finally{
+			for (Bloque unBLoque : secuenciaBloques) {
+            	unBLoque.ejecutar(unPersonaje);	
+		}
+	}
 
     public BloquePersonalizado guardaAlgoritmoPersonalizado(String nombre) {
 
-        BloquePersonalizado personalizado = new BloquePersonalizado(nombre, secuenciaBloques);
-
-        secuenciaBloques = new ArrayList<Bloque>();
-
-        return personalizado;
+        try{
+			ValidaAlgoritmo.algoritmoValido(this.cantidadBloques());
+			ValidaNombre.nombreValido(nombre);
+		}catch(AlgoritmoVacioError){
+			
+		}catch(NombreVacioError){
+			
+		}finally{	
+			BloquePersonalizado personalizado = new BloquePersonalizado(nombre, secuenciaBloques);
+        	secuenciaBloques = new ArrayList<Bloque>();
+        	return personalizado;
+		}	
     }
 
     public ArrayList<Bloque> invertirSecuenciaDeBloques() {
