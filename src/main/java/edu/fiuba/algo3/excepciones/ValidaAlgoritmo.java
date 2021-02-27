@@ -1,6 +1,5 @@
-package edu.fiuba.algo3.modelo.*;
+package edu.fiuba.algo3.excepciones;
 
-import edu.fiuba.algo3.modelo.*;
 
 public class ValidaAlgoritmo {
 
@@ -11,8 +10,5 @@ public class ValidaAlgoritmo {
 			return new AlgoritmoVacioError();
 		}
 	}
-
-
-
 
 }

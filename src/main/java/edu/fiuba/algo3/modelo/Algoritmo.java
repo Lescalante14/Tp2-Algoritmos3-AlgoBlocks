@@ -1,5 +1,9 @@
 package edu.fiuba.algo3.modelo;
 
+import edu.fiuba.algo3.excepciones.AlgoritmoVacioError;
+import edu.fiuba.algo3.excepciones.NombreVacioError;
+import edu.fiuba.algo3.excepciones.ValidaAlgoritmo;
+import edu.fiuba.algo3.excepciones.ValidaNombre;
 import edu.fiuba.algo3.modelo.bloque.Bloque;
 import edu.fiuba.algo3.modelo.bloque.BloquePersonalizado;
 

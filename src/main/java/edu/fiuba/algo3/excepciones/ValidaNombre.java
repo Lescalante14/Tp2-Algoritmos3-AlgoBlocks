@@ -1,11 +1,10 @@
-package edu.fiuba.algo3.modelo.*;
-
-import edu.fiuba.algo3.modelo.*;
+package edu.fiuba.algo3.excepciones.*;
 
 public class ValidaNombre{
 	
 	public static void nombreValido(String nombre){
-		if( (nombre == null) || (nombre.trim().length > 0)){
+
+		if( (nombre == null) || (nombre.trim().length() > 0)){
 			return new NombreVacioError();			
 		}else{
 				return true;
