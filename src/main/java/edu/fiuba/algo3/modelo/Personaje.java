@@ -17,11 +17,6 @@ public class Personaje {
         lapiz.cambiarEstado(nuevoEstado);
     }
 
-    /*public void mover(Posicion posicionNueva){
-        lapiz.dibujarDesdeHasta(posicion, posicionNueva);
-        posicion = posicionNueva;
-    }*/
-
     public void mover(Direccion direccion){
         Posicion posicionNueva = direccion.posicionEnDireccionDe(posicion);
         lapiz.dibujarDesdeHasta(posicion, posicionNueva);

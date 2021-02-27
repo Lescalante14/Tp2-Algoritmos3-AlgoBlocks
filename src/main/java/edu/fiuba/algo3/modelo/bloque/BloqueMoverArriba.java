@@ -7,6 +7,7 @@ import edu.fiuba.algo3.modelo.direccion.DireccionArriba;
 public class BloqueMoverArriba implements Bloque {
 
     Direccion direccion;
+
     public BloqueMoverArriba(){
         Direccion direccion = new DireccionArriba();
     }
