@@ -5,7 +5,7 @@ import edu.fiuba.algo3.modelo.Posicion;
 public class DireccionIzquierda implements Direccion{
 
     @Override
-    Posicion posicionEnDireccionDe(Posicion posicion){
+    public Posicion posicionEnDireccionDe(Posicion posicion){
         return Posicion.izquierdaDe(posicion);
     }
 

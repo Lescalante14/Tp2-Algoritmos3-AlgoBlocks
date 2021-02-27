@@ -1,6 +1,7 @@
 package edu.fiuba.algo3.modelo;
 
 import edu.fiuba.algo3.modelo.direccion.Direccion;
+import edu.fiuba.algo3.modelo.direccion.DireccionDerecha;
 
 public class Personaje {
 
@@ -17,7 +18,7 @@ public class Personaje {
         lapiz.cambiarEstado(nuevoEstado);
     }
 
-    public void mover(Direccion direccion){
+    public void moverHacia(Direccion direccion) {
         Posicion posicionNueva = direccion.posicionEnDireccionDe(posicion);
         lapiz.dibujarDesdeHasta(posicion, posicionNueva);
         posicion = posicionNueva;
@@ -31,4 +32,6 @@ public class Personaje {
     public int totalDeCasillasPintadas() {
         return lapiz.totalDeCasillasPintadas();
     }
+
+
 }

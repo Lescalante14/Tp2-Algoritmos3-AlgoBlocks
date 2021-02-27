@@ -1,5 +1,9 @@
 package edu.fiuba.algo3.modelo;
 
+import edu.fiuba.algo3.modelo.direccion.DireccionAbajo;
+import edu.fiuba.algo3.modelo.direccion.DireccionArriba;
+import edu.fiuba.algo3.modelo.direccion.DireccionDerecha;
+import edu.fiuba.algo3.modelo.direccion.DireccionIzquierda;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -12,7 +16,7 @@ public class PersonajeTest {
 
         Personaje personaje = new Personaje();
 
-        personaje.mover(Posicion.abajoDe(personaje.getPosicion()));
+        personaje.moverHacia(new DireccionIzquierda());
         assertEquals(0 , personaje.totalDeCasillasPintadas());
 
     }
@@ -35,7 +39,7 @@ public class PersonajeTest {
         Personaje personaje = new Personaje();
 
         personaje.cambiarEstadoLapiz(new EstadoActivado());
-        personaje.mover(Posicion.arribaDe(personaje.getPosicion()));
+        personaje.moverHacia(new DireccionDerecha());
 
         assertEquals(1 , personaje.totalDeCasillasPintadas());
 
@@ -43,65 +47,65 @@ public class PersonajeTest {
 
 
     @Test
-    public void AlAplicarBloqueMoverDerechaSeMueveALaDerecha()
+    public void AlAplicarMetodoMoverConDireccionDerechaSeMueveALaDerecha()
     {
 
         Personaje personaje = new Personaje();
         Posicion posicionInicial = personaje.getPosicion();
 
-        personaje.mover(Posicion.derechaDe(personaje.getPosicion()));
+        personaje.moverHacia(new DireccionDerecha());
         assertTrue(Posicion.compararPosiciones(personaje.getPosicion(), Posicion.derechaDe(posicionInicial)));
 
     }
 
     @Test
-    public void AlAplicarBloqueMoverIzquierdaSeMueveALaIzquierda()
+    public void AlAplicarMetodoMoverConDireccionIzquierdaSeMueveALaIzquierda()
     {
 
         Personaje personaje = new Personaje();
         Posicion posicionInicial = personaje.getPosicion();
 
-        personaje.mover(Posicion.izquierdaDe(personaje.getPosicion()));
+        personaje.moverHacia(new DireccionIzquierda());
 
         assertTrue(Posicion.compararPosiciones(personaje.getPosicion(), Posicion.izquierdaDe(posicionInicial)));
 
     }
 
     @Test
-    public void AlAplicarBloqueMoverArribaSeMueveAArriba()
+    public void AlAplicarMetodoMoverConDireccionArribaSeMueveAArriba()
     {
 
         Personaje personaje = new Personaje();
         Posicion posicionInicial = personaje.getPosicion();
 
-        personaje.mover(Posicion.arribaDe(personaje.getPosicion()));
+        personaje.moverHacia(new DireccionArriba());
 
         assertTrue(Posicion.compararPosiciones(personaje.getPosicion(), Posicion.arribaDe(posicionInicial)));
 
     }
 
     @Test
-    public void AlAplicarBloqueMoverAbajoSeMueveAAbajo()
+    public void AlAplicarMetodoMoverConDireccionAbajoSeMueveALaAbajo()
     {
 
         Personaje personaje = new Personaje();
         Posicion posicionInicial = personaje.getPosicion();
 
-        personaje.mover(Posicion.abajoDe(personaje.getPosicion()));
+        personaje.moverHacia(new DireccionAbajo());
 
         assertTrue(Posicion.compararPosiciones(personaje.getPosicion(), Posicion.abajoDe(posicionInicial)));
 
     }
 
     @Test
-    public void AlAplicarBloqueMoverDerechaYAbajoEstaEnLaPosicionCorrespondiente()
+    public void AlAplicarMetodoMoverConDireccionDerechaYMetodoMoverConDireccionAbajoElPersonajeEstaEnLaPosicionCorrespondiente()
     {
 
         Personaje personaje = new Personaje();
         Posicion posicionInicial = personaje.getPosicion();
 
-        personaje.mover(Posicion.derechaDe(personaje.getPosicion()));
-        personaje.mover(Posicion.abajoDe(personaje.getPosicion()));
+        personaje.moverHacia(new DireccionDerecha());
+        personaje.moverHacia(new DireccionAbajo());
 
         assertTrue(Posicion.compararPosiciones(personaje.getPosicion() ,
                    Posicion.abajoDe(Posicion.derechaDe(posicionInicial) )));
@@ -109,14 +113,14 @@ public class PersonajeTest {
     }
 
     @Test
-    public void AlAplicarBloqueMoverArribaEIzquierdaEstaEnLaPosicionCorrespondiente()
+    public void AlAplicarMetodoMoverConDireccionArribaYMetodoMoverConDireccionIzquierdaElPersonajeEstaEnLaPosicionCorrespondiente()
     {
 
         Personaje personaje = new Personaje();
         Posicion posicionInicial = personaje.getPosicion();
 
-        personaje.mover(Posicion.arribaDe(personaje.getPosicion()));
-        personaje.mover(Posicion.izquierdaDe(personaje.getPosicion()));
+        personaje.moverHacia(new DireccionArriba());
+        personaje.moverHacia(new DireccionIzquierda());
 
         assertTrue(Posicion.compararPosiciones(personaje.getPosicion() ,
                 Posicion.izquierdaDe(Posicion.arribaDe(posicionInicial) )));
@@ -129,7 +133,7 @@ public class PersonajeTest {
         Personaje personaje = new Personaje();
 
         personaje.cambiarEstadoLapiz(new EstadoActivado());
-        personaje.mover(Posicion.izquierdaDe(personaje.getPosicion()));
+        personaje.moverHacia(new DireccionIzquierda());
 
         assertEquals(1,personaje.totalDeCasillasPintadas());
 
@@ -142,8 +146,8 @@ public class PersonajeTest {
 
         personaje.cambiarEstadoLapiz(new EstadoActivado());
 
-        personaje.mover(Posicion.arribaDe(personaje.getPosicion()));
-        personaje.mover(Posicion.derechaDe(personaje.getPosicion()));
+        personaje.moverHacia(new DireccionArriba());
+        personaje.moverHacia(new DireccionDerecha());
 
         assertEquals(2,personaje.totalDeCasillasPintadas());
 
@@ -156,9 +160,9 @@ public class PersonajeTest {
 
         personaje.cambiarEstadoLapiz(new EstadoActivado());
 
-        personaje.mover(Posicion.derechaDe(personaje.getPosicion()));
-        personaje.mover(Posicion.abajoDe(personaje.getPosicion()));
-        personaje.mover(Posicion.izquierdaDe(personaje.getPosicion()));
+        personaje.moverHacia(new DireccionDerecha());
+        personaje.moverHacia(new DireccionAbajo());
+        personaje.moverHacia(new DireccionIzquierda());
 
         assertEquals(3,personaje.totalDeCasillasPintadas());
 
