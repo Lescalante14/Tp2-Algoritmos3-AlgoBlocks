@@ -25,8 +25,7 @@ public class VistaJuego {
     }
 
     private BorderPane crearVistaPersonaje(){
-        Canvas canvasSectorDibujo = new Canvas(400, 400);
-        vistaPersonaje = new VistaPersonaje(canvasSectorDibujo);
+        vistaPersonaje = new VistaPersonaje();
         vistaPersonaje.dibujar();
         return vistaPersonaje;
     }
