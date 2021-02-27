@@ -1,12 +1,11 @@
 package edu.fiuba.algo3.vistas;
 
+import edu.fiuba.algo3.controladores.ControladorBotonBloques;
+import edu.fiuba.algo3.modelo.algortimo.Algoritmo;
+import edu.fiuba.algo3.vistas.botones.BotonBloque;
 import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
-import javafx.scene.paint.Color;
-import javafx.scene.shape.Rectangle;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -33,11 +32,12 @@ public class VistaBloques {
         BackgroundImage imagenDeFondo = new BackgroundImage(imagen, BackgroundRepeat.REPEAT, BackgroundRepeat.REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT);
         bloques.setBackground(new Background(imagenDeFondo));
 
+        ControladorBotonBloques controladorBotonBloques = new ControladorBotonBloques(controladorAlgoritmo);
 
         for(Map.Entry<String, Image> entry : infoBloques.entrySet()) {
             String nombre = entry.getKey();
             Image imagenBloque = entry.getValue();
-            bloques.getChildren().add(new BotonBloque(nombre, imagenBloque));
+            bloques.getChildren().add(new BotonBloque(nombre, imagenBloque, controladorBotonBloques));
         }
     }
 }

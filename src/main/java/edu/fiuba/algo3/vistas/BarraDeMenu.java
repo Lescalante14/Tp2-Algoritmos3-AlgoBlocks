@@ -1,5 +1,8 @@
 package edu.fiuba.algo3.vistas;
 
+import edu.fiuba.algo3.controladores.OpcionAcercaDeEventHandler;
+import edu.fiuba.algo3.controladores.OpcionPantallaCompletaEventHandler;
+import edu.fiuba.algo3.controladores.OpcionSalirEventHandler;
 import javafx.scene.control.Menu;
 import javafx.scene.control.MenuBar;
 import javafx.scene.control.MenuItem;
@@ -20,14 +23,14 @@ public class BarraDeMenu extends MenuBar {
         MenuItem opcionAbrir = new MenuItem("Abrir");
         MenuItem opcionAcercaDe = new MenuItem("Acerca de...");
 
-        /*OpcionSalirEventHandler opcionSalirHandler = new OpcionSalirEventHandler();
+        OpcionSalirEventHandler opcionSalirHandler = new OpcionSalirEventHandler();
         opcionSalir.setOnAction(opcionSalirHandler);
 
         OpcionAcercaDeEventHandler opcionAcercaDeHandler = new OpcionAcercaDeEventHandler();
         opcionAcercaDe.setOnAction(opcionAcercaDeHandler);
 
         OpcionPantallaCompletaEventHandler opcionPantallaCompletaHandler = new OpcionPantallaCompletaEventHandler(stage, opcionPantallaCompleta);
-        opcionPantallaCompleta.setOnAction(opcionPantallaCompletaHandler);*/
+        opcionPantallaCompleta.setOnAction(opcionPantallaCompletaHandler);
 
         opcionPantallaCompleta.setDisable(true);
 

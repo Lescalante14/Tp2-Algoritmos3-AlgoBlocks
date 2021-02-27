@@ -18,19 +18,14 @@ public class App extends Application {
 
         stage.setTitle("AlgoBlocks");
 
-        Tablero tablero = crearModelo();
-
-        ContenedorPrincipal contenedorPrincipal = new ContenedorPrincipal(stage, tablero);
+        ContenedorPrincipal contenedorPrincipal = new ContenedorPrincipal(stage);
         Scene escenaJuego = new Scene(contenedorPrincipal, 640, 480);
 
         /*AplicacionOnKeyPressEventHandler AplicacionOnKeyPressEventHandler = new AplicacionOnKeyPressEventHandler(stage, contenedorPrincipal.getBarraDeMenu());
-        escenaJuego.setOnKeyPressed(AplicacionOnKeyPressEventHandler);
-
-        ContenedorBienvenidos contenedorBienvenidos = new ContenedorBienvenidos(stage, escenaJuego);
-        Scene escenaBienvenidos = new Scene(contenedorBienvenidos, 640, 480);*/
+        escenaJuego.setOnKeyPressed(AplicacionOnKeyPressEventHandler);*/
 
         stage.setScene(escenaJuego);
-        stage.setFullScreen(true);
+        //stage.setFullScreen(true);
 
         stage.show();
 
@@ -38,12 +33,5 @@ public class App extends Application {
 
     public static void main(String[] args) {
         launch();
-    }
-
-    private Tablero crearModelo() {
-        Personaje personaje = new Personaje();
-        Algoritmo algoritmo = new Algoritmo();
-        Tablero tablero = new Tablero(personaje, algoritmo);
-        return tablero;
     }
 }

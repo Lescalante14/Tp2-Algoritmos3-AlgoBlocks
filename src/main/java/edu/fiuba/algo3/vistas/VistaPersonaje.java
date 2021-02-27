@@ -9,9 +9,9 @@ public class VistaPersonaje {
     private Canvas canvasSectorDibujo;
     private Personaje personaje;
 
-    public VistaPersonaje(Canvas canvas, Personaje personaje){
+    public VistaPersonaje(Canvas canvas){
         canvasSectorDibujo = canvas;
-        this.personaje = personaje;
+        this.personaje = new Personaje();
     }
 
     public void dibujar() {

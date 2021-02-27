@@ -13,14 +13,12 @@ import javafx.scene.layout.VBox;
 
 public class VistaTablero {
 
-    private Tablero tablero;
     private VistaPersonaje vistaPersonaje;
     private VistaBloques vistaBloques;
     private VistaAlgoritmo vistaAlgoritmo;
     private GridPane contenedorTablero;
 
-    public VistaTablero(Tablero tablero) {
-        this.tablero = tablero;
+    public VistaTablero() {
         contenedorTablero = new GridPane();
         contenedorTablero.setGridLinesVisible(true); // QUITAR AL FINLAL
         contenedorTablero.setHgap(20);
@@ -44,7 +42,7 @@ public class VistaTablero {
     private HBox crearVistaPersonaje(){
 
         Canvas canvasSectorDibujo = new Canvas(400, 400);
-        vistaPersonaje = new VistaPersonaje(canvasSectorDibujo, tablero.getPersonaje());
+        vistaPersonaje = new VistaPersonaje(canvasSectorDibujo);
         vistaPersonaje.dibujar();
         HBox sectorDibujo = new HBox(canvasSectorDibujo);
         sectorDibujo.setAlignment(Pos.CENTER);
@@ -67,6 +65,7 @@ public class VistaTablero {
     }
 
     private VBox crearVistaSectorBloques() {
+
         VBox bloques = new VBox();
         bloques.setAlignment(Pos.CENTER);
         bloques.setSpacing(20);

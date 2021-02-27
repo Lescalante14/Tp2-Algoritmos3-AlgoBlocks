@@ -21,10 +21,9 @@ public class ContenedorPrincipal extends BorderPane {
     VistaTablero vistaTablero;
     GridPane pantallaDeJuego;
 
-    public ContenedorPrincipal(Stage stage, Tablero tablero) {
+    public ContenedorPrincipal(Stage stage) {
         this.setEncabezado(stage);
-        this.setCentro(tablero);
-        //this.setConsola();
+        this.setCentro();
         //this.setBotonera(tablero);
     }
 
@@ -58,8 +57,8 @@ public class ContenedorPrincipal extends BorderPane {
 
     }
 
-    private void setCentro(Tablero tablero) {
-        vistaTablero = new VistaTablero(tablero);
+    private void setCentro() {
+        vistaTablero = new VistaTablero();
         pantallaDeJuego = vistaTablero.dibujarContenedores();
         this.setCenter(pantallaDeJuego);
     }
