@@ -9,6 +9,7 @@ public class VistaAlgoritmo extends BorderPane{
     public VistaAlgoritmo() {
         this.setTop(new Titulo("Sector de Algoritmos"));
         this.setPadding(new Insets(25));
+        this.dibujar();
     }
 
     public void dibujar(){

@@ -20,6 +20,7 @@ public class VistaBloques extends BorderPane{
         this.setTop(new Titulo("Sector de Bloques"));
         this.setPadding(new Insets(25));
         inicializarBloques();
+        this.dibujar();
     }
 
     private void inicializarBloques() {

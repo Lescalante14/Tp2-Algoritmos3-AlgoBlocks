@@ -17,6 +17,7 @@ public class VistaPersonaje extends BorderPane {
         this.setTop(new Titulo("Sector de Dibujo"));
         this.setCenter(canvasSectorDibujo);
         this.setPadding(new Insets(25));
+        this.dibujar();
     }
 
     public void dibujar() {
