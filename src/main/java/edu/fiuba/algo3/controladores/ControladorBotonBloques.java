@@ -15,8 +15,7 @@ public class ControladorBotonBloques implements EventHandler<ActionEvent>{
     private EventHandler<ActionEvent> controladorAlgoritmo;
     private static HashMap<String, Bloque> infoBloques;
 
-    public ControladorBotonBloques(EventHandler<ActionEvent> controladorAlgoritmo){
-        this.controladorAlgoritmo = controladorAlgoritmo;
+    public ControladorBotonBloques(){
     }
 
     @Override
@@ -27,7 +26,7 @@ public class ControladorBotonBloques implements EventHandler<ActionEvent>{
 
         Optional<ButtonType> result = alert.showAndWait();
         if (result.get() == ButtonType.OK){
-            controladorAlgoritmo.agregarBloque();
+            //controladorAlgoritmo.agregarBloque();
         } else {
             // ... user chose CANCEL or closed the dialog
         }

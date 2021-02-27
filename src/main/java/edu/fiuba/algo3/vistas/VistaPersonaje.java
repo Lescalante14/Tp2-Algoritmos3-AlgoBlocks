@@ -1,17 +1,24 @@
 package edu.fiuba.algo3.vistas;
 
 import edu.fiuba.algo3.modelo.personaje.Personaje;
+import javafx.geometry.Insets;
 import javafx.scene.canvas.Canvas;
+import javafx.scene.layout.BorderPane;
 import javafx.scene.paint.Color;
 
-public class VistaPersonaje {
+public class VistaPersonaje extends BorderPane {
 
     private Canvas canvasSectorDibujo;
     private Personaje personaje;
+    private BorderPane sectorDIbujo;
 
-    public VistaPersonaje(Canvas canvas){
+    public VistaPersonaje(Canvas canvas, BorderPane sectorDibujo){
         canvasSectorDibujo = canvas;
         this.personaje = new Personaje();
+        this.sectorDIbujo = sectorDibujo;
+        sectorDibujo.setTop(new Titulo("Sector de Dibujo"));
+        sectorDibujo.setCenter(canvasSectorDibujo);
+        sectorDibujo.setPadding(new Insets(25));
     }
 
     public void dibujar() {
@@ -27,7 +34,7 @@ public class VistaPersonaje {
     public void clean() {
 
         canvasSectorDibujo.getGraphicsContext2D().setFill(Color.BEIGE);
-        canvasSectorDibujo.getGraphicsContext2D().fillRect(0, 0, 460, 220);
+        canvasSectorDibujo.getGraphicsContext2D().fillRect(0, 0, 400, 400);
     }
 
     public void update() {

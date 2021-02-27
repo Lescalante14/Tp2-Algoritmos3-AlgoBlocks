@@ -52,6 +52,9 @@ public class ContenedorPrincipal extends BorderPane {
         this.menuBar = new BarraDeMenu(stage);
         encabezado.getChildren().add(menuBar);
         encabezado.getChildren().add(crearTitulo());
+        Image imagen = new Image("file:" + System.getProperty("user.dir") + "/src/main/java/edu/fiuba/algo3/resources/fondoTitulo.jpg");
+        BackgroundImage imagenDeFondo = new BackgroundImage(imagen, BackgroundRepeat.REPEAT, BackgroundRepeat.REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT);
+        encabezado.setBackground(new Background(imagenDeFondo));
         encabezado.setAlignment(Pos.TOP_CENTER);
         this.setTop(encabezado);
 
@@ -69,23 +72,4 @@ public class ContenedorPrincipal extends BorderPane {
         return titulo;
     }
 
-    /*private void setConsola() {
-
-        // TODO cambiar por el modelo de Consola...
-        Label etiqueta = new Label();
-        etiqueta.setText("consola...");
-        etiqueta.setFont(Font.font("courier new", FontWeight.SEMI_BOLD, 14));
-        etiqueta.setTextFill(Color.WHITE);
-
-        VBox contenedorConsola = new VBox(etiqueta);
-        contenedorConsola.setSpacing(10);
-        contenedorConsola.setPadding(new Insets(15));
-        contenedorConsola.setStyle("-fx-background-color: black;");
-
-        this.add(contenedorConsola, 2,0);
-    }*/
-
-    public BarraDeMenu getBarraDeMenu() {
-        return menuBar;
-    }
 }
