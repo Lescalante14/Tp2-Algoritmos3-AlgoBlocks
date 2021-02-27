@@ -1,24 +1,16 @@
 package edu.fiuba.algo3.vistas;
 
-import edu.fiuba.algo3.modelo.Tablero;
-import edu.fiuba.algo3.modelo.personaje.Personaje;
-import javafx.css.Stylesheet;
-import javafx.geometry.Insets;
 import javafx.geometry.Pos;
-import javafx.scene.canvas.Canvas;
-import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.layout.*;
-import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
-import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
 
 public class ContenedorPrincipal extends BorderPane {
 
     BarraDeMenu menuBar;
-    VistaTablero vistaTablero;
+    VistaJuego vistaJuego;
     GridPane pantallaDeJuego;
 
     public ContenedorPrincipal(Stage stage) {
@@ -61,8 +53,8 @@ public class ContenedorPrincipal extends BorderPane {
     }
 
     private void setCentro() {
-        vistaTablero = new VistaTablero();
-        pantallaDeJuego = vistaTablero.dibujarContenedores();
+        vistaJuego = new VistaJuego();
+        pantallaDeJuego = vistaJuego.dibujarContenedores();
         this.setCenter(pantallaDeJuego);
     }
 

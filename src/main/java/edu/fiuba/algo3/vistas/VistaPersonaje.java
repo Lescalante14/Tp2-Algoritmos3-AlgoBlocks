@@ -10,15 +10,13 @@ public class VistaPersonaje extends BorderPane {
 
     private Canvas canvasSectorDibujo;
     private Personaje personaje;
-    private BorderPane sectorDIbujo;
 
-    public VistaPersonaje(Canvas canvas, BorderPane sectorDibujo){
+    public VistaPersonaje(Canvas canvas){
         canvasSectorDibujo = canvas;
         this.personaje = new Personaje();
-        this.sectorDIbujo = sectorDibujo;
-        sectorDibujo.setTop(new Titulo("Sector de Dibujo"));
-        sectorDibujo.setCenter(canvasSectorDibujo);
-        sectorDibujo.setPadding(new Insets(25));
+        this.setTop(new Titulo("Sector de Dibujo"));
+        this.setCenter(canvasSectorDibujo);
+        this.setPadding(new Insets(25));
     }
 
     public void dibujar() {

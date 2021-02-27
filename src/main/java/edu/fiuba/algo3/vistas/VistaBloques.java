@@ -1,7 +1,6 @@
 package edu.fiuba.algo3.vistas;
 
 import edu.fiuba.algo3.controladores.ControladorBotonBloques;
-import edu.fiuba.algo3.modelo.algortimo.Algoritmo;
 import edu.fiuba.algo3.vistas.botones.BotonBloque;
 import javafx.geometry.Insets;
 import javafx.scene.image.Image;
@@ -10,16 +9,16 @@ import javafx.scene.layout.*;
 import java.util.HashMap;
 import java.util.Map;
 
-public class VistaBloques {
+public class VistaBloques extends BorderPane{
 
-    private BorderPane sectorBloques;
     private VBox bloques;
     HashMap<String, Image> infoBloques;
 
-    public VistaBloques(BorderPane sectorBloques){
-        this.sectorBloques = sectorBloques;
+    public VistaBloques(){
         infoBloques = new HashMap<>();
         this.bloques = new VBox();
+        this.setTop(new Titulo("Sector de Bloques"));
+        this.setPadding(new Insets(25));
         inicializarBloques();
     }
 
@@ -31,8 +30,6 @@ public class VistaBloques {
 
     public void dibujar() {
 
-        sectorBloques.setTop(new Titulo("Sector de Bloques"));
-        sectorBloques.setPadding(new Insets(25));
         Image imagen = new Image("file:" + System.getProperty("user.dir") + "/src/main/java/edu/fiuba/algo3/resources/fondoBloques.jpg");
         BackgroundImage imagenDeFondo = new BackgroundImage(imagen, BackgroundRepeat.REPEAT, BackgroundRepeat.REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT);
         bloques.setBackground(new Background(imagenDeFondo));
@@ -45,6 +42,6 @@ public class VistaBloques {
             bloques.getChildren().add(new BotonBloque(nombre, imagenBloque, controladorBotonBloques));
         }
 
-        sectorBloques.setCenter(bloques);
+        this.setCenter(bloques);
     }
 }

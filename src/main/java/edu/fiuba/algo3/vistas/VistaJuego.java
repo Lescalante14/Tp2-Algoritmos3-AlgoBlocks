@@ -4,18 +4,17 @@ import javafx.scene.canvas.Canvas;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 
-import java.util.concurrent.BrokenBarrierException;
 
-public class VistaTablero {
+public class VistaJuego {
 
     private VistaPersonaje vistaPersonaje;
     private VistaBloques vistaBloques;
     private VistaAlgoritmo vistaAlgoritmo;
     private GridPane contenedorTablero;
 
-    public VistaTablero() {
+    public VistaJuego() {
         contenedorTablero = new GridPane();
-        contenedorTablero.setGridLinesVisible(true); // QUITAR AL FINLAL
+        contenedorTablero.setGridLinesVisible(true); // QUITAR AL FINAL
     }
 
     public GridPane dibujarContenedores() {
@@ -26,25 +25,22 @@ public class VistaTablero {
     }
 
     private BorderPane crearVistaPersonaje(){
-        BorderPane sectorDibujo = new BorderPane();
         Canvas canvasSectorDibujo = new Canvas(400, 400);
-        vistaPersonaje = new VistaPersonaje(canvasSectorDibujo, sectorDibujo);
+        vistaPersonaje = new VistaPersonaje(canvasSectorDibujo);
         vistaPersonaje.dibujar();
-        return sectorDibujo;
+        return vistaPersonaje;
     }
 
     private BorderPane crearVistaSectorAlgoritmo() {
-        BorderPane sectorAlgoritmo = new BorderPane();
-        vistaAlgoritmo = new VistaAlgoritmo(sectorAlgoritmo);
+        vistaAlgoritmo = new VistaAlgoritmo();
         vistaAlgoritmo.dibujar();
-        return sectorAlgoritmo;
+        return vistaAlgoritmo;
     }
 
     private BorderPane crearVistaSectorBloques() {
-        BorderPane sectorBloques = new BorderPane();
-        vistaBloques = new VistaBloques(sectorBloques);
+        vistaBloques = new VistaBloques();
         vistaBloques.dibujar();
-        return sectorBloques;
+        return vistaBloques;
     }
 
 
