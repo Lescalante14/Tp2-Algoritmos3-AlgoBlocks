@@ -1,18 +1,16 @@
-package edu.fiuba.algo3.modelo.*;
+package edu.fiuba.algo3.modelo;
 
-import edu.fiuba.algo3.modelo.*;
+
+import edu.fiuba.algo3.excepciones.AlgoritmoVacioError;
 
 public class ValidaAlgoritmo {
 
-	public static boolean algoritmoValido(int cantidadBloques){
+	public static boolean algoritmoValido(int cantidadBloques) throws RuntimeException{
 		if(cantidadBloques > 0){
 			return true;
-		}else{
-			return new AlgoritmoVacioError();
 		}
+		throw new AlgoritmoVacioError();
+
 	}
-
-
-
 
 }
