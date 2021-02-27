@@ -31,7 +31,6 @@ public class Algoritmo {
     }
 
     public void ejecutarAlgoritmo(Personaje unPersonaje) {
-		//try{}catch{}
 		try{
         	ValidaAlgoritmo.algoritmoValido(this.cantidadBloques());
     		}

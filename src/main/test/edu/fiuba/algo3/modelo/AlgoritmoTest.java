@@ -117,7 +117,19 @@ public class AlgoritmoTest {
     }
 
     @Test
-    public void alAgregarAlgoritmoPersonalizadoConNombreInvalidoLanzaError()
+    public void alCrearAlgoritmoPersonalizadoConNombreNullLanzaError()
+    {
+        Algoritmo algoritmo = new Algoritmo();
+        algoritmo.agregarBloque(new BloqueMoverAbajo());
+
+
+        assertThrows(NombreVacioError.class, ()->{
+            algoritmo.guardaAlgoritmoPersonalizado(null);
+        });
+    }
+
+    @Test
+    public void alCrearAlgoritmoPersonalizadoConNombreInvalidoLanzaError()
     {
         Algoritmo algoritmo = new Algoritmo();
         algoritmo.agregarBloque(new BloqueMoverAbajo());
@@ -128,6 +140,15 @@ public class AlgoritmoTest {
         });
     }
 
+    @Test
+    public void alCrearAlgoritmoPersonalizadoDeUnAlgoritmoVacioSeLanzaError()
+    {
+        Algoritmo algoritmo = new Algoritmo();
+
+        assertThrows(AlgoritmoVacioError.class, ()->{
+            algoritmo.guardaAlgoritmoPersonalizado("Algoritmo vacio");
+        });
+    }
 }
 
 
