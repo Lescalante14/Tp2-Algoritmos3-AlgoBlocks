@@ -1,27 +1,25 @@
 package edu.fiuba.algo3.vistas;
 
-import edu.fiuba.algo3.controladores.ControladorAlgoritmo;
 import edu.fiuba.algo3.modelo.Personaje;
+import edu.fiuba.algo3.modelo.algortimo.Algoritmo;
 import javafx.scene.layout.GridPane;
 
 
 public class VistaJuego {
 
-    private VistaPersonaje vistaPersonaje;
-    private VistaBloques vistaBloques;
-    private VistaAlgoritmo vistaAlgoritmo;
-    private GridPane contenedorTablero;
-    private Personaje personaje;
+    private final VistaPersonaje vistaPersonaje;
+    private final VistaBloques vistaBloques;
+    private final VistaAlgoritmo vistaAlgoritmo;
+    private final GridPane contenedorTablero;
 
     public VistaJuego() {
-
-        personaje = new Personaje();
+        Personaje personaje = new Personaje();
         contenedorTablero = new GridPane();
         contenedorTablero.setGridLinesVisible(true); // QUITAR AL FINAL
         vistaPersonaje = new VistaPersonaje(personaje);
-        ControladorAlgoritmo controladorAlgoritmo = new ControladorAlgoritmo(personaje, vistaPersonaje);
-        vistaBloques = new VistaBloques(personaje, vistaPersonaje, controladorAlgoritmo);
-        vistaAlgoritmo = new VistaAlgoritmo(controladorAlgoritmo);
+        Algoritmo algoritmo = new Algoritmo();
+        vistaBloques = new VistaBloques(algoritmo);
+        vistaAlgoritmo = new VistaAlgoritmo(personaje, vistaPersonaje, algoritmo);
     }
 
     public GridPane dibujarContenedores() {

@@ -1,5 +1,6 @@
 package edu.fiuba.algo3.controladores;
 
+import edu.fiuba.algo3.modelo.algortimo.Algoritmo;
 import edu.fiuba.algo3.modelo.bloque.Bloque;
 import edu.fiuba.algo3.modelo.bloque.bloqueDeMovimiento.BloqueMoverDerecha;
 import javafx.event.ActionEvent;
@@ -10,15 +11,15 @@ import java.util.HashMap;
 
 public class ControladorBotonBloques implements EventHandler<ActionEvent>{
 
-    private ControladorAlgoritmo controladorAlgoritmo;
+    private Algoritmo algoritmo;
     private static HashMap<String, Bloque> infoBloques;
 
-    public ControladorBotonBloques(ControladorAlgoritmo controladorAlgoritmo){
-        this.controladorAlgoritmo = controladorAlgoritmo;
+    public ControladorBotonBloques(Algoritmo algoritmo){
+        this.algoritmo = algoritmo;
     }
 
     @Override
     public void handle(ActionEvent actionEvent) {
-        controladorAlgoritmo.agregarBloque(new BloqueMoverDerecha());
+        algoritmo.agregarBloque(new BloqueMoverDerecha());
     }
 }

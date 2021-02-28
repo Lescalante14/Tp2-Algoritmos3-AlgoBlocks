@@ -1,8 +1,7 @@
 package edu.fiuba.algo3.vistas;
 
-import edu.fiuba.algo3.controladores.ControladorAlgoritmo;
 import edu.fiuba.algo3.controladores.ControladorBotonBloques;
-import edu.fiuba.algo3.modelo.Personaje;
+import edu.fiuba.algo3.modelo.algortimo.Algoritmo;
 import edu.fiuba.algo3.vistas.botones.BotonBloque;
 import javafx.geometry.Insets;
 import javafx.scene.image.Image;
@@ -13,17 +12,14 @@ import java.util.Map;
 
 public class VistaBloques extends BorderPane{
 
-    private VBox bloques;
+    private final VBox bloques;
     HashMap<String, Image> infoBloques;
-    private final VistaPersonaje vistaPersonaje;
-    private final Personaje personaje;
-    private ControladorAlgoritmo controladorAlgoritmo;
+    private final Algoritmo algoritmo;
 
-    public VistaBloques(Personaje personaje, VistaPersonaje vistaPersonaje, ControladorAlgoritmo controladorAlgoritmo){
+    public VistaBloques(Algoritmo algoritmo){
         infoBloques = new HashMap<>();
-        this.personaje = personaje;
-        this.vistaPersonaje = vistaPersonaje;
-        this.controladorAlgoritmo = controladorAlgoritmo;
+        this.algoritmo = algoritmo;
+
         this.bloques = new VBox();
         this.setTop(new Titulo("Sector de Bloques"));
         this.setPadding(new Insets(25));
@@ -44,7 +40,7 @@ public class VistaBloques extends BorderPane{
         bloques.setBackground(new Background(imagenDeFondo));
 
 
-        ControladorBotonBloques controladorBotonBloques = new ControladorBotonBloques(controladorAlgoritmo);
+        ControladorBotonBloques controladorBotonBloques = new ControladorBotonBloques(algoritmo);
 
         for(Map.Entry<String, Image> entry : infoBloques.entrySet()) {
             String nombre = entry.getKey();

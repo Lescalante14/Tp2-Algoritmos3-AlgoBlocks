@@ -2,6 +2,8 @@ package edu.fiuba.algo3.vistas;
 
 import edu.fiuba.algo3.controladores.ControladorAlgoritmo;
 import edu.fiuba.algo3.controladores.ControladorBotonBloques;
+import edu.fiuba.algo3.modelo.Personaje;
+import edu.fiuba.algo3.modelo.algortimo.Algoritmo;
 import edu.fiuba.algo3.vistas.botones.BotonAlgoritmo;
 import edu.fiuba.algo3.vistas.botones.BotonBloque;
 import javafx.geometry.Insets;
@@ -14,8 +16,8 @@ public class VistaAlgoritmo extends BorderPane{
 
     private ControladorAlgoritmo controladorAlgoritmo;
 
-    public VistaAlgoritmo(ControladorAlgoritmo controladorAlgoritmo) {
-        this.controladorAlgoritmo = controladorAlgoritmo;
+    public VistaAlgoritmo(Personaje personaje, VistaPersonaje vistaPersonaje, Algoritmo algoritmo) {
+        controladorAlgoritmo = new ControladorAlgoritmo(personaje, vistaPersonaje, algoritmo);
         this.setTop(new Titulo("Sector de Algoritmos"));
         this.setPadding(new Insets(25));
         this.dibujar();

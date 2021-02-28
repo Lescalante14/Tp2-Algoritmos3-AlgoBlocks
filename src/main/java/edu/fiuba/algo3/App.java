@@ -18,11 +18,7 @@ public class App extends Application {
         ContenedorPrincipal contenedorPrincipal = new ContenedorPrincipal(stage);
         Scene escenaJuego = new Scene(contenedorPrincipal, 640, 480);
 
-        /*AplicacionOnKeyPressEventHandler AplicacionOnKeyPressEventHandler = new AplicacionOnKeyPressEventHandler(stage, contenedorPrincipal.getBarraDeMenu());
-        escenaJuego.setOnKeyPressed(AplicacionOnKeyPressEventHandler);*/
-
         stage.setScene(escenaJuego);
-        //stage.setFullScreen(true);
 
         stage.show();
 

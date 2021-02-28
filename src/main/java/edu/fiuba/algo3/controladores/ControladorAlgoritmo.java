@@ -1,6 +1,7 @@
 package edu.fiuba.algo3.controladores;
 
 import edu.fiuba.algo3.modelo.Personaje;
+import edu.fiuba.algo3.modelo.algortimo.Algoritmo;
 import edu.fiuba.algo3.modelo.bloque.Bloque;
 import edu.fiuba.algo3.vistas.VistaPersonaje;
 import javafx.event.ActionEvent;
@@ -12,25 +13,18 @@ import java.util.List;
 
 public class ControladorAlgoritmo implements EventHandler<ActionEvent> {
 
-    private List<Bloque> secuenciaBloques;
     private final VistaPersonaje vistaPersonaje;
     private final Personaje personaje;
+    private Algoritmo algortimo;
 
-    public ControladorAlgoritmo(Personaje personaje, VistaPersonaje vistaPersonaje){
-        secuenciaBloques = new ArrayList<>();
+    public ControladorAlgoritmo(Personaje personaje, VistaPersonaje vistaPersonaje, Algoritmo algoritmo){
         this.personaje = personaje;
         this.vistaPersonaje = vistaPersonaje;
+        this.algortimo = algoritmo;
     }
 
     public void handle(ActionEvent actionEvent) {
-        for (Bloque unBLoque : secuenciaBloques) {
-            unBLoque.ejecutar(personaje);
-            this.vistaPersonaje.update();
-        }
-        secuenciaBloques = new ArrayList<>();
+        algortimo.ejecutarAlgoritmo(personaje);
+        vistaPersonaje.update();
     }
-
-    public void agregarBloque(Bloque bloque){
-        this.secuenciaBloques.add(bloque);
     }
-}

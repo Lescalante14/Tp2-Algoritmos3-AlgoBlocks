@@ -16,7 +16,7 @@ public class Algoritmo {
     private List <Bloque> secuenciaBloques;
 
     public Algoritmo(){
-        secuenciaBloques = new ArrayList<Bloque>();
+        secuenciaBloques = new ArrayList<>();
     }
 
     public Algoritmo(List <Bloque> secuencia){
@@ -39,8 +39,8 @@ public class Algoritmo {
     		}
 		catch(AlgoritmoVacioError algoritmoVacioError) {
             throw algoritmoVacioError;
-            //System.out.println("ErrorDeTry");
-        }for (Bloque unBLoque : secuenciaBloques) {
+        }
+		for (Bloque unBLoque : secuenciaBloques) {
             	unBLoque.ejecutar(unPersonaje);	
 		}
 
