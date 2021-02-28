@@ -1,5 +1,6 @@
 package edu.fiuba.algo3.vistas;
 
+import edu.fiuba.algo3.controladores.ControladorAlgoritmo;
 import edu.fiuba.algo3.modelo.Personaje;
 import javafx.scene.layout.GridPane;
 
@@ -13,12 +14,14 @@ public class VistaJuego {
     private Personaje personaje;
 
     public VistaJuego() {
+
         personaje = new Personaje();
         contenedorTablero = new GridPane();
         contenedorTablero.setGridLinesVisible(true); // QUITAR AL FINAL
-        vistaPersonaje = new VistaPersonaje();
-        vistaBloques = new VistaBloques();
-        vistaAlgoritmo = new VistaAlgoritmo();
+        vistaPersonaje = new VistaPersonaje(personaje);
+        ControladorAlgoritmo controladorAlgoritmo = new ControladorAlgoritmo(personaje, vistaPersonaje);
+        vistaBloques = new VistaBloques(personaje, vistaPersonaje, controladorAlgoritmo);
+        vistaAlgoritmo = new VistaAlgoritmo(controladorAlgoritmo);
     }
 
     public GridPane dibujarContenedores() {

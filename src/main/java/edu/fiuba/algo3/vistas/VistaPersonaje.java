@@ -11,9 +11,9 @@ public class VistaPersonaje extends BorderPane {
     private Canvas canvasSectorDibujo;
     private Personaje personaje;
 
-    public VistaPersonaje(){
+    public VistaPersonaje(Personaje personaje){
         canvasSectorDibujo = new Canvas(400, 400);
-        this.personaje = new Personaje();
+        this.personaje = personaje;
         this.setTop(new Titulo("Sector de Dibujo"));
         this.setCenter(canvasSectorDibujo);
         this.setPadding(new Insets(25));
@@ -31,7 +31,6 @@ public class VistaPersonaje extends BorderPane {
     }
 
     public void clean() {
-
         canvasSectorDibujo.getGraphicsContext2D().setFill(Color.BEIGE);
         canvasSectorDibujo.getGraphicsContext2D().fillRect(0, 0, 400, 400);
     }
