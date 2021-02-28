@@ -1,62 +1,19 @@
 package edu.fiuba.algo3.modelo;
 
-import edu.fiuba.algo3.modelo.algortimo.Algoritmo;
-import edu.fiuba.algo3.modelo.personaje.Personaje;
 import edu.fiuba.algo3.modelo.bloque.*;
-import edu.fiuba.algo3.modelo.lapiz.EstadoActivado;
-import edu.fiuba.algo3.modelo.posicion.Posicion;
+import edu.fiuba.algo3.modelo.bloque.bloqueDeActivacion.BloqueActivarLapiz;
+import edu.fiuba.algo3.modelo.bloque.bloqueDeActivacion.BloqueDesactivarLapiz;
+import edu.fiuba.algo3.modelo.bloque.bloqueDeMovimiento.BloqueMoverAbajo;
+import edu.fiuba.algo3.modelo.bloque.bloqueDeMovimiento.BloqueMoverArriba;
+import edu.fiuba.algo3.modelo.bloque.bloqueDeMovimiento.BloqueMoverDerecha;
+import edu.fiuba.algo3.modelo.bloque.bloqueDeMovimiento.BloqueMoverIzquierda;
+import edu.fiuba.algo3.modelo.direccion.DireccionDerecha;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 public class BloquesTests {
 
-
-    @Test
-    public void bloqueDeActivarLapizActivaElLapizDelPersonaje()
-    {
-        Personaje personaje = new Personaje();
-        BloqueActivarLapiz bloqueActivaLapices = new BloqueActivarLapiz();
-
-        bloqueActivaLapices.ejecutar(personaje);
-        personaje.mover(Posicion.abajoDe(personaje.getPosicion()));
-
-        assertEquals(1 , personaje.totalDeCasillasPintadas());
-
-    }
-
-    @Test
-    public void bloqueDeDesactivarLapizDesactivaElLapizDelPersonajeQueTeniaElLapizActivado()
-    {
-        Personaje personaje = new Personaje();
-        BloqueActivarLapiz bloqueActivaLapices = new BloqueActivarLapiz();
-
-        bloqueActivaLapices.ejecutar(personaje);
-        personaje.mover(Posicion.abajoDe(personaje.getPosicion()));
-
-        assertEquals(1 , personaje.totalDeCasillasPintadas());
-
-        BloqueDesactivarLapiz bloqueDesactivaLapices = new BloqueDesactivarLapiz();
-
-        bloqueDesactivaLapices.ejecutar(personaje);
-        personaje.mover(Posicion.abajoDe(personaje.getPosicion()));
-
-        assertEquals(1 , personaje.totalDeCasillasPintadas());
-    }
-
-    @Test
-    public void bloqueDeMoverADerechaCambiaLaPosicionDelPersonajeCorrespondientemente()
-    {
-
-        Personaje personaje = new Personaje();
-        Posicion posicionInicial = personaje.getPosicion();
-
-        BloqueMoverDerecha bloqueDerecha = new BloqueMoverDerecha();
-
-        bloqueDerecha.ejecutar(personaje);
-        assertTrue(Posicion.compararPosiciones(personaje.getPosicion(), Posicion.derechaDe(posicionInicial)));
-
-    }
 
     @Test
     public void bloqueDeMoverADerechaCambiaLaPosicionDelPersonajeCorrespondientementeConLapizActivado()
@@ -77,49 +34,7 @@ public class BloquesTests {
     }
 
     @Test
-    public void bloqueDeMoverAIzquierdaCambiaLaPosicionDelPersonajeCorrespondientemente()
-    {
-
-        Personaje personaje = new Personaje();
-        Posicion posicionInicial = personaje.getPosicion();
-
-        BloqueMoverIzquierda bloqueIzquierda = new BloqueMoverIzquierda();
-
-        bloqueIzquierda.ejecutar(personaje);
-        assertTrue(Posicion.compararPosiciones(personaje.getPosicion(), Posicion.izquierdaDe(posicionInicial)));
-
-    }
-
-    @Test
-    public void bloqueDeMoverAArribaCambiaLaPosicionDelPersonajeCorrespondientemente()
-    {
-
-        Personaje personaje = new Personaje();
-        Posicion posicionInicial = personaje.getPosicion();
-
-        BloqueMoverArriba bloqueArriba = new BloqueMoverArriba();
-
-        bloqueArriba.ejecutar(personaje);
-        assertTrue(Posicion.compararPosiciones(personaje.getPosicion(), Posicion.arribaDe(posicionInicial)));
-
-    }
-
-    @Test
-    public void bloqueDeMoverAAbajoCambiaLaPosicionDelPersonajeCorrespondiente()
-    {
-
-        Personaje personaje = new Personaje();
-        Posicion posicionInicial = personaje.getPosicion();
-
-        BloqueMoverAbajo bloqueAbajo = new BloqueMoverAbajo();
-
-        bloqueAbajo.ejecutar(personaje);
-        assertTrue(Posicion.compararPosiciones(personaje.getPosicion(), Posicion.abajoDe(posicionInicial)));
-
-    }
-
-    @Test
-    public void repiteUnBloqueCambiaLaPosicionDelPersonajeCorrespondiente()
+    public void bloqueDeRepeticionTripleConBloqueMoverAIzquierdaCambiaLaPosicionDelPersonajeCorrespondiente()
     {
         Personaje personaje = new Personaje();
         Posicion posicionFinal = new Posicion(-3,0);
@@ -133,7 +48,7 @@ public class BloquesTests {
     }
 
     @Test
-    public void bloqueDeRepeticionDobleCambiaLaPosicionDelPersonajeCorrespondiente()
+    public void bloqueDeRepeticionDobleConVariedadDeBloquesCambiaLaPosicionDelPersonajeCorrespondiente()
     {
         Personaje personaje = new Personaje();
         Posicion posicionFinal = new Posicion(2,0);
@@ -151,7 +66,7 @@ public class BloquesTests {
     }
 
     @Test
-    public void bloqueDeRepeticionTripleCambiaLaPosicionDelPersonajeCorrespondiente()
+    public void bloqueDeRepeticionTripleConVariedadDeBloquesCambiaLaPosicionDelPersonajeCorrespondiente()
     {
         Personaje personaje = new Personaje();
         Posicion posicionFinal = new Posicion(3,-3);
@@ -166,7 +81,7 @@ public class BloquesTests {
     }
 
     @Test
-    public void repiteUnBloquePersonalizado()
+    public void seAgregaAunBloqueDeRepeticionUnBloquePersonalizadoYSeEjecutaCorrespondientemente()
     {
         Personaje personaje = new Personaje();
         Posicion posicionFinal = new Posicion(2,-2);
@@ -206,7 +121,7 @@ public class BloquesTests {
         bloque.agregarBloque(new BloqueDesactivarLapiz());
         bloque.ejecutar(personaje);
 
-        personaje.mover(Posicion.derechaDe(personaje.getPosicion()));
+        personaje.moverHacia(new DireccionDerecha());
 
         assertEquals(1, personaje.totalDeCasillasPintadas());
     }
@@ -221,7 +136,7 @@ public class BloquesTests {
         bloque.agregarBloque(new BloqueActivarLapiz());
         bloque.ejecutar(personaje);
 
-        personaje.mover(Posicion.derechaDe(personaje.getPosicion()));
+        personaje.moverHacia(new DireccionDerecha());
 
         assertEquals(0, personaje.totalDeCasillasPintadas());
     }

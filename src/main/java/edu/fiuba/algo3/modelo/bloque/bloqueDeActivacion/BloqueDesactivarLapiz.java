@@ -1,7 +1,9 @@
-package edu.fiuba.algo3.modelo.bloque;
+package edu.fiuba.algo3.modelo.bloque.bloqueDeActivacion;
 
-import edu.fiuba.algo3.modelo.lapiz.EstadoDesactivado;
-import edu.fiuba.algo3.modelo.personaje.Personaje;
+import edu.fiuba.algo3.modelo.EstadoDesactivado;
+import edu.fiuba.algo3.modelo.Personaje;
+import edu.fiuba.algo3.modelo.bloque.Bloque;
+import edu.fiuba.algo3.modelo.bloque.bloqueDeActivacion.BloqueActivarLapiz;
 
 public class BloqueDesactivarLapiz implements Bloque {
 

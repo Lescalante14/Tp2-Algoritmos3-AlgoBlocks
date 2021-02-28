@@ -1,5 +1,7 @@
 package edu.fiuba.algo3.modelo.algortimo;
 
+import edu.fiuba.algo3.excepciones.AlgoritmoVacioError;
+import edu.fiuba.algo3.excepciones.NombreVacioError;
 import edu.fiuba.algo3.modelo.bloque.Bloque;
 import edu.fiuba.algo3.modelo.bloque.BloquePersonalizado;
 import edu.fiuba.algo3.modelo.personaje.Personaje;
@@ -30,20 +32,32 @@ public class Algoritmo {
     }
 
     public void ejecutarAlgoritmo(Personaje unPersonaje) {
+		try{
+        	ValidaAlgoritmo.algoritmoValido(this.cantidadBloques());
+    		}
+		catch(AlgoritmoVacioError algoritmoVacioError) {
+            throw algoritmoVacioError;
+            //System.out.println("ErrorDeTry");
+        }for (Bloque unBLoque : secuenciaBloques) {
+            	unBLoque.ejecutar(unPersonaje);	
+		}
 
-        for (Bloque unBLoque : secuenciaBloques) {
-
-            unBLoque.ejecutar(unPersonaje);
-        }
-    }
+	}
 
     public BloquePersonalizado guardaAlgoritmoPersonalizado(String nombre) {
 
+        try{
+			ValidaAlgoritmo.algoritmoValido(this.cantidadBloques());
+			ValidaNombre.nombreValido(nombre);
+		}catch(AlgoritmoVacioError algoritmoVacioError){
+            throw algoritmoVacioError;
+		}catch(NombreVacioError nombreVacioError){
+            throw nombreVacioError;
+		}
         BloquePersonalizado personalizado = new BloquePersonalizado(nombre, secuenciaBloques);
-
         secuenciaBloques = new ArrayList<Bloque>();
-
         return personalizado;
+
     }
 
     public ArrayList<Bloque> invertirSecuenciaDeBloques() {
