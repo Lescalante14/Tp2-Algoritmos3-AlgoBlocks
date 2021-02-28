@@ -16,6 +16,7 @@ public class ControladorBotonBloques implements EventHandler<ActionEvent>{
     private static HashMap<String, Bloque> infoBloques;
 
     public ControladorBotonBloques(){
+        //this.controladorAlgoritmo = controladorAlgoritmo;
     }
 
     @Override
