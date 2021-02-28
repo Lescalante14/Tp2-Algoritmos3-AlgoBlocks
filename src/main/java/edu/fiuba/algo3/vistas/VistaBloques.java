@@ -1,7 +1,6 @@
 package edu.fiuba.algo3.vistas;
 
 import edu.fiuba.algo3.controladores.ControladorBotonBloques;
-import edu.fiuba.algo3.modelo.personaje.Personaje;
 import edu.fiuba.algo3.vistas.botones.BotonBloque;
 import javafx.geometry.Insets;
 import javafx.scene.image.Image;

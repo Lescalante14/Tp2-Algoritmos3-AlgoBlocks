@@ -1,7 +1,6 @@
 package edu.fiuba.algo3.modelo;
 
 import edu.fiuba.algo3.modelo.lapiz.SectorDeDibujo;
-import edu.fiuba.algo3.modelo.posicion.Posicion;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;

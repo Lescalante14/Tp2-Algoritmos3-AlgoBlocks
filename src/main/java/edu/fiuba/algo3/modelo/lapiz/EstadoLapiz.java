@@ -1,6 +1,6 @@
 package edu.fiuba.algo3.modelo.lapiz;
 
-import edu.fiuba.algo3.modelo.posicion.Posicion;
+import edu.fiuba.algo3.modelo.Posicion;
 
 public interface EstadoLapiz {
 

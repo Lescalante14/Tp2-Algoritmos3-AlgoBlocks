@@ -1,7 +1,7 @@
 package edu.fiuba.algo3.modelo.bloque;
 
 import edu.fiuba.algo3.modelo.algortimo.Algoritmo;
-import edu.fiuba.algo3.modelo.personaje.Personaje;
+import edu.fiuba.algo3.modelo.Personaje;
 
 
 public class BloqueInvertir implements Bloque{

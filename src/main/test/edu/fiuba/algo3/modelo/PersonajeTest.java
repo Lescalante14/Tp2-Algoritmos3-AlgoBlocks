@@ -4,6 +4,7 @@ import edu.fiuba.algo3.modelo.direccion.DireccionAbajo;
 import edu.fiuba.algo3.modelo.direccion.DireccionArriba;
 import edu.fiuba.algo3.modelo.direccion.DireccionDerecha;
 import edu.fiuba.algo3.modelo.direccion.DireccionIzquierda;
+import edu.fiuba.algo3.modelo.lapiz.EstadoActivado;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;

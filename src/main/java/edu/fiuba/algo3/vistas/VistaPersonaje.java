@@ -1,6 +1,6 @@
 package edu.fiuba.algo3.vistas;
 
-import edu.fiuba.algo3.modelo.personaje.Personaje;
+import edu.fiuba.algo3.modelo.Personaje;
 import javafx.geometry.Insets;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.layout.BorderPane;

@@ -1,4 +1,4 @@
-package edu.fiuba.algo3.modelo.posicion;
+package edu.fiuba.algo3.modelo;
 
 public class Posicion {
     int coordenadaX;

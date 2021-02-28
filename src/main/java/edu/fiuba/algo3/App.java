@@ -1,8 +1,5 @@
 package edu.fiuba.algo3;
 
-import edu.fiuba.algo3.modelo.Tablero;
-import edu.fiuba.algo3.modelo.algortimo.Algoritmo;
-import edu.fiuba.algo3.modelo.personaje.Personaje;
 import edu.fiuba.algo3.vistas.ContenedorPrincipal;
 import javafx.application.Application;
 import javafx.scene.Scene;

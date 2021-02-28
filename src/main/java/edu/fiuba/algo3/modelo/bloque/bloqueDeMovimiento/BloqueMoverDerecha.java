@@ -2,7 +2,6 @@ package edu.fiuba.algo3.modelo.bloque.bloqueDeMovimiento;
 
 import edu.fiuba.algo3.modelo.Personaje;
 import edu.fiuba.algo3.modelo.bloque.Bloque;
-import edu.fiuba.algo3.modelo.direccion.Direccion;
 import edu.fiuba.algo3.modelo.direccion.DireccionDerecha;
 
 public class   BloqueMoverDerecha extends BloqueDeMovimiento {

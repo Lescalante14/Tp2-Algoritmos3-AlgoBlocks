@@ -1,6 +1,6 @@
 package edu.fiuba.algo3.modelo.bloque.bloqueDeActivacion;
 
-import edu.fiuba.algo3.modelo.EstadoActivado;
+import edu.fiuba.algo3.modelo.lapiz.EstadoActivado;
 import edu.fiuba.algo3.modelo.Personaje;
 import edu.fiuba.algo3.modelo.bloque.Bloque;
 

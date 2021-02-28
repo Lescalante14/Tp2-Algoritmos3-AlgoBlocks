@@ -1,11 +1,10 @@
-package edu.fiuba.algo3.modelo.personaje;
+package edu.fiuba.algo3.modelo;
 
 import edu.fiuba.algo3.modelo.lapiz.EstadoLapiz;
 import edu.fiuba.algo3.modelo.lapiz.Lapiz;
-import edu.fiuba.algo3.modelo.posicion.Posicion;
+import edu.fiuba.algo3.modelo.Posicion;
 
 import edu.fiuba.algo3.modelo.direccion.Direccion;
-import edu.fiuba.algo3.modelo.direccion.DireccionDerecha;
 
 public class Personaje {
 

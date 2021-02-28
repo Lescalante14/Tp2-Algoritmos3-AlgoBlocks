@@ -2,6 +2,7 @@ package edu.fiuba.algo3.modelo;
 
 import edu.fiuba.algo3.excepciones.AlgoritmoVacioError;
 import edu.fiuba.algo3.excepciones.NombreVacioError;
+import edu.fiuba.algo3.modelo.algortimo.Algoritmo;
 import edu.fiuba.algo3.modelo.bloque.*;
 import edu.fiuba.algo3.modelo.bloque.bloqueDeActivacion.BloqueActivarLapiz;
 import edu.fiuba.algo3.modelo.bloque.bloqueDeActivacion.BloqueDesactivarLapiz;
