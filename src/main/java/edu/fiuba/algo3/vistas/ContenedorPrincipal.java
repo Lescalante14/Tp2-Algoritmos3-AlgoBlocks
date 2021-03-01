@@ -14,6 +14,9 @@ public class ContenedorPrincipal extends BorderPane {
     GridPane pantallaDeJuego;
 
     public ContenedorPrincipal(Stage stage) {
+        Image imagen = new Image("file:" + System.getProperty("user.dir") + "/src/main/java/edu/fiuba/algo3/resources/imagenes/background5.jpg");
+        BackgroundImage imagenDeFondo = new BackgroundImage(imagen, BackgroundRepeat.REPEAT, BackgroundRepeat.REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT);
+        this.setBackground(new Background(imagenDeFondo));
         this.setEncabezado(stage);
         this.setCentro();
         }
@@ -23,9 +26,6 @@ public class ContenedorPrincipal extends BorderPane {
         this.menuBar = new BarraDeMenu(stage);
         encabezado.getChildren().add(menuBar);
         encabezado.getChildren().add(crearTitulo());
-        Image imagen = new Image("file:" + System.getProperty("user.dir") + "/src/main/java/edu/fiuba/algo3/resources/fondoTitulo.jpg");
-        BackgroundImage imagenDeFondo = new BackgroundImage(imagen, BackgroundRepeat.REPEAT, BackgroundRepeat.REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT);
-        encabezado.setBackground(new Background(imagenDeFondo));
         encabezado.setAlignment(Pos.TOP_CENTER);
         this.setTop(encabezado);
 

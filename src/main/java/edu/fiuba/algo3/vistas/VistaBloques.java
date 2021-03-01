@@ -29,7 +29,7 @@ public class VistaBloques extends BorderPane{
 
     public void dibujar() {
 
-        Image imagen = new Image("file:" + System.getProperty("user.dir") + "/src/main/java/edu/fiuba/algo3/resources/fondoBloques.jpg");
+        Image imagen = new Image("file:" + System.getProperty("user.dir") + "/src/main/java/edu/fiuba/algo3/resources/Tp2/barra_bloques.png",350,350,false,true);
         BackgroundImage imagenDeFondo = new BackgroundImage(imagen, BackgroundRepeat.REPEAT, BackgroundRepeat.REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT);
         bloques.setBackground(new Background(imagenDeFondo));
 

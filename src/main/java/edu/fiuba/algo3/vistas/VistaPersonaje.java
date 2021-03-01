@@ -3,6 +3,7 @@ package edu.fiuba.algo3.vistas;
 import edu.fiuba.algo3.modelo.Personaje;
 import javafx.geometry.Insets;
 import javafx.scene.canvas.Canvas;
+import javafx.scene.image.Image;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.paint.Color;
 
@@ -10,8 +11,11 @@ public class VistaPersonaje extends BorderPane {
 
     private Canvas canvasSectorDibujo;
     private Personaje personaje;
+    private Image imagenPersonaje;
 
     public VistaPersonaje(Personaje personaje){
+        imagenPersonaje = new Image("file:" + System.getProperty("user.dir") + "/src/main/java/edu/fiuba/algo3/resources/imagenes/personaje_lapiz_desactivado.png", 60,60,false, true);
+
         canvasSectorDibujo = new Canvas(400, 400);
         this.personaje = personaje;
         this.setTop(new Titulo("Sector de Dibujo"));
@@ -26,8 +30,9 @@ public class VistaPersonaje extends BorderPane {
 
     private void dibujarFormas() {
         this.clean();
+        canvasSectorDibujo.getGraphicsContext2D().drawImage(imagenPersonaje, personaje.getPosicion().getX() + 200, personaje.getPosicion().getY() + 200);
         canvasSectorDibujo.getGraphicsContext2D().setFill(Color.BLUE);
-        canvasSectorDibujo.getGraphicsContext2D().fillOval(personaje.getPosicion().getX() + 200, personaje.getPosicion().getY() + 200, 10, 10);
+        //canvasSectorDibujo.getGraphicsContext2D().fillOval(personaje.getPosicion().getX() + 200, personaje.getPosicion().getY() + 200, 10, 10);
     }
 
     public void clean() {

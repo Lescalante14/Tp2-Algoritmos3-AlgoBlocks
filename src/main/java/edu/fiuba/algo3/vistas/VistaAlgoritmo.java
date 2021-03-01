@@ -22,9 +22,6 @@ public class VistaAlgoritmo extends BorderPane{
 
     public void dibujar(){
         HBox imagenHBox = new HBox();
-        Image imagen = new Image("file:" + System.getProperty("user.dir") + "/src/main/java/edu/fiuba/algo3/resources/fondoVerde.jpg");
-        BackgroundImage imagenDeFondo = new BackgroundImage(imagen, BackgroundRepeat.REPEAT, BackgroundRepeat.REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT);
-        imagenHBox.setBackground(new Background(imagenDeFondo));
         imagenHBox.getChildren().add(new BotonAlgoritmo(controladorAlgoritmo));
         this.setCenter(imagenHBox);
     }

@@ -6,6 +6,7 @@ import edu.fiuba.algo3.modelo.bloque.Bloque;
 import edu.fiuba.algo3.vistas.VistaPersonaje;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import javafx.scene.image.Image;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,4 +28,5 @@ public class ControladorAlgoritmo implements EventHandler<ActionEvent> {
         algortimo.ejecutarAlgoritmo(personaje);
         vistaPersonaje.update();
     }
+
     }

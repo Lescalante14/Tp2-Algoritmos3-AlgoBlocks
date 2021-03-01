@@ -43,7 +43,6 @@ public class Algoritmo {
 		for (Bloque unBLoque : secuenciaBloques) {
             	unBLoque.ejecutar(unPersonaje);	
 		}
-
 	}
 
     public BloquePersonalizado guardaAlgoritmoPersonalizado(String nombre) {
@@ -57,8 +56,9 @@ public class Algoritmo {
             throw nombreVacioError;
 		}
         BloquePersonalizado personalizado = new BloquePersonalizado(nombre, secuenciaBloques);
-        secuenciaBloques = new ArrayList<Bloque>();
+        secuenciaBloques = new ArrayList<>();
         return personalizado;
+
 
     }
 
