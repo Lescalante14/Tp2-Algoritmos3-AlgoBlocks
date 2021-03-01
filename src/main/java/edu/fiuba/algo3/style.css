@@ -1,0 +1,8 @@
+.root{
+    -fx-background-color: #ffff00;
+}
+
+.button{
+    text-decoration: none;
+    outline:none;
+}

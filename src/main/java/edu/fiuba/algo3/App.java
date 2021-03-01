@@ -17,7 +17,7 @@ public class App extends Application {
 
         ContenedorPrincipal contenedorPrincipal = new ContenedorPrincipal(stage);
         Scene escenaJuego = new Scene(contenedorPrincipal, 640, 480);
-        //escenaJuego.getStylesheets().add("resources/style.css");
+        escenaJuego.getStylesheets().add("file:" + System.getProperty("user.dir") + "/src/main/java/edu/fiuba/algo3/style.css");
 
         stage.setScene(escenaJuego);
 
