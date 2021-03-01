@@ -12,7 +12,7 @@ public class BotonBloqueMoverAbajo extends Button {
         ImageView view = new ImageView(bloqueMoverAbajo);
         view.setFitHeight(60);
         view.setPreserveRatio(true);
-        super.setPrefSize(60,60);
+        super.setPrefSize(100,100);
         super.setGraphic(view);
         super.setOnAction(controladorBloqueMoverAbajo);
     }
