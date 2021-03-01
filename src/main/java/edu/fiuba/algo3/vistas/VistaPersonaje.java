@@ -9,9 +9,9 @@ import javafx.scene.paint.Color;
 
 public class VistaPersonaje extends BorderPane {
 
-    private Canvas canvasSectorDibujo;
-    private Personaje personaje;
-    private Image imagenPersonaje;
+    private final Canvas canvasSectorDibujo;
+    private final Personaje personaje;
+    private final Image imagenPersonaje;
 
     public VistaPersonaje(Personaje personaje){
         imagenPersonaje = new Image("file:" + System.getProperty("user.dir") + "/src/main/java/edu/fiuba/algo3/resources/imagenes/personaje_lapiz_desactivado.png", 60,60,false, true);
@@ -30,10 +30,9 @@ public class VistaPersonaje extends BorderPane {
 
     private void dibujarFormas() {
         this.clean();
-        canvasSectorDibujo.getGraphicsContext2D().drawImage(imagenPersonaje, personaje.getPosicion().getX() + 200, personaje.getPosicion().getY() + 200);
+        canvasSectorDibujo.getGraphicsContext2D().drawImage(imagenPersonaje, personaje.getPosicion().getX() + 200, personaje.getPosicion().getY()*(-1) + 200);
         canvasSectorDibujo.getGraphicsContext2D().setFill(Color.BLUE);
-        //canvasSectorDibujo.getGraphicsContext2D().fillOval(personaje.getPosicion().getX() + 200, personaje.getPosicion().getY() + 200, 10, 10);
-    }
+        }
 
     public void clean() {
         canvasSectorDibujo.getGraphicsContext2D().setFill(Color.BEIGE);

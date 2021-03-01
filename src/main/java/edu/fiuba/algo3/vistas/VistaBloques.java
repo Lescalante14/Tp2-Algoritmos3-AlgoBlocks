@@ -1,14 +1,10 @@
 package edu.fiuba.algo3.vistas;
 
-import edu.fiuba.algo3.controladores.bloquesControladores.ControladorBloqueMoverAbajo;
-import edu.fiuba.algo3.controladores.bloquesControladores.ControladorBloqueMoverArriba;
-import edu.fiuba.algo3.controladores.bloquesControladores.ControladorBloqueMoverDerecha;
-import edu.fiuba.algo3.controladores.bloquesControladores.ControladorBloqueMoverIzquierda;
+import edu.fiuba.algo3.controladores.bloquesControladores.*;
 import edu.fiuba.algo3.modelo.algortimo.Algoritmo;
-import edu.fiuba.algo3.vistas.botones.bloquesBotones.BotonBloqueMoverAbajo;
-import edu.fiuba.algo3.vistas.botones.bloquesBotones.BotonBloqueMoverArriba;
-import edu.fiuba.algo3.vistas.botones.bloquesBotones.BotonBloqueMoverDerecha;
-import edu.fiuba.algo3.vistas.botones.bloquesBotones.BotonBloqueMoverIzquierda;
+import edu.fiuba.algo3.vistas.botones.bloquesBotones.BotonBloqueDesactivarLapiz;
+import edu.fiuba.algo3.controladores.bloquesControladores.ControladorBloqueDesactivarLapiz;
+import edu.fiuba.algo3.vistas.botones.bloquesBotones.*;
 import javafx.geometry.Insets;
 import javafx.scene.image.Image;
 import javafx.scene.layout.*;
@@ -37,6 +33,10 @@ public class VistaBloques extends BorderPane{
         bloques.getChildren().add(new BotonBloqueMoverAbajo(new ControladorBloqueMoverAbajo(algoritmo)));
         bloques.getChildren().add(new BotonBloqueMoverDerecha(new ControladorBloqueMoverDerecha(algoritmo)));
         bloques.getChildren().add(new BotonBloqueMoverIzquierda(new ControladorBloqueMoverIzquierda(algoritmo)));
+        bloques.getChildren().add(new BotonBloqueActivarLapiz(new ControladorBloqueActivarLapiz(algoritmo)));
+        bloques.getChildren().add(new BotonBloqueDesactivarLapiz(new ControladorBloqueDesactivarLapiz(algoritmo)));
+        bloques.getChildren().add(new BotonBloquePersonalizado(new ControladorBloquePerzonalizado(algoritmo)));
+        bloques.getChildren().add(new BotonBloqueRepetir(new ControladorBloqueRepetir(algoritmo)));
 
         this.setCenter(bloques);
     }

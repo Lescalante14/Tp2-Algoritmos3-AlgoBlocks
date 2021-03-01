@@ -8,8 +8,12 @@ import javafx.scene.image.ImageView;
 public class BotonBloqueMoverIzquierda extends Button {
 
     public BotonBloqueMoverIzquierda(ControladorBloqueMoverIzquierda controladorBloqueMoverIzquierda){
-        Image imagenOk = new Image("file:" + System.getProperty("user.dir") + "/src/main/java/edu/fiuba/algo3/resources/imagenes/bloque_mover_izquierda.png", 60,60,false, true);
-        super.setGraphic(new ImageView(imagenOk));
+        Image bloqueMoverIzquierda = new Image("file:" + System.getProperty("user.dir") + "/src/main/java/edu/fiuba/algo3/resources/imagenes/bloque_mover_izquierda.png");
+        ImageView view = new ImageView(bloqueMoverIzquierda);
+        view.setFitHeight(60);
+        view.setPreserveRatio(true);
+        super.setPrefSize(60,60);
+        super.setGraphic(view);
         super.setOnAction(controladorBloqueMoverIzquierda);
     }
 }
