@@ -6,21 +6,32 @@ import edu.fiuba.algo3.vistas.botones.bloquesBotones.BotonBloqueDesactivarLapiz;
 import edu.fiuba.algo3.controladores.bloquesControladores.ControladorBloqueDesactivarLapiz;
 import edu.fiuba.algo3.vistas.botones.bloquesBotones.*;
 import javafx.geometry.Insets;
+import javafx.scene.control.ScrollPane;
 import javafx.scene.image.Image;
 import javafx.scene.layout.*;
 
 public class VistaBloques extends BorderPane{
 
+    private final ScrollPane bloquesScroll;
     private final VBox bloques;
     private final Algoritmo algoritmo;
 
     public VistaBloques(Algoritmo algoritmo){
 
         this.algoritmo = algoritmo;
-        this.bloques = new VBox(20);
+        this.bloquesScroll = new ScrollPane();
+        this.bloques = new VBox();
         this.setTop(new Titulo("Sector de Bloques"));
         this.setPadding(new Insets(25));
         this.dibujar();
+
+        this.bloques.setPrefSize(20,50);
+        this.bloquesScroll.setContent(bloques);
+        this.bloquesScroll.setPrefSize(50,50);
+        this.bloquesScroll.setFitToHeight(false);
+        //this.bloquesScroll.setFitToWidth(true);
+        this.bloquesScroll.setPannable(true);
+        this.bloquesScroll.setVbarPolicy(ScrollPane.ScrollBarPolicy.AS_NEEDED);
     }
 
     public void dibujar() {
@@ -38,6 +49,6 @@ public class VistaBloques extends BorderPane{
         bloques.getChildren().add(new BotonBloquePersonalizado(new ControladorBloquePerzonalizado(algoritmo)));
         bloques.getChildren().add(new BotonBloqueRepetir(new ControladorBloqueRepetir(algoritmo)));
 
-        this.setCenter(bloques);
+        this.setCenter(bloquesScroll);
     }
 }

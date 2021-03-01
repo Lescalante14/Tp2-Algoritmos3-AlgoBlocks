@@ -12,7 +12,7 @@ public class BotonBloqueDesactivarLapiz extends Button {
         ImageView view = new ImageView(bloqueDesactivarLapiz);
         view.setFitHeight(60);
         view.setPreserveRatio(true);
-        super.setPrefSize(60,60);
+        super.setPrefSize(100,100);
         super.setGraphic(view);
         super.setOnAction(controladorBloqueDesactivarLapiz);
     }
