@@ -5,6 +5,8 @@ import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
+import java.io.File;
+
 /**
  * JavaFX App
  */
@@ -17,7 +19,10 @@ public class App extends Application {
 
         ContenedorPrincipal contenedorPrincipal = new ContenedorPrincipal(stage);
         Scene escenaJuego = new Scene(contenedorPrincipal, 640, 480);
-        //escenaJuego.getStylesheets().add("resources/style.css");
+        File file = new File("src/main/java/edu/fiuba/algo3/resources/style.css");
+        escenaJuego.getStylesheets().add("file:///" + file.getAbsolutePath().replace("\\", "/"));
+
+
 
         stage.setScene(escenaJuego);
 
