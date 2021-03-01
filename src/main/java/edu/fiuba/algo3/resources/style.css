@@ -1,4 +1,9 @@
 .button{
-    background-color: none;
-    -fx-background-color: none;
+    -fx-background-color: transparent;
+}
+.button:hover{
+    -fx-cursor: hand;
+    -fx-background-color: #3e8e4b7a;
+    -fx-box-shadow-offset-y:5px;
+    -fx-box-shadow-color: #666;
 }
