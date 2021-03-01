@@ -1,16 +1,12 @@
 package edu.fiuba.algo3.vistas;
 
 import edu.fiuba.algo3.controladores.ControladorAlgoritmo;
-import edu.fiuba.algo3.controladores.ControladorBotonBloques;
 import edu.fiuba.algo3.modelo.Personaje;
 import edu.fiuba.algo3.modelo.algortimo.Algoritmo;
 import edu.fiuba.algo3.vistas.botones.BotonAlgoritmo;
-import edu.fiuba.algo3.vistas.botones.BotonBloque;
 import javafx.geometry.Insets;
 import javafx.scene.image.Image;
 import javafx.scene.layout.*;
-
-import java.util.Map;
 
 public class VistaAlgoritmo extends BorderPane{
 

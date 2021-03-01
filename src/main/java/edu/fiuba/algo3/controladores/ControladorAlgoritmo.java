@@ -15,7 +15,7 @@ public class ControladorAlgoritmo implements EventHandler<ActionEvent> {
 
     private final VistaPersonaje vistaPersonaje;
     private final Personaje personaje;
-    private Algoritmo algortimo;
+    private final Algoritmo algortimo;
 
     public ControladorAlgoritmo(Personaje personaje, VistaPersonaje vistaPersonaje, Algoritmo algoritmo){
         this.personaje = personaje;

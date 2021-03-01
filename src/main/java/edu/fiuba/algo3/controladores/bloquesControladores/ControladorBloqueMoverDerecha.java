@@ -1,20 +1,16 @@
-package edu.fiuba.algo3.controladores;
+package edu.fiuba.algo3.controladores.bloquesControladores;
 
 import edu.fiuba.algo3.modelo.algortimo.Algoritmo;
-import edu.fiuba.algo3.modelo.bloque.Bloque;
 import edu.fiuba.algo3.modelo.bloque.bloqueDeMovimiento.BloqueMoverDerecha;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 
-import java.util.HashMap;
 
+public class ControladorBloqueMoverDerecha implements EventHandler<ActionEvent>{
 
-public class ControladorBotonBloques implements EventHandler<ActionEvent>{
+    private final Algoritmo algoritmo;
 
-    private Algoritmo algoritmo;
-    private static HashMap<String, Bloque> infoBloques;
-
-    public ControladorBotonBloques(Algoritmo algoritmo){
+    public ControladorBloqueMoverDerecha(Algoritmo algoritmo){
         this.algoritmo = algoritmo;
     }
 
