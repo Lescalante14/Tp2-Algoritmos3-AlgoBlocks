@@ -18,11 +18,9 @@ public class App extends Application {
         stage.setTitle("AlgoBlocks");
 
         ContenedorPrincipal contenedorPrincipal = new ContenedorPrincipal(stage);
-        Scene escenaJuego = new Scene(contenedorPrincipal, 640, 480);
+        final Scene escenaJuego = new Scene(contenedorPrincipal, 640, 480);
         File file = new File("src/main/java/edu/fiuba/algo3/resources/style.css");
         escenaJuego.getStylesheets().add("file:///" + file.getAbsolutePath().replace("\\", "/"));
-
-
 
         stage.setScene(escenaJuego);
 

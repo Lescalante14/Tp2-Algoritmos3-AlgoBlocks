@@ -12,8 +12,8 @@ public class VistaAlgoritmo extends BorderPane{
 
     private ControladorAlgoritmo controladorAlgoritmo;
 
-    public VistaAlgoritmo(Personaje personaje, VistaPersonaje vistaPersonaje, Algoritmo algoritmo) {
-        controladorAlgoritmo = new ControladorAlgoritmo(personaje, vistaPersonaje, algoritmo);
+    public VistaAlgoritmo(ControladorAlgoritmo controladorAlgoritmo) {
+        this.controladorAlgoritmo = controladorAlgoritmo;
         this.setTop(new Titulo("Sector de Algoritmos"));
         this.setPadding(new Insets(25));
         this.dibujar();

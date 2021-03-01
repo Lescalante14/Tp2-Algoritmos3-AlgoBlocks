@@ -14,9 +14,9 @@ public class ContenedorPrincipal extends BorderPane {
     GridPane pantallaDeJuego;
 
     public ContenedorPrincipal(Stage stage) {
-        Image imagen = new Image("file:" + System.getProperty("user.dir") + "/src/main/java/edu/fiuba/algo3/resources/imagenes/background5.jpg");
-        BackgroundImage imagenDeFondo = new BackgroundImage(imagen, BackgroundRepeat.REPEAT, BackgroundRepeat.REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT);
-        this.setBackground(new Background(imagenDeFondo));
+        //Image imagen = new Image("file:" + System.getProperty("user.dir") + "/src/main/java/edu/fiuba/algo3/resources/imagenes/background5.jpg");
+        //BackgroundImage imagenDeFondo = new BackgroundImage(imagen, BackgroundRepeat.REPEAT, BackgroundRepeat.REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT);
+        //this.setBackground(new Background(imagenDeFondo));
         this.setEncabezado(stage);
         this.setCentro();
         }

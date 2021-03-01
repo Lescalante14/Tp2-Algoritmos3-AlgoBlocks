@@ -1,3 +1,7 @@
+.root{
+    -fx-background-image: url("imagenes/background5.jpg");
+}
+
 .button{
     -fx-background-color: transparent;
 }

@@ -11,11 +11,10 @@ public class VistaPersonaje extends BorderPane {
 
     private final Canvas canvasSectorDibujo;
     private final Personaje personaje;
-    private final Image imagenPersonaje;
+    private Image imagenPersonaje;
 
     public VistaPersonaje(Personaje personaje){
         imagenPersonaje = new Image("file:" + System.getProperty("user.dir") + "/src/main/java/edu/fiuba/algo3/resources/imagenes/personaje_lapiz_desactivado.png", 60,60,false, true);
-
         canvasSectorDibujo = new Canvas(400, 400);
         this.personaje = personaje;
         this.setTop(new Titulo("Sector de Dibujo"));
@@ -39,7 +38,8 @@ public class VistaPersonaje extends BorderPane {
         canvasSectorDibujo.getGraphicsContext2D().fillRect(0, 0, 400, 400);
     }
 
-    public void update() {
+    public void update(Image imagen) {
+        this.imagenPersonaje = imagen;
         this.dibujar();
     }
 }

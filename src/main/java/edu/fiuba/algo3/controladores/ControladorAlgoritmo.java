@@ -17,6 +17,7 @@ public class ControladorAlgoritmo implements EventHandler<ActionEvent> {
     private final VistaPersonaje vistaPersonaje;
     private final Personaje personaje;
     private final Algoritmo algortimo;
+    private Image imagen;
 
     public ControladorAlgoritmo(Personaje personaje, VistaPersonaje vistaPersonaje, Algoritmo algoritmo){
         this.personaje = personaje;
@@ -26,7 +27,10 @@ public class ControladorAlgoritmo implements EventHandler<ActionEvent> {
 
     public void handle(ActionEvent actionEvent) {
         algortimo.ejecutarAlgoritmo(personaje);
-        vistaPersonaje.update();
+        vistaPersonaje.update(this.imagen);
     }
 
+    public void setImagen(Image imagen){
+        this.imagen = imagen;
+    }
     }
