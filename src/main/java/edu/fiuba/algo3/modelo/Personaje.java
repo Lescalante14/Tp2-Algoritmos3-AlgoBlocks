@@ -37,4 +37,7 @@ public class Personaje {
     }
 
 
+    public void reiniciarPosicion() {
+        posicion = new Posicion(0,0);
+    }
 }

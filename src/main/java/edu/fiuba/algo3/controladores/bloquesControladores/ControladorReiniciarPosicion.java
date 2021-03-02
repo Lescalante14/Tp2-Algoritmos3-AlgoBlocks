@@ -9,7 +9,7 @@ import javafx.scene.image.Image;
 public class ControladorReiniciarPosicion implements EventHandler<ActionEvent> {
 
     private final Image imagenInicial;
-    private VistaPersonaje vistaPersonaje;
+    private final VistaPersonaje vistaPersonaje;
     private Personaje personaje;
 
     public ControladorReiniciarPosicion(Personaje personaje, VistaPersonaje vistaPersonaje){
@@ -20,7 +20,7 @@ public class ControladorReiniciarPosicion implements EventHandler<ActionEvent> {
 
     @Override
     public void handle(ActionEvent actionEvent) {
-        personaje = new Personaje();
+        personaje.reiniciarPosicion();
         vistaPersonaje.vaciarVistaPersonaje(personaje, imagenInicial);
     }
 

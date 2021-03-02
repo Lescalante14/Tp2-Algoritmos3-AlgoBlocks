@@ -56,10 +56,8 @@ public class Algoritmo {
             throw nombreVacioError;
 		}
         BloquePersonalizado personalizado = new BloquePersonalizado(nombre, secuenciaBloques);
-        secuenciaBloques = new ArrayList<>();
+        vaciarAlgoritmo();
         return personalizado;
-
-
     }
 
     public ArrayList<Bloque> invertirSecuenciaDeBloques() {
