@@ -1,6 +1,8 @@
 package edu.fiuba.algo3.vistas;
 
+import edu.fiuba.algo3.controladores.bloquesControladores.ControladorReiniciarPosicion;
 import edu.fiuba.algo3.modelo.Personaje;
+import edu.fiuba.algo3.vistas.botones.bloquesBotones.BotonReiniciarPosicion;
 import javafx.geometry.Insets;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.image.Image;
@@ -19,6 +21,10 @@ public class VistaPersonaje extends BorderPane {
         this.personaje = personaje;
         this.setTop(new Titulo("Sector de Dibujo"));
         this.setCenter(canvasSectorDibujo);
+
+        ControladorReiniciarPosicion controladorReiniciarPosicion = new ControladorReiniciarPosicion(personaje, this);
+        this.setBottom(new BotonReiniciarPosicion(controladorReiniciarPosicion));
+
         this.setPadding(new Insets(25));
         this.dibujar();
     }
