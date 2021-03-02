@@ -9,17 +9,18 @@ import javafx.scene.image.Image;
 
 public class ControladorBloqueDesactivarLapiz implements EventHandler<ActionEvent> {
 
-    private final ControladorEjecutarAlgoritmo controladorEjecutarAlgoritmo;
+    private final ControladorEjecutarAlgoritmo controladorAlgoritmo;
     private Image imagen;
 
-    public ControladorBloqueDesactivarLapiz(ControladorEjecutarAlgoritmo controladorEjecutarAlgoritmo) {
-        this.controladorEjecutarAlgoritmo = controladorEjecutarAlgoritmo;
+    public ControladorBloqueDesactivarLapiz(ControladorEjecutarAlgoritmo controladorAlgoritmo) {
+        this.controladorAlgoritmo = controladorAlgoritmo;
         imagen = new Image("file:" + System.getProperty("user.dir") + "/src/main/java/edu/fiuba/algo3/resources/imagenes/personaje_lapiz_desactivado.png", 60,60,false, true);
     }
 
     @Override
     public void handle(ActionEvent actionEvent) {
-        controladorEjecutarAlgoritmo.agregarBloque(new BloqueDesactivarLapiz());
-        controladorEjecutarAlgoritmo.setImagen(imagen);
+        controladorAlgoritmo.updateVistaAlgortimo("Bloque Desactivar Lapiz");
+        controladorAlgoritmo.agregarBloque(new BloqueDesactivarLapiz());
+        controladorAlgoritmo.setImagen(imagen);
     }
 }

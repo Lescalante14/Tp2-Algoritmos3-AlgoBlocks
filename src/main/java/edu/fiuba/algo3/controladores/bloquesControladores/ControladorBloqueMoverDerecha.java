@@ -9,17 +9,18 @@ import javafx.scene.image.Image;
 
 public class ControladorBloqueMoverDerecha implements EventHandler<ActionEvent>{
 
-    private final ControladorEjecutarAlgoritmo controladorEjecutarAlgoritmo;
+    private final ControladorEjecutarAlgoritmo controladorAlgoritmo;
     private Image imagen;
 
-    public ControladorBloqueMoverDerecha(ControladorEjecutarAlgoritmo controladorEjecutarAlgoritmo) {
-        this.controladorEjecutarAlgoritmo = controladorEjecutarAlgoritmo;
+    public ControladorBloqueMoverDerecha(ControladorEjecutarAlgoritmo controladorAlgoritmo) {
+        this.controladorAlgoritmo = controladorAlgoritmo;
         imagen = new Image("file:" + System.getProperty("user.dir") + "/src/main/java/edu/fiuba/algo3/resources/imagenes/personaje_derecha_lapiz_desactivado.png", 60,60,false, true);
     }
 
     @Override
     public void handle(ActionEvent actionEvent) {
-        controladorEjecutarAlgoritmo.agregarBloque(new BloqueMoverDerecha());
-        controladorEjecutarAlgoritmo.setImagen(imagen);
+        controladorAlgoritmo.updateVistaAlgortimo("Bloque Mover Derecha");
+        controladorAlgoritmo.agregarBloque(new BloqueMoverDerecha());
+        controladorAlgoritmo.setImagen(imagen);
     }
 }

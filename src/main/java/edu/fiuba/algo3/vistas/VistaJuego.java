@@ -20,10 +20,12 @@ public class VistaJuego {
         contenedorTablero.setGridLinesVisible(true); // QUITAR AL FINAL
         vistaPersonaje = new VistaPersonaje(personaje);
         Algoritmo algoritmo = new Algoritmo();
-        ControladorEjecutarAlgoritmo controladorEjecutarAlgoritmo = new ControladorEjecutarAlgoritmo(personaje, vistaPersonaje, algoritmo);
-        ControladorReiniciarAlgoritmo controladorReiniciarAlgoritmo = new ControladorReiniciarAlgoritmo(algoritmo);
+        vistaAlgoritmo = new VistaAlgoritmo();
+        ControladorReiniciarAlgoritmo controladorReiniciarAlgoritmo = new ControladorReiniciarAlgoritmo(algoritmo, vistaAlgoritmo);
+        ControladorEjecutarAlgoritmo controladorEjecutarAlgoritmo = new ControladorEjecutarAlgoritmo(personaje, vistaPersonaje, algoritmo, vistaAlgoritmo);
         vistaBloques = new VistaBloques(controladorEjecutarAlgoritmo);
-        vistaAlgoritmo = new VistaAlgoritmo(controladorEjecutarAlgoritmo, controladorReiniciarAlgoritmo);
+        vistaAlgoritmo.setControladores(controladorEjecutarAlgoritmo, controladorReiniciarAlgoritmo);
+
     }
 
     public GridPane dibujarContenedores() {
