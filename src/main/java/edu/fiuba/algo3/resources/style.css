@@ -1,5 +1,9 @@
 .root{
     -fx-background-image: url("imagenes/background5.jpg");
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: cover;
+    -fx-background-position: center;
+    -fx-height: 100%;
 }
 
 .button{
