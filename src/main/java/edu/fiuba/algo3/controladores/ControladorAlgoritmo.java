@@ -3,6 +3,7 @@ package edu.fiuba.algo3.controladores;
 import edu.fiuba.algo3.modelo.Personaje;
 import edu.fiuba.algo3.modelo.algortimo.Algoritmo;
 import edu.fiuba.algo3.modelo.bloque.Bloque;
+import edu.fiuba.algo3.modelo.bloque.bloqueDeActivacion.BloqueActivarLapiz;
 import edu.fiuba.algo3.vistas.VistaPersonaje;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -33,4 +34,8 @@ public class ControladorAlgoritmo implements EventHandler<ActionEvent> {
     public void setImagen(Image imagen){
         this.imagen = imagen;
     }
+
+    public void agregarBloque(Bloque bloque) {
+        algortimo.agregarBloque(bloque);
     }
+}

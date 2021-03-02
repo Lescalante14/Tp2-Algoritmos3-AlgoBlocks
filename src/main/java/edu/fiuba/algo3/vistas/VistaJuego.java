@@ -20,7 +20,7 @@ public class VistaJuego {
         vistaPersonaje = new VistaPersonaje(personaje);
         Algoritmo algoritmo = new Algoritmo();
         ControladorAlgoritmo controladorAlgoritmo = new ControladorAlgoritmo(personaje, vistaPersonaje, algoritmo);
-        vistaBloques = new VistaBloques(algoritmo, controladorAlgoritmo);
+        vistaBloques = new VistaBloques(controladorAlgoritmo);
         vistaAlgoritmo = new VistaAlgoritmo(controladorAlgoritmo);
     }
 
