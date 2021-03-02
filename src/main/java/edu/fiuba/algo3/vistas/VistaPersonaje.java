@@ -12,7 +12,7 @@ import javafx.scene.paint.Color;
 public class VistaPersonaje extends BorderPane {
 
     private final Canvas canvasSectorDibujo;
-    private final Personaje personaje;
+    private Personaje personaje;
     private Image imagenPersonaje;
 
     public VistaPersonaje(Personaje personaje){
@@ -47,5 +47,10 @@ public class VistaPersonaje extends BorderPane {
     public void update(Image imagen) {
         this.imagenPersonaje = imagen;
         this.dibujar();
+    }
+
+    public void vaciarVistaPersonaje(Personaje personaje, Image imagenInicial) {
+        this.personaje = personaje;
+        update(imagenInicial);
     }
 }

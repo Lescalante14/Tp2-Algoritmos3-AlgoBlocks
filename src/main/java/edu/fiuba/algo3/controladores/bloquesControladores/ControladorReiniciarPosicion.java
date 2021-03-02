@@ -21,7 +21,7 @@ public class ControladorReiniciarPosicion implements EventHandler<ActionEvent> {
     @Override
     public void handle(ActionEvent actionEvent) {
         personaje = new Personaje();
-        vistaPersonaje.update(imagenInicial);
+        vistaPersonaje.vaciarVistaPersonaje(personaje, imagenInicial);
     }
 
 }
