@@ -13,14 +13,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class ControladorAlgoritmo implements EventHandler<ActionEvent> {
+public class ControladorEjecutarAlgoritmo implements EventHandler<ActionEvent> {
 
     private final VistaPersonaje vistaPersonaje;
     private final Personaje personaje;
     private final Algoritmo algortimo;
     private Image imagen;
 
-    public ControladorAlgoritmo(Personaje personaje, VistaPersonaje vistaPersonaje, Algoritmo algoritmo){
+    public ControladorEjecutarAlgoritmo(Personaje personaje, VistaPersonaje vistaPersonaje, Algoritmo algoritmo){
         this.personaje = personaje;
         this.vistaPersonaje = vistaPersonaje;
         this.algortimo = algoritmo;

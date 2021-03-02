@@ -73,4 +73,7 @@ public class Algoritmo {
         return bloquesInvertidos;
     }
 
+    public void vaciarAlgoritmo() {
+        secuenciaBloques = new ArrayList<>();
+    }
 }

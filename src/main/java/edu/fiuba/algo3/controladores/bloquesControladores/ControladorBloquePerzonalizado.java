@@ -1,15 +1,15 @@
 package edu.fiuba.algo3.controladores.bloquesControladores;
 
-import edu.fiuba.algo3.controladores.ControladorAlgoritmo;
+import edu.fiuba.algo3.controladores.ControladorEjecutarAlgoritmo;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 
 public class ControladorBloquePerzonalizado implements EventHandler<ActionEvent> {
 
-    private final ControladorAlgoritmo controladorAlgoritmo;
+    private final ControladorEjecutarAlgoritmo controladorEjecutarAlgoritmo;
 
-    public ControladorBloquePerzonalizado(ControladorAlgoritmo controladorAlgoritmo) {
-        this.controladorAlgoritmo = controladorAlgoritmo;
+    public ControladorBloquePerzonalizado(ControladorEjecutarAlgoritmo controladorEjecutarAlgoritmo) {
+        this.controladorEjecutarAlgoritmo = controladorEjecutarAlgoritmo;
     }
 
     @Override

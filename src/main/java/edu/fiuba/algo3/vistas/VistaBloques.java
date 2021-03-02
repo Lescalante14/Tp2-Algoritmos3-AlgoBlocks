@@ -1,6 +1,6 @@
 package edu.fiuba.algo3.vistas;
 
-import edu.fiuba.algo3.controladores.ControladorAlgoritmo;
+import edu.fiuba.algo3.controladores.ControladorEjecutarAlgoritmo;
 import edu.fiuba.algo3.controladores.bloquesControladores.*;
 import edu.fiuba.algo3.vistas.botones.bloquesBotones.BotonBloqueDesactivarLapiz;
 import edu.fiuba.algo3.controladores.bloquesControladores.ControladorBloqueDesactivarLapiz;
@@ -14,10 +14,10 @@ public class VistaBloques extends BorderPane{
 
     private final ScrollPane bloquesScroll;
     private final VBox bloques;
-    private final ControladorAlgoritmo controladorAlgoritmo;
+    private final ControladorEjecutarAlgoritmo controladorEjecutarAlgoritmo;
 
-    public VistaBloques(ControladorAlgoritmo controladorAlgoritmo){
-        this.controladorAlgoritmo = controladorAlgoritmo;
+    public VistaBloques(ControladorEjecutarAlgoritmo controladorEjecutarAlgoritmo){
+        this.controladorEjecutarAlgoritmo = controladorEjecutarAlgoritmo;
         this.bloquesScroll = new ScrollPane();
         this.bloques = new VBox();
         this.setTop(new Titulo("Sector de Bloques"));
@@ -38,14 +38,14 @@ public class VistaBloques extends BorderPane{
         BackgroundImage imagenDeFondo = new BackgroundImage(imagen, BackgroundRepeat.REPEAT, BackgroundRepeat.REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT);
         bloques.setBackground(new Background(imagenDeFondo));
 
-        bloques.getChildren().add(new BotonBloqueMoverArriba(new ControladorBloqueMoverArriba(controladorAlgoritmo)));
-        bloques.getChildren().add(new BotonBloqueMoverAbajo(new ControladorBloqueMoverAbajo(controladorAlgoritmo)));
-        bloques.getChildren().add(new BotonBloqueMoverDerecha(new ControladorBloqueMoverDerecha(controladorAlgoritmo)));
-        bloques.getChildren().add(new BotonBloqueMoverIzquierda(new ControladorBloqueMoverIzquierda(controladorAlgoritmo)));
-        bloques.getChildren().add(new BotonBloqueActivarLapiz(new ControladorBloqueActivarLapiz(controladorAlgoritmo)));
-        bloques.getChildren().add(new BotonBloqueDesactivarLapiz(new ControladorBloqueDesactivarLapiz(controladorAlgoritmo)));
-        bloques.getChildren().add(new BotonBloquePersonalizado(new ControladorBloquePerzonalizado(controladorAlgoritmo)));
-        bloques.getChildren().add(new BotonBloqueRepetir(new ControladorBloqueRepetir(controladorAlgoritmo)));
+        bloques.getChildren().add(new BotonBloqueMoverArriba(new ControladorBloqueMoverArriba(controladorEjecutarAlgoritmo)));
+        bloques.getChildren().add(new BotonBloqueMoverAbajo(new ControladorBloqueMoverAbajo(controladorEjecutarAlgoritmo)));
+        bloques.getChildren().add(new BotonBloqueMoverDerecha(new ControladorBloqueMoverDerecha(controladorEjecutarAlgoritmo)));
+        bloques.getChildren().add(new BotonBloqueMoverIzquierda(new ControladorBloqueMoverIzquierda(controladorEjecutarAlgoritmo)));
+        bloques.getChildren().add(new BotonBloqueActivarLapiz(new ControladorBloqueActivarLapiz(controladorEjecutarAlgoritmo)));
+        bloques.getChildren().add(new BotonBloqueDesactivarLapiz(new ControladorBloqueDesactivarLapiz(controladorEjecutarAlgoritmo)));
+        bloques.getChildren().add(new BotonBloquePersonalizado(new ControladorBloquePerzonalizado(controladorEjecutarAlgoritmo)));
+        bloques.getChildren().add(new BotonBloqueRepetir(new ControladorBloqueRepetir(controladorEjecutarAlgoritmo)));
 
         this.setCenter(bloquesScroll);
     }

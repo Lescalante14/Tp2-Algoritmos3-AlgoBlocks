@@ -1,19 +1,20 @@
 package edu.fiuba.algo3.vistas;
 
-import edu.fiuba.algo3.controladores.ControladorAlgoritmo;
-import edu.fiuba.algo3.modelo.Personaje;
-import edu.fiuba.algo3.modelo.algortimo.Algoritmo;
-import edu.fiuba.algo3.vistas.botones.BotonAlgoritmo;
+import edu.fiuba.algo3.controladores.ControladorEjecutarAlgoritmo;
+import edu.fiuba.algo3.controladores.bloquesControladores.ControladorReiniciarAlgoritmo;
+import edu.fiuba.algo3.vistas.botones.BotonEjecutarAlgoritmo;
+import edu.fiuba.algo3.vistas.botones.BotonReiniciarAlgoritmo;
 import javafx.geometry.Insets;
-import javafx.scene.image.Image;
 import javafx.scene.layout.*;
 
 public class VistaAlgoritmo extends BorderPane{
 
-    private ControladorAlgoritmo controladorAlgoritmo;
+    private ControladorReiniciarAlgoritmo controladorReiniciarAlgoritmo;
+    private ControladorEjecutarAlgoritmo controladorEjecutarAlgoritmo;
 
-    public VistaAlgoritmo(ControladorAlgoritmo controladorAlgoritmo) {
-        this.controladorAlgoritmo = controladorAlgoritmo;
+    public VistaAlgoritmo(ControladorEjecutarAlgoritmo controladorEjecutarAlgoritmo, ControladorReiniciarAlgoritmo controladorReiniciarAlgoritmo) {
+        this.controladorEjecutarAlgoritmo = controladorEjecutarAlgoritmo;
+        this.controladorReiniciarAlgoritmo = controladorReiniciarAlgoritmo;
         this.setTop(new Titulo("Sector de Algoritmos"));
         this.setPadding(new Insets(25));
         this.dibujar();
@@ -22,7 +23,8 @@ public class VistaAlgoritmo extends BorderPane{
 
     public void dibujar(){
         HBox imagenHBox = new HBox();
-        imagenHBox.getChildren().add(new BotonAlgoritmo(controladorAlgoritmo));
+        imagenHBox.getChildren().add(new BotonEjecutarAlgoritmo(controladorEjecutarAlgoritmo));
+        imagenHBox.getChildren().add(new BotonReiniciarAlgoritmo(controladorReiniciarAlgoritmo));
         this.setCenter(imagenHBox);
     }
 }
