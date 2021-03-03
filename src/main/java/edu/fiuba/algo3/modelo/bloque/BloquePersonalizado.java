@@ -30,4 +30,8 @@ public class BloquePersonalizado implements Bloque {
         return bloqueInverso;
 
     }
+
+    public String getNombre(){
+        return this.nombreAlgortimo;
+    }
 }

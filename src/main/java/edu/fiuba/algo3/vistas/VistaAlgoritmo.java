@@ -1,8 +1,10 @@
 package edu.fiuba.algo3.vistas;
 
 import edu.fiuba.algo3.controladores.ControladorEjecutarAlgoritmo;
-import edu.fiuba.algo3.controladores.bloquesControladores.ControladorVaciarAlgoritmo;
+import edu.fiuba.algo3.controladores.ControladorGuardarAlgoritmo;
+import edu.fiuba.algo3.controladores.ControladorVaciarAlgoritmo;
 import edu.fiuba.algo3.vistas.botones.BotonEjecutarAlgoritmo;
+import edu.fiuba.algo3.vistas.botones.BotonGuardarAlgoritmo;
 import edu.fiuba.algo3.vistas.botones.BotonVaciarAlgoritmo;
 import javafx.geometry.Insets;
 import javafx.scene.control.Button;
@@ -13,6 +15,7 @@ public class VistaAlgoritmo extends BorderPane{
     private ControladorVaciarAlgoritmo controladorVaciarAlgoritmo;
     private ControladorEjecutarAlgoritmo controladorEjecutarAlgoritmo;
     private VBox imagenVBox;
+    private ControladorGuardarAlgoritmo controladorGuardarAlgoritmo;
 
     public VistaAlgoritmo() {
 
@@ -21,9 +24,10 @@ public class VistaAlgoritmo extends BorderPane{
         imagenVBox = new VBox();
     }
 
-    public void setControladores(ControladorEjecutarAlgoritmo controladorAlgoritmo, ControladorVaciarAlgoritmo controladorVaciarAlgoritmo){
+    public void setControladores(ControladorEjecutarAlgoritmo controladorAlgoritmo, ControladorVaciarAlgoritmo controladorVaciarAlgoritmo, ControladorGuardarAlgoritmo controladorGuardarAlgoritmo){
         this.controladorEjecutarAlgoritmo = controladorAlgoritmo;
         this.controladorVaciarAlgoritmo = controladorVaciarAlgoritmo;
+        this.controladorGuardarAlgoritmo = controladorGuardarAlgoritmo;
         this.dibujar();
 
     }
@@ -32,6 +36,7 @@ public class VistaAlgoritmo extends BorderPane{
         HBox imagenHBox = new HBox();
         imagenHBox.getChildren().add(new BotonEjecutarAlgoritmo(controladorEjecutarAlgoritmo));
         imagenHBox.getChildren().add(new BotonVaciarAlgoritmo(controladorVaciarAlgoritmo));
+        imagenHBox.getChildren().add(new BotonGuardarAlgoritmo(controladorGuardarAlgoritmo));
         imagenVBox.getChildren().add(imagenHBox);
         this.setCenter(imagenVBox);
     }

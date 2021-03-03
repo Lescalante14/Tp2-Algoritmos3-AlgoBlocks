@@ -1,4 +1,4 @@
-package edu.fiuba.algo3.controladores.bloquesControladores;
+package edu.fiuba.algo3.controladores;
 
 import edu.fiuba.algo3.modelo.algortimo.Algoritmo;
 import edu.fiuba.algo3.vistas.VistaAlgoritmo;

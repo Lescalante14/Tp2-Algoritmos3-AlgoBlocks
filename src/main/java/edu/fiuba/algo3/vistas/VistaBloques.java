@@ -2,6 +2,8 @@ package edu.fiuba.algo3.vistas;
 
 import edu.fiuba.algo3.controladores.ControladorEjecutarAlgoritmo;
 import edu.fiuba.algo3.controladores.bloquesControladores.*;
+import edu.fiuba.algo3.modelo.Personaje;
+import edu.fiuba.algo3.modelo.bloque.BloquePersonalizado;
 import edu.fiuba.algo3.vistas.botones.bloquesBotones.BotonBloqueDesactivarLapiz;
 import edu.fiuba.algo3.controladores.bloquesControladores.ControladorBloqueDesactivarLapiz;
 import edu.fiuba.algo3.vistas.botones.bloquesBotones.*;
@@ -45,9 +47,14 @@ public class VistaBloques extends BorderPane{
         bloques.getChildren().add(new BotonBloqueMoverIzquierda(new ControladorBloqueMoverIzquierda(controladorEjecutarAlgoritmo)));
         bloques.getChildren().add(new BotonBloqueActivarLapiz(new ControladorBloqueActivarLapiz(controladorEjecutarAlgoritmo)));
         bloques.getChildren().add(new BotonBloqueDesactivarLapiz(new ControladorBloqueDesactivarLapiz(controladorEjecutarAlgoritmo)));
-        bloques.getChildren().add(new BotonBloquePersonalizado(new ControladorBloquePerzonalizado(controladorEjecutarAlgoritmo)));
+        //bloques.getChildren().add(new BotonBloquePersonalizado(new ControladorBloquePerzonalizado(controladorEjecutarAlgoritmo)));
         bloques.getChildren().add(new BotonBloqueRepetir(new ControladorBloqueRepetir(controladorEjecutarAlgoritmo)));
 
         this.setCenter(bloquesScroll);
+    }
+
+    public void agregarBloquePersonalizado(BloquePersonalizado bloquePersonalizado, Personaje personaje) {
+        bloques.getChildren().add(new BotonBloquePersonalizado(new ControladorBloquePerzonalizado(controladorEjecutarAlgoritmo, bloquePersonalizado, personaje),bloquePersonalizado.getNombre()));
+
     }
 }

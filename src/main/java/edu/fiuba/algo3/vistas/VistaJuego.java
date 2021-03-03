@@ -1,7 +1,8 @@
 package edu.fiuba.algo3.vistas;
 
 import edu.fiuba.algo3.controladores.ControladorEjecutarAlgoritmo;
-import edu.fiuba.algo3.controladores.bloquesControladores.ControladorVaciarAlgoritmo;
+import edu.fiuba.algo3.controladores.ControladorGuardarAlgoritmo;
+import edu.fiuba.algo3.controladores.ControladorVaciarAlgoritmo;
 import edu.fiuba.algo3.modelo.Personaje;
 import edu.fiuba.algo3.modelo.algortimo.Algoritmo;
 import javafx.scene.layout.GridPane;
@@ -24,7 +25,8 @@ public class VistaJuego {
         ControladorVaciarAlgoritmo controladorVaciarAlgoritmo = new ControladorVaciarAlgoritmo(algoritmo, vistaAlgoritmo);
         ControladorEjecutarAlgoritmo controladorEjecutarAlgoritmo = new ControladorEjecutarAlgoritmo(personaje, vistaPersonaje, algoritmo, vistaAlgoritmo);
         vistaBloques = new VistaBloques(controladorEjecutarAlgoritmo);
-        vistaAlgoritmo.setControladores(controladorEjecutarAlgoritmo, controladorVaciarAlgoritmo);
+        ControladorGuardarAlgoritmo controladorGuardarAlgoritmo = new ControladorGuardarAlgoritmo(algoritmo, vistaAlgoritmo, vistaBloques, personaje);
+        vistaAlgoritmo.setControladores(controladorEjecutarAlgoritmo, controladorVaciarAlgoritmo, controladorGuardarAlgoritmo);
 
     }
 

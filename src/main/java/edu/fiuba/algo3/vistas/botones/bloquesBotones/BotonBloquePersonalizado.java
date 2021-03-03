@@ -4,16 +4,17 @@ import edu.fiuba.algo3.controladores.bloquesControladores.ControladorBloquePerzo
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.*;
 
 public class BotonBloquePersonalizado extends Button {
 
-    public BotonBloquePersonalizado(ControladorBloquePerzonalizado controladorBloquePerzonalizado) {
-        Image bloquePerzonalizado = new Image("file:" + System.getProperty("user.dir") + "/src/main/java/edu/fiuba/algo3/resources/imagenes/bloque_personalizado.png");
-        ImageView view = new ImageView(bloquePerzonalizado);
-        view.setFitHeight(90);
-        view.setPreserveRatio(true);
+    public BotonBloquePersonalizado(ControladorBloquePerzonalizado controladorBloquePerzonalizado, String nombreDeBloque) {
+        super.setText(nombreDeBloque);
+        Image bloquePerzonalizado = new Image("file:" + System.getProperty("user.dir") + "/src/main/java/edu/fiuba/algo3/resources/imagenes/bloque_grande.png");
+        BackgroundImage imagenDeFondo = new BackgroundImage(bloquePerzonalizado, BackgroundRepeat.REPEAT, BackgroundRepeat.REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT);
         super.setPrefSize(100,100);
-        super.setGraphic(view);
+        super.setBackground(new Background(imagenDeFondo));
         super.setOnAction(controladorBloquePerzonalizado);
+        super.setId("boton-bloque-personalizado");
     }
 }
