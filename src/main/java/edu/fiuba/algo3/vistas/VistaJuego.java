@@ -9,7 +9,7 @@ import javafx.scene.layout.GridPane;
 
 public class VistaJuego {
 
-    private final VistaPersonaje vistaPersonaje;
+    private final VistaSectorDibujo vistaSectorDibujo;
     private final VistaBloques vistaBloques;
     private final VistaAlgoritmo vistaAlgoritmo;
     private final GridPane contenedorTablero;
@@ -18,11 +18,11 @@ public class VistaJuego {
         Personaje personaje = new Personaje();
         contenedorTablero = new GridPane();
         contenedorTablero.setGridLinesVisible(true);
-        vistaPersonaje = new VistaPersonaje(personaje);
+        vistaSectorDibujo = new VistaSectorDibujo(personaje);
         Algoritmo algoritmo = new Algoritmo();
         vistaAlgoritmo = new VistaAlgoritmo();
         ControladorVaciarAlgoritmo controladorVaciarAlgoritmo = new ControladorVaciarAlgoritmo(algoritmo, vistaAlgoritmo);
-        ControladorEjecutarAlgoritmo controladorEjecutarAlgoritmo = new ControladorEjecutarAlgoritmo(personaje, vistaPersonaje, algoritmo, vistaAlgoritmo);
+        ControladorEjecutarAlgoritmo controladorEjecutarAlgoritmo = new ControladorEjecutarAlgoritmo(personaje, vistaSectorDibujo, algoritmo, vistaAlgoritmo);
         vistaBloques = new VistaBloques(controladorEjecutarAlgoritmo);
         ControladorGuardarAlgoritmo controladorGuardarAlgoritmo = new ControladorGuardarAlgoritmo(algoritmo, vistaAlgoritmo, vistaBloques, personaje);
         vistaAlgoritmo.setControladores(controladorEjecutarAlgoritmo, controladorVaciarAlgoritmo, controladorGuardarAlgoritmo);
@@ -30,7 +30,7 @@ public class VistaJuego {
     }
 
     public GridPane dibujarContenedores() {
-        contenedorTablero.add(vistaPersonaje, 0,0);
+        contenedorTablero.add(vistaSectorDibujo, 0,0);
         contenedorTablero.add(vistaBloques, 1, 0);
         contenedorTablero.add(vistaAlgoritmo, 2, 0);
         return contenedorTablero;

@@ -5,7 +5,7 @@ import edu.fiuba.algo3.modelo.Personaje;
 import edu.fiuba.algo3.modelo.Algoritmo;
 import edu.fiuba.algo3.modelo.bloque.Bloque;
 import edu.fiuba.algo3.vistas.VistaAlgoritmo;
-import edu.fiuba.algo3.vistas.VistaPersonaje;
+import edu.fiuba.algo3.vistas.VistaSectorDibujo;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.control.Alert;
@@ -14,15 +14,15 @@ import javafx.scene.image.Image;
 
 public class ControladorEjecutarAlgoritmo implements EventHandler<ActionEvent> {
 
-    private final VistaPersonaje vistaPersonaje;
+    private final VistaSectorDibujo vistaSectorDibujo;
     private final Personaje personaje;
     private final Algoritmo algortimo;
     private final VistaAlgoritmo vistaAlgoritmo;
     private Image imagen;
 
-    public ControladorEjecutarAlgoritmo(Personaje personaje, VistaPersonaje vistaPersonaje, Algoritmo algoritmo, VistaAlgoritmo vistaAlgoritmo){
+    public ControladorEjecutarAlgoritmo(Personaje personaje, VistaSectorDibujo vistaSectorDibujo, Algoritmo algoritmo, VistaAlgoritmo vistaAlgoritmo){
         this.personaje = personaje;
-        this.vistaPersonaje = vistaPersonaje;
+        this.vistaSectorDibujo = vistaSectorDibujo;
         this.algortimo = algoritmo;
         this.vistaAlgoritmo = vistaAlgoritmo;
         this.imagen = new Image("file:" + System.getProperty("user.dir") + "/src/main/java/edu/fiuba/algo3/resources/imagenes/personaje_lapiz_desactivado.png", 60,60,false, true);
@@ -40,7 +40,7 @@ public class ControladorEjecutarAlgoritmo implements EventHandler<ActionEvent> {
 
             alert.showAndWait();
         }
-        vistaPersonaje.update(this.imagen);
+        vistaSectorDibujo.update(this.imagen);
 
     }
 

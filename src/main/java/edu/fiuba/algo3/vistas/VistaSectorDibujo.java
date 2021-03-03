@@ -11,25 +11,21 @@ import javafx.scene.canvas.Canvas;
 import javafx.scene.image.Image;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.paint.Color;
-import javafx.scene.shape.Line;
 
-public class VistaPersonaje extends BorderPane {
+public class VistaSectorDibujo extends BorderPane {
 
-    private final Canvas canvasSectorDibujo;
+    private Canvas canvasPersonaje;
     private Personaje personaje;
     private Image imagenPersonaje;
-    private final Canvas canvas;
+    private Group grupo;
+    private Canvas canvasDibujo;
     ControladorSectorDibujo controladorSectorDibujo;
 
-    public VistaPersonaje(Personaje personaje){
+    public VistaSectorDibujo(Personaje personaje){
         imagenPersonaje = new Image("file:" + System.getProperty("user.dir") + "/src/main/java/edu/fiuba/algo3/resources/imagenes/personaje_lapiz_desactivado.png", 60,60,false, true);
-        canvasSectorDibujo = new Canvas(400, 400);
-        canvas = new Canvas(400,400);
         this.personaje = personaje;
         this.setTop(new Titulo("Sector de Dibujo"));
-        Group gp = new Group(canvasSectorDibujo, canvas);
-        this.setCenter(gp);
-
+        crearVistaPrincipal();
         ControladorReiniciarPosicion controladorReiniciarPosicion = new ControladorReiniciarPosicion(personaje, this);
         this.setBottom(new BotonReiniciarPosicion(controladorReiniciarPosicion));
 
@@ -46,13 +42,13 @@ public class VistaPersonaje extends BorderPane {
 
     private void dibujarFormas() {
         this.clean();
-        canvasSectorDibujo.getGraphicsContext2D().drawImage(imagenPersonaje, personaje.getPosicion().getX() + 200, personaje.getPosicion().getY()*(-1) + 200);
-        canvasSectorDibujo.getGraphicsContext2D().setFill(Color.BLUE);
+        canvasPersonaje.getGraphicsContext2D().drawImage(imagenPersonaje, personaje.getPosicion().getX() + 200, personaje.getPosicion().getY()*(-1) + 200);
+        canvasPersonaje.getGraphicsContext2D().setFill(Color.BLUE);
         }
 
     public void clean() {
-        canvasSectorDibujo.getGraphicsContext2D().setFill(Color.BEIGE);
-        canvasSectorDibujo.getGraphicsContext2D().fillRect(0, 0, 400, 400);
+        canvasPersonaje.getGraphicsContext2D().setFill(Color.BEIGE);
+        canvasPersonaje.getGraphicsContext2D().fillRect(0, 0, 400, 400);
     }
 
     public void update(Image imagen) {
@@ -62,10 +58,18 @@ public class VistaPersonaje extends BorderPane {
 
     public void vaciarVistaPersonaje(Personaje personaje, Image imagenInicial) {
         this.personaje = personaje;
+        crearVistaPrincipal();
         update(imagenInicial);
     }
 
     public void pintarCasilla(Posicion posicionInicial, Posicion posicionFinal) {
-        canvas.getGraphicsContext2D().strokeLine(posicionInicial.getX() +200, posicionInicial.getY()*(-1) +200, posicionFinal.getX() +200, posicionFinal.getY()*(-1) +200);
+        canvasDibujo.getGraphicsContext2D().strokeLine(posicionInicial.getX() +200, posicionInicial.getY()*(-1) +200, posicionFinal.getX() +200, posicionFinal.getY()*(-1) +200);
+    }
+
+    private void crearVistaPrincipal(){
+        canvasPersonaje = new Canvas(400, 400);
+        canvasDibujo = new Canvas(400,400);
+        this.grupo = new Group(canvasPersonaje, canvasDibujo);
+        this.setCenter(grupo);
     }
 }
