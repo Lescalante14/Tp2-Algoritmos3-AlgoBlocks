@@ -10,7 +10,7 @@ public class BotonBloquePersonalizado extends Button {
     public BotonBloquePersonalizado(ControladorBloquePerzonalizado controladorBloquePerzonalizado) {
         Image bloquePerzonalizado = new Image("file:" + System.getProperty("user.dir") + "/src/main/java/edu/fiuba/algo3/resources/imagenes/bloque_personalizado.png");
         ImageView view = new ImageView(bloquePerzonalizado);
-        view.setFitHeight(100);
+        view.setFitHeight(90);
         view.setPreserveRatio(true);
         super.setPrefSize(100,100);
         super.setGraphic(view);
