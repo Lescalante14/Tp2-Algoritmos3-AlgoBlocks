@@ -1,5 +1,7 @@
 package edu.fiuba.algo3.controladores;
 
+import edu.fiuba.algo3.excepciones.AlgoritmoVacioError;
+import edu.fiuba.algo3.excepciones.NombreVacioError;
 import edu.fiuba.algo3.modelo.Personaje;
 import edu.fiuba.algo3.modelo.algortimo.Algoritmo;
 import edu.fiuba.algo3.modelo.bloque.BloquePersonalizado;
@@ -7,6 +9,7 @@ import edu.fiuba.algo3.vistas.VistaAlgoritmo;
 import edu.fiuba.algo3.vistas.VistaBloques;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import javafx.scene.control.Alert;
 import javafx.scene.control.TextInputDialog;
 
 import java.util.Optional;
@@ -33,12 +36,20 @@ public class ControladorGuardarAlgoritmo implements EventHandler<ActionEvent> {
         dialog.setContentText("Nombre de tu algoritmo:");
 
         Optional<String> result = dialog.showAndWait();
-        if (result.isPresent()){
-            BloquePersonalizado bloquePersonalizado = algoritmo.guardaAlgoritmoPersonalizado(result.get());
-            vistaBloques.agregarBloquePersonalizado(bloquePersonalizado, personaje);
-            vistaAlgoritmo.vaciarVistaAlgoritmo();
+        try{
+            if (result.isPresent()){
+                BloquePersonalizado bloquePersonalizado = algoritmo.guardaAlgoritmoPersonalizado(result.get());
+                vistaBloques.agregarBloquePersonalizado(bloquePersonalizado, personaje);
+                vistaAlgoritmo.vaciarVistaAlgoritmo();
+            }
         }
-
+        catch(NombreVacioError nombreVacioError) {
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Information Dialog");
+            alert.setHeaderText(null);
+            alert.setContentText("Nombre vacío, agrega al menos un caracter");
+            alert.showAndWait();
+        }
 
     }
 

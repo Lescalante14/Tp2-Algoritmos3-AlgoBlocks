@@ -21,7 +21,7 @@ public class ControladorBloquePerzonalizado implements EventHandler<ActionEvent>
 
     @Override
     public void handle(ActionEvent actionEvent) {
-
+        
         controladorEjecutarAlgoritmo.agregarBloque(bloquePersonalizado);
         controladorEjecutarAlgoritmo.updateVistaAlgortimo("Bloque Personalizado: "+bloquePersonalizado.getNombre());
     }
