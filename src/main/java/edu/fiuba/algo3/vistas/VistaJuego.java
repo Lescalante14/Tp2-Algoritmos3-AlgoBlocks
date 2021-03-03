@@ -7,7 +7,6 @@ import edu.fiuba.algo3.modelo.Personaje;
 import edu.fiuba.algo3.modelo.algortimo.Algoritmo;
 import javafx.scene.layout.GridPane;
 
-
 public class VistaJuego {
 
     private final VistaPersonaje vistaPersonaje;
@@ -18,7 +17,7 @@ public class VistaJuego {
     public VistaJuego() {
         Personaje personaje = new Personaje();
         contenedorTablero = new GridPane();
-        contenedorTablero.setGridLinesVisible(true); // QUITAR AL FINAL
+        contenedorTablero.setGridLinesVisible(true);
         vistaPersonaje = new VistaPersonaje(personaje);
         Algoritmo algoritmo = new Algoritmo();
         vistaAlgoritmo = new VistaAlgoritmo();

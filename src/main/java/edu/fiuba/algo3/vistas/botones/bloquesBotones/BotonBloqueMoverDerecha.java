@@ -2,6 +2,7 @@ package edu.fiuba.algo3.vistas.botones.bloquesBotones;
 
 import edu.fiuba.algo3.controladores.bloquesControladores.ControladorBloqueMoverDerecha;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 

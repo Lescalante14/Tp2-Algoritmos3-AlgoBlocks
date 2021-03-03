@@ -26,7 +26,7 @@
     -fx-background-color: #ad20207a;
 }
 #boton-bloque-personalizado{
-    -fx-background-image: url("imagenes/bloque_grande.png");
+    -fx-image-background: url("imagenes/bloque_grande.png");
     -fx-height: 60%;
     -fx-width: 60%;
 }

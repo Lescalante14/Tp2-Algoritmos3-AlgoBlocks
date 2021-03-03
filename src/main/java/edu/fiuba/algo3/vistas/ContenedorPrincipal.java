@@ -2,7 +2,6 @@ package edu.fiuba.algo3.vistas;
 
 import javafx.geometry.Pos;
 import javafx.scene.control.Label;
-import javafx.scene.image.Image;
 import javafx.scene.layout.*;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
@@ -14,12 +13,9 @@ public class ContenedorPrincipal extends BorderPane {
     GridPane pantallaDeJuego;
 
     public ContenedorPrincipal(Stage stage) {
-        //Image imagen = new Image("file:" + System.getProperty("user.dir") + "/src/main/java/edu/fiuba/algo3/resources/imagenes/background5.jpg");
-        //BackgroundImage imagenDeFondo = new BackgroundImage(imagen, BackgroundRepeat.REPEAT, BackgroundRepeat.REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT);
-        //this.setBackground(new Background(imagenDeFondo));
         this.setEncabezado(stage);
         this.setCentro();
-        }
+    }
 
     private void setEncabezado(Stage stage) {
         VBox encabezado = new VBox();

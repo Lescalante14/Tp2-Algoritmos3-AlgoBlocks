@@ -1,9 +1,11 @@
 package edu.fiuba.algo3.vistas;
 
+import edu.fiuba.algo3.controladores.bloquesControladores.ControladorBloqueInvertir;
 import edu.fiuba.algo3.controladores.ControladorEjecutarAlgoritmo;
 import edu.fiuba.algo3.controladores.bloquesControladores.*;
 import edu.fiuba.algo3.modelo.Personaje;
 import edu.fiuba.algo3.modelo.bloque.BloquePersonalizado;
+import edu.fiuba.algo3.vistas.botones.bloquesBotones.BotonBloqueInvertir;
 import edu.fiuba.algo3.vistas.botones.bloquesBotones.BotonBloqueDesactivarLapiz;
 import edu.fiuba.algo3.controladores.bloquesControladores.ControladorBloqueDesactivarLapiz;
 import edu.fiuba.algo3.vistas.botones.bloquesBotones.*;
@@ -47,8 +49,9 @@ public class VistaBloques extends BorderPane{
         bloques.getChildren().add(new BotonBloqueMoverIzquierda(new ControladorBloqueMoverIzquierda(controladorEjecutarAlgoritmo)));
         bloques.getChildren().add(new BotonBloqueActivarLapiz(new ControladorBloqueActivarLapiz(controladorEjecutarAlgoritmo)));
         bloques.getChildren().add(new BotonBloqueDesactivarLapiz(new ControladorBloqueDesactivarLapiz(controladorEjecutarAlgoritmo)));
-        //bloques.getChildren().add(new BotonBloquePersonalizado(new ControladorBloquePerzonalizado(controladorEjecutarAlgoritmo)));
-        bloques.getChildren().add(new BotonBloqueRepetir(new ControladorBloqueRepetir(controladorEjecutarAlgoritmo)));
+        bloques.getChildren().add(new BotonBloqueInvertir(new ControladorBloqueInvertir(controladorEjecutarAlgoritmo)));
+        bloques.getChildren().add(new BotonBloqueRepetirX2(new ControladorBloqueRepetirX2(controladorEjecutarAlgoritmo)));
+        bloques.getChildren().add(new BotonBloqueRepetirX3(new ControladorBloqueRepetirX3(controladorEjecutarAlgoritmo)));
 
         this.setCenter(bloquesScroll);
     }

@@ -7,7 +7,6 @@ import edu.fiuba.algo3.vistas.botones.BotonEjecutarAlgoritmo;
 import edu.fiuba.algo3.vistas.botones.BotonGuardarAlgoritmo;
 import edu.fiuba.algo3.vistas.botones.BotonVaciarAlgoritmo;
 import javafx.geometry.Insets;
-import javafx.scene.control.Button;
 import javafx.scene.layout.*;
 
 public class VistaAlgoritmo extends BorderPane{
@@ -15,27 +14,26 @@ public class VistaAlgoritmo extends BorderPane{
     private ControladorVaciarAlgoritmo controladorVaciarAlgoritmo;
     private ControladorEjecutarAlgoritmo controladorEjecutarAlgoritmo;
     private VBox imagenVBox;
-    private ControladorGuardarAlgoritmo controladorGuardarAlgoritmo;
     private BotonGuardarAlgoritmo botonGuardarAlgoritmo;
 
     public VistaAlgoritmo() {
         this.setTop(new Titulo("Sector de Algoritmos"));
         this.setPadding(new Insets(20));
         imagenVBox = new VBox();
+        imagenVBox.setPrefSize(700,600);
 
     }
 
     public void setControladores(ControladorEjecutarAlgoritmo controladorAlgoritmo, ControladorVaciarAlgoritmo controladorVaciarAlgoritmo, ControladorGuardarAlgoritmo controladorGuardarAlgoritmo){
         this.controladorEjecutarAlgoritmo = controladorAlgoritmo;
         this.controladorVaciarAlgoritmo = controladorVaciarAlgoritmo;
-        this.controladorGuardarAlgoritmo = controladorGuardarAlgoritmo;
         this.botonGuardarAlgoritmo = new BotonGuardarAlgoritmo(controladorGuardarAlgoritmo);
         this.dibujar();
 
     }
 
     private void dibujar(){
-        HBox imagenHBox = new HBox();
+        HBox imagenHBox = new HBox(100);
 
         imagenHBox.getChildren().add(new BotonEjecutarAlgoritmo(controladorEjecutarAlgoritmo));
         imagenHBox.getChildren().add(new BotonVaciarAlgoritmo(controladorVaciarAlgoritmo));
@@ -44,9 +42,7 @@ public class VistaAlgoritmo extends BorderPane{
         this.setCenter(imagenVBox);
     }
 
-    public void update(String nombreBoton){
-        imagenVBox.getChildren().add(new Button(nombreBoton));
-    }
+    public void update(String nombreBoton){imagenVBox.getChildren().add(new Titulo(nombreBoton)); }
 
     public void vaciarVistaAlgoritmo(){
         this.imagenVBox = new VBox();
