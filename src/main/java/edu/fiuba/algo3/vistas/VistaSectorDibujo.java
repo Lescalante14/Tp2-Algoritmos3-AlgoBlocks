@@ -42,13 +42,13 @@ public class VistaSectorDibujo extends BorderPane {
 
     private void dibujarFormas() {
         this.clean();
-        canvasPersonaje.getGraphicsContext2D().drawImage(imagenPersonaje, personaje.getPosicion().getX() + 200, personaje.getPosicion().getY()*(-1) + 200);
+        canvasPersonaje.getGraphicsContext2D().drawImage(imagenPersonaje, (personaje.getPosicion().getX())*(20) +300, personaje.getPosicion().getY()*(-20) + 300);
         canvasPersonaje.getGraphicsContext2D().setFill(Color.BLUE);
         }
 
     public void clean() {
         canvasPersonaje.getGraphicsContext2D().setFill(Color.BEIGE);
-        canvasPersonaje.getGraphicsContext2D().fillRect(0, 0, 400, 400);
+        canvasPersonaje.getGraphicsContext2D().fillRect(0, 0, 600, 600);
     }
 
     public void update(Image imagen) {
@@ -63,12 +63,12 @@ public class VistaSectorDibujo extends BorderPane {
     }
 
     public void pintarCasilla(Posicion posicionInicial, Posicion posicionFinal) {
-        canvasDibujo.getGraphicsContext2D().strokeLine(posicionInicial.getX() +200, posicionInicial.getY()*(-1) +200, posicionFinal.getX() +200, posicionFinal.getY()*(-1) +200);
+        canvasDibujo.getGraphicsContext2D().strokeLine((posicionInicial.getX())*(20) +300, posicionInicial.getY()*(-20) +300, posicionFinal.getX()*(20) +300, posicionFinal.getY()*(-20) +300);
     }
 
     private void crearVistaPrincipal(){
-        canvasPersonaje = new Canvas(400, 400);
-        canvasDibujo = new Canvas(400,400);
+        canvasPersonaje = new Canvas(600, 600);
+        canvasDibujo = new Canvas(600,600);
         this.grupo = new Group(canvasPersonaje, canvasDibujo);
         this.setCenter(grupo);
     }
