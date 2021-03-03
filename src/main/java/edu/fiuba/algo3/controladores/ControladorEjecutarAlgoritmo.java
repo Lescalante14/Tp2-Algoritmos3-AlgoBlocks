@@ -8,6 +8,7 @@ import edu.fiuba.algo3.modelo.bloque.Bloque;
 import edu.fiuba.algo3.modelo.bloque.bloqueDeActivacion.BloqueActivarLapiz;
 import edu.fiuba.algo3.vistas.VistaAlgoritmo;
 import edu.fiuba.algo3.vistas.VistaPersonaje;
+import edu.fiuba.algo3.vistas.botones.BotonGuardarAlgoritmo;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.control.Alert;
@@ -55,6 +56,8 @@ public class ControladorEjecutarAlgoritmo implements EventHandler<ActionEvent> {
 
     public void agregarBloque(Bloque bloque) {
         algortimo.agregarBloque(bloque);
+        vistaAlgoritmo.desactivarBotonGuardado(false);
+
     }
 
     public void updateVistaAlgortimo(String nombreBloque) {

@@ -3,6 +3,7 @@ package edu.fiuba.algo3.controladores;
 import edu.fiuba.algo3.excepciones.AlgoritmoVacioError;
 import edu.fiuba.algo3.excepciones.NombreVacioError;
 import edu.fiuba.algo3.modelo.Personaje;
+import edu.fiuba.algo3.modelo.ValidaAlgoritmo;
 import edu.fiuba.algo3.modelo.algortimo.Algoritmo;
 import edu.fiuba.algo3.modelo.bloque.BloquePersonalizado;
 import edu.fiuba.algo3.vistas.VistaAlgoritmo;
@@ -41,16 +42,16 @@ public class ControladorGuardarAlgoritmo implements EventHandler<ActionEvent> {
                 BloquePersonalizado bloquePersonalizado = algoritmo.guardaAlgoritmoPersonalizado(result.get());
                 vistaBloques.agregarBloquePersonalizado(bloquePersonalizado, personaje);
                 vistaAlgoritmo.vaciarVistaAlgoritmo();
+                vistaAlgoritmo.desactivarBotonGuardado(true);
             }
         }
         catch(NombreVacioError nombreVacioError) {
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("Information Dialog");
+            alert.setTitle("Nombre de tu algoritmo vacio");
             alert.setHeaderText(null);
             alert.setContentText("Nombre vacío, agrega al menos un caracter");
             alert.showAndWait();
         }
-
     }
 
 }

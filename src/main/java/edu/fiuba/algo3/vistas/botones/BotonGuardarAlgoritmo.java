@@ -7,6 +7,7 @@ public class BotonGuardarAlgoritmo extends Button {
 
     public BotonGuardarAlgoritmo(ControladorGuardarAlgoritmo controladorGuardarAlgoritmo){
         super.setText("Guardar");
+        super.setDisable(true);
         super.setOnAction(controladorGuardarAlgoritmo);
         super.setId("boton-guardar");
     }

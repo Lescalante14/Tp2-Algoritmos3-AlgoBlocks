@@ -16,27 +16,30 @@ public class VistaAlgoritmo extends BorderPane{
     private ControladorEjecutarAlgoritmo controladorEjecutarAlgoritmo;
     private VBox imagenVBox;
     private ControladorGuardarAlgoritmo controladorGuardarAlgoritmo;
+    private BotonGuardarAlgoritmo botonGuardarAlgoritmo;
 
     public VistaAlgoritmo() {
-
         this.setTop(new Titulo("Sector de Algoritmos"));
         this.setPadding(new Insets(20));
         imagenVBox = new VBox();
+
     }
 
     public void setControladores(ControladorEjecutarAlgoritmo controladorAlgoritmo, ControladorVaciarAlgoritmo controladorVaciarAlgoritmo, ControladorGuardarAlgoritmo controladorGuardarAlgoritmo){
         this.controladorEjecutarAlgoritmo = controladorAlgoritmo;
         this.controladorVaciarAlgoritmo = controladorVaciarAlgoritmo;
         this.controladorGuardarAlgoritmo = controladorGuardarAlgoritmo;
+        this.botonGuardarAlgoritmo = new BotonGuardarAlgoritmo(controladorGuardarAlgoritmo);
         this.dibujar();
 
     }
 
     private void dibujar(){
         HBox imagenHBox = new HBox();
+
         imagenHBox.getChildren().add(new BotonEjecutarAlgoritmo(controladorEjecutarAlgoritmo));
         imagenHBox.getChildren().add(new BotonVaciarAlgoritmo(controladorVaciarAlgoritmo));
-        imagenHBox.getChildren().add(new BotonGuardarAlgoritmo(controladorGuardarAlgoritmo));
+        imagenHBox.getChildren().add(botonGuardarAlgoritmo);
         imagenVBox.getChildren().add(imagenHBox);
         this.setCenter(imagenVBox);
     }
@@ -48,5 +51,9 @@ public class VistaAlgoritmo extends BorderPane{
     public void vaciarVistaAlgoritmo(){
         this.imagenVBox = new VBox();
         this.dibujar();
+    }
+
+    public void desactivarBotonGuardado(boolean estado) {
+        this.botonGuardarAlgoritmo.setDisable(estado);
     }
 }
