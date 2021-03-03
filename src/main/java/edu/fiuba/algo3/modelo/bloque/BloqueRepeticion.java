@@ -5,7 +5,7 @@ import edu.fiuba.algo3.modelo.Personaje;
 
 import java.util.ArrayList;
 
-public class BloqueRepeticion implements Bloque{
+public class BloqueRepeticion implements Bloque, BloquesDeSecuencia{
 
     private int iteraciones;
     private Algoritmo algoritmo;

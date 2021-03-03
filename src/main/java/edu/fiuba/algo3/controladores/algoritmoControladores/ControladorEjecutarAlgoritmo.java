@@ -4,6 +4,7 @@ import edu.fiuba.algo3.excepciones.AlgoritmoVacioError;
 import edu.fiuba.algo3.modelo.Personaje;
 import edu.fiuba.algo3.modelo.Algoritmo;
 import edu.fiuba.algo3.modelo.bloque.Bloque;
+import edu.fiuba.algo3.modelo.bloque.BloquesDeSecuencia;
 import edu.fiuba.algo3.vistas.VistaAlgoritmo;
 import edu.fiuba.algo3.vistas.VistaSectorDibujo;
 import javafx.event.ActionEvent;
@@ -17,8 +18,10 @@ public class ControladorEjecutarAlgoritmo implements EventHandler<ActionEvent> {
     private final VistaSectorDibujo vistaSectorDibujo;
     private final Personaje personaje;
     private final Algoritmo algortimo;
+    private BloquesDeSecuencia bloqueTemporal;
     private final VistaAlgoritmo vistaAlgoritmo;
     private Image imagen;
+    private boolean hayBloqueTemporal;
 
     public ControladorEjecutarAlgoritmo(Personaje personaje, VistaSectorDibujo vistaSectorDibujo, Algoritmo algoritmo, VistaAlgoritmo vistaAlgoritmo){
         this.personaje = personaje;
@@ -49,12 +52,32 @@ public class ControladorEjecutarAlgoritmo implements EventHandler<ActionEvent> {
     }
 
     public void agregarBloque(Bloque bloque) {
-        algortimo.agregarBloque(bloque);
-        vistaAlgoritmo.desactivarBotonGuardado(false);
+
+        if(hayBloqueTemporal){
+            bloqueTemporal.agregarBloque(bloque);
+            vistaAlgoritmo.desactivarBotonBreak(false);
+        }else {
+            algortimo.agregarBloque(bloque);
+            vistaAlgoritmo.desactivarBotonGuardado(false);
+        }
 
     }
 
+    public void activarBloqueTemporal(BloquesDeSecuencia bloqueTemporal){
+        this.hayBloqueTemporal = true;
+        this.bloqueTemporal= bloqueTemporal;
+        vistaAlgoritmo.mostrarBotonBreak();
+        vistaAlgoritmo.desactivarBotonEjecutar(true);
+
+    }
     public void updateVistaAlgortimo(String nombreBloque) {
        vistaAlgoritmo.update(nombreBloque);
+    }
+
+    public void desactivarBloqueTemporal() {
+        this.hayBloqueTemporal = false;
+        agregarBloque((Bloque) this.bloqueTemporal);
+        vistaAlgoritmo.removerBotonBreak();
+        vistaAlgoritmo.desactivarBotonEjecutar(false);
     }
 }

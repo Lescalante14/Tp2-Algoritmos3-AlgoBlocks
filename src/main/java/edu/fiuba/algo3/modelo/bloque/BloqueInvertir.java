@@ -4,7 +4,7 @@ import edu.fiuba.algo3.modelo.Algoritmo;
 import edu.fiuba.algo3.modelo.Personaje;
 
 
-public class BloqueInvertir implements Bloque{
+public class BloqueInvertir implements Bloque, BloquesDeSecuencia{
 
     private Algoritmo algoritmo;
 

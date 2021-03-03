@@ -3,6 +3,8 @@ package edu.fiuba.algo3.vistas;
 import edu.fiuba.algo3.controladores.algoritmoControladores.ControladorEjecutarAlgoritmo;
 import edu.fiuba.algo3.controladores.algoritmoControladores.ControladorGuardarAlgoritmo;
 import edu.fiuba.algo3.controladores.algoritmoControladores.ControladorVaciarAlgoritmo;
+import edu.fiuba.algo3.controladores.ControladorBreak;
+import edu.fiuba.algo3.vistas.botones.BotonBreak;
 import edu.fiuba.algo3.vistas.botones.BotonEjecutarAlgoritmo;
 import edu.fiuba.algo3.vistas.botones.BotonGuardarAlgoritmo;
 import edu.fiuba.algo3.vistas.botones.BotonVaciarAlgoritmo;
@@ -14,13 +16,18 @@ public class VistaAlgoritmo extends BorderPane{
     private ControladorVaciarAlgoritmo controladorVaciarAlgoritmo;
     private ControladorEjecutarAlgoritmo controladorEjecutarAlgoritmo;
     private VBox imagenVBox;
+    private HBox imagenHBox;
+    private BotonEjecutarAlgoritmo botonEjecutarAlgoritmo;
     private BotonGuardarAlgoritmo botonGuardarAlgoritmo;
+    private BotonBreak botonBreak;
 
     public VistaAlgoritmo() {
         this.setTop(new Titulo("Sector de Algoritmos"));
         this.setPadding(new Insets(20));
+        imagenHBox = new HBox(100);
         imagenVBox = new VBox();
         imagenVBox.setPrefSize(700,600);
+
 
     }
 
@@ -28,14 +35,15 @@ public class VistaAlgoritmo extends BorderPane{
         this.controladorEjecutarAlgoritmo = controladorAlgoritmo;
         this.controladorVaciarAlgoritmo = controladorVaciarAlgoritmo;
         this.botonGuardarAlgoritmo = new BotonGuardarAlgoritmo(controladorGuardarAlgoritmo);
+        this.botonEjecutarAlgoritmo= new BotonEjecutarAlgoritmo(controladorEjecutarAlgoritmo);
+        this.botonBreak = new BotonBreak(new ControladorBreak(controladorEjecutarAlgoritmo));
         this.dibujar();
 
     }
 
     private void dibujar(){
-        HBox imagenHBox = new HBox(100);
-
-        imagenHBox.getChildren().add(new BotonEjecutarAlgoritmo(controladorEjecutarAlgoritmo));
+        imagenHBox = new HBox(100);
+        imagenHBox.getChildren().add(botonEjecutarAlgoritmo);
         imagenHBox.getChildren().add(new BotonVaciarAlgoritmo(controladorVaciarAlgoritmo));
         imagenHBox.getChildren().add(botonGuardarAlgoritmo);
         imagenVBox.getChildren().add(imagenHBox);
@@ -52,5 +60,23 @@ public class VistaAlgoritmo extends BorderPane{
 
     public void desactivarBotonGuardado(boolean estado) {
         this.botonGuardarAlgoritmo.setDisable(estado);
+    }
+
+    public void desactivarBotonEjecutar(boolean estado) {
+        this.botonEjecutarAlgoritmo.setDisable(estado);
+    }
+
+    public void desactivarBotonBreak(boolean estado) {
+        this.botonBreak.setDisable(estado);
+    }
+
+    public void mostrarBotonBreak() {
+        desactivarBotonBreak(true);
+        imagenHBox.getChildren().add(botonBreak);
+    }
+
+    public void removerBotonBreak() {
+        imagenHBox.getChildren().remove(imagenHBox.getChildren().size()-1);
+
     }
 }
