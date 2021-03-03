@@ -1,19 +1,23 @@
 package edu.fiuba.algo3.vistas;
 
+import edu.fiuba.algo3.controladores.ControladorSectorDibujo;
 import edu.fiuba.algo3.controladores.bloquesControladores.ControladorReiniciarPosicion;
 import edu.fiuba.algo3.modelo.Personaje;
+import edu.fiuba.algo3.modelo.Posicion;
 import edu.fiuba.algo3.vistas.botones.bloquesBotones.BotonReiniciarPosicion;
 import javafx.geometry.Insets;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.image.Image;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.paint.Color;
+import javafx.scene.shape.Line;
 
 public class VistaPersonaje extends BorderPane {
 
     private final Canvas canvasSectorDibujo;
     private Personaje personaje;
     private Image imagenPersonaje;
+    ControladorSectorDibujo controladorSectorDibujo;
 
     public VistaPersonaje(Personaje personaje){
         imagenPersonaje = new Image("file:" + System.getProperty("user.dir") + "/src/main/java/edu/fiuba/algo3/resources/imagenes/personaje_lapiz_desactivado.png", 60,60,false, true);
@@ -27,6 +31,9 @@ public class VistaPersonaje extends BorderPane {
 
         this.setPadding(new Insets(25));
         this.dibujar();
+
+
+        this.controladorSectorDibujo = new ControladorSectorDibujo(personaje.getSectorDibujo(), this);
     }
 
     public void dibujar() {
@@ -34,15 +41,15 @@ public class VistaPersonaje extends BorderPane {
     }
 
     private void dibujarFormas() {
-        this.clean();
+        //this.clean();
         canvasSectorDibujo.getGraphicsContext2D().drawImage(imagenPersonaje, personaje.getPosicion().getX() + 200, personaje.getPosicion().getY()*(-1) + 200);
         canvasSectorDibujo.getGraphicsContext2D().setFill(Color.BLUE);
         }
 
-    public void clean() {
+    /*public void clean() {
         canvasSectorDibujo.getGraphicsContext2D().setFill(Color.BEIGE);
         canvasSectorDibujo.getGraphicsContext2D().fillRect(0, 0, 400, 400);
-    }
+    }*/
 
     public void update(Image imagen) {
         this.imagenPersonaje = imagen;
@@ -52,5 +59,9 @@ public class VistaPersonaje extends BorderPane {
     public void vaciarVistaPersonaje(Personaje personaje, Image imagenInicial) {
         this.personaje = personaje;
         update(imagenInicial);
+    }
+
+    public void pintarCasilla(Posicion posicionInicial, Posicion posicionFinal) {
+        canvasSectorDibujo.getGraphicsContext2D().strokeLine(posicionInicial.getX() +200, posicionInicial.getY()*(-1) +200, posicionFinal.getX() +200, posicionFinal.getY()*(-1) +200);
     }
 }

@@ -5,6 +5,7 @@ import edu.fiuba.algo3.modelo.lapiz.Lapiz;
 import edu.fiuba.algo3.modelo.Posicion;
 
 import edu.fiuba.algo3.modelo.direccion.Direccion;
+import edu.fiuba.algo3.modelo.lapiz.SectorDeDibujo;
 
 public class Personaje {
 
@@ -39,5 +40,9 @@ public class Personaje {
 
     public void reiniciarPosicion() {
         posicion = new Posicion(0,0);
+    }
+
+    public SectorDeDibujo getSectorDibujo() {
+        return lapiz.getSectorDibujo();
     }
 }

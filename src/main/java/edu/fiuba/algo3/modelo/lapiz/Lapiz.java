@@ -24,4 +24,8 @@ public class Lapiz {
     public void cambiarEstado(EstadoLapiz nuevoEstado) {
         estado = nuevoEstado;
     }
+
+    public SectorDeDibujo getSectorDibujo() {
+        return sectorDeDibujo;
+    }
 }
