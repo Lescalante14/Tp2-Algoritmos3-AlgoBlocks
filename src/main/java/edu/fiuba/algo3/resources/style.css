@@ -15,3 +15,10 @@
     -fx-box-shadow-offset-y:5px;
     -fx-box-shadow-color: #666;
 }
+.scroll-pane{
+    -fx-background-color: transparent;
+}
+#contenedor-de-bloques{
+    -fx-background-image: url("imagenes/background4.png");
+    -fx-padding: 23px;
+}

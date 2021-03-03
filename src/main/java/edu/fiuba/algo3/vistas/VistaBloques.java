@@ -30,6 +30,7 @@ public class VistaBloques extends BorderPane{
         this.bloquesScroll.setFitToHeight(false);
         this.bloquesScroll.setPannable(true);
         this.bloquesScroll.setVbarPolicy(ScrollPane.ScrollBarPolicy.AS_NEEDED);
+        this.bloques.setId("contenedor-de-bloques");
     }
 
     public void dibujar() {

@@ -9,7 +9,7 @@ public class BotonBloqueRepetir extends Button {
     public BotonBloqueRepetir(ControladorBloqueRepetir controladorBloqueRepetir) {
         Image bloqueRepetir = new Image("file:" + System.getProperty("user.dir") + "/src/main/java/edu/fiuba/algo3/resources/imagenes/bloque_repetir2.png");
         ImageView view = new ImageView(bloqueRepetir);
-        view.setFitHeight(60);
+        view.setFitHeight(90);
         view.setPreserveRatio(true);
         super.setPrefSize(100,100);
         super.setGraphic(view);
