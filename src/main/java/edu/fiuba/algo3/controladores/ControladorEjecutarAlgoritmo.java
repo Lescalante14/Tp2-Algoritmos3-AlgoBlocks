@@ -1,6 +1,8 @@
 package edu.fiuba.algo3.controladores;
 
+import edu.fiuba.algo3.excepciones.AlgoritmoVacioError;
 import edu.fiuba.algo3.modelo.Personaje;
+import edu.fiuba.algo3.modelo.ValidaAlgoritmo;
 import edu.fiuba.algo3.modelo.algortimo.Algoritmo;
 import edu.fiuba.algo3.modelo.bloque.Bloque;
 import edu.fiuba.algo3.modelo.bloque.bloqueDeActivacion.BloqueActivarLapiz;
@@ -8,6 +10,7 @@ import edu.fiuba.algo3.vistas.VistaAlgoritmo;
 import edu.fiuba.algo3.vistas.VistaPersonaje;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import javafx.scene.control.Alert;
 import javafx.scene.image.Image;
 
 import java.util.ArrayList;
@@ -27,11 +30,23 @@ public class ControladorEjecutarAlgoritmo implements EventHandler<ActionEvent> {
         this.vistaPersonaje = vistaPersonaje;
         this.algortimo = algoritmo;
         this.vistaAlgoritmo = vistaAlgoritmo;
+        this.imagen = new Image("file:" + System.getProperty("user.dir") + "/src/main/java/edu/fiuba/algo3/resources/imagenes/personaje_lapiz_desactivado.png", 60,60,false, true);
     }
 
     public void handle(ActionEvent actionEvent) {
-        algortimo.ejecutarAlgoritmo(personaje);
+        try{
+            algortimo.ejecutarAlgoritmo(personaje);
+        }
+        catch(AlgoritmoVacioError algoritmoVacioError) {
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Information Dialog");
+            alert.setHeaderText(null);
+            alert.setContentText("Algoritmo vacío, agrega al menos un bloque para ejecutar");
+
+            alert.showAndWait();
+        }
         vistaPersonaje.update(this.imagen);
+
     }
 
     public void setImagen(Image imagen){

@@ -1,16 +1,16 @@
 package edu.fiuba.algo3.vistas;
 
 import edu.fiuba.algo3.controladores.ControladorEjecutarAlgoritmo;
-import edu.fiuba.algo3.controladores.bloquesControladores.ControladorReiniciarAlgoritmo;
+import edu.fiuba.algo3.controladores.bloquesControladores.ControladorVaciarAlgoritmo;
 import edu.fiuba.algo3.vistas.botones.BotonEjecutarAlgoritmo;
-import edu.fiuba.algo3.vistas.botones.BotonReiniciarAlgoritmo;
+import edu.fiuba.algo3.vistas.botones.BotonVaciarAlgoritmo;
 import javafx.geometry.Insets;
 import javafx.scene.control.Button;
 import javafx.scene.layout.*;
 
 public class VistaAlgoritmo extends BorderPane{
 
-    private ControladorReiniciarAlgoritmo controladorReiniciarAlgoritmo;
+    private ControladorVaciarAlgoritmo controladorVaciarAlgoritmo;
     private ControladorEjecutarAlgoritmo controladorEjecutarAlgoritmo;
     private VBox imagenVBox;
 
@@ -21,9 +21,9 @@ public class VistaAlgoritmo extends BorderPane{
         imagenVBox = new VBox();
     }
 
-    public void setControladores(ControladorEjecutarAlgoritmo controladorAlgoritmo, ControladorReiniciarAlgoritmo controladorReiniciarAlgoritmo){
+    public void setControladores(ControladorEjecutarAlgoritmo controladorAlgoritmo, ControladorVaciarAlgoritmo controladorVaciarAlgoritmo){
         this.controladorEjecutarAlgoritmo = controladorAlgoritmo;
-        this.controladorReiniciarAlgoritmo = controladorReiniciarAlgoritmo;
+        this.controladorVaciarAlgoritmo = controladorVaciarAlgoritmo;
         this.dibujar();
 
     }
@@ -31,7 +31,7 @@ public class VistaAlgoritmo extends BorderPane{
     private void dibujar(){
         HBox imagenHBox = new HBox();
         imagenHBox.getChildren().add(new BotonEjecutarAlgoritmo(controladorEjecutarAlgoritmo));
-        imagenHBox.getChildren().add(new BotonReiniciarAlgoritmo(controladorReiniciarAlgoritmo));
+        imagenHBox.getChildren().add(new BotonVaciarAlgoritmo(controladorVaciarAlgoritmo));
         imagenVBox.getChildren().add(imagenHBox);
         this.setCenter(imagenVBox);
     }

@@ -5,12 +5,12 @@ import edu.fiuba.algo3.vistas.VistaAlgoritmo;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 
-public class ControladorReiniciarAlgoritmo implements EventHandler<ActionEvent> {
+public class ControladorVaciarAlgoritmo implements EventHandler<ActionEvent> {
 
     private final Algoritmo algoritmo;
     private final VistaAlgoritmo vistaAlgoritmo;
 
-    public ControladorReiniciarAlgoritmo(Algoritmo algoritmo, VistaAlgoritmo vistaAlgoritmo){
+    public ControladorVaciarAlgoritmo(Algoritmo algoritmo, VistaAlgoritmo vistaAlgoritmo){
         this.algoritmo = algoritmo;
         this.vistaAlgoritmo = vistaAlgoritmo;
     }

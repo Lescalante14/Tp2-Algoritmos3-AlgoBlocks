@@ -1,6 +1,5 @@
 package edu.fiuba.algo3.vistas.botones.bloquesBotones;
 
-import edu.fiuba.algo3.controladores.bloquesControladores.ControladorReiniciarAlgoritmo;
 import edu.fiuba.algo3.controladores.bloquesControladores.ControladorReiniciarPosicion;
 import javafx.scene.control.Button;
 
