@@ -1,6 +1,6 @@
 package edu.fiuba.algo3.vistas.botones;
 
-import edu.fiuba.algo3.controladores.ControladorGuardarAlgoritmo;
+import edu.fiuba.algo3.controladores.algoritmoControladores.ControladorGuardarAlgoritmo;
 import javafx.scene.control.Button;
 
 public class BotonGuardarAlgoritmo extends Button {

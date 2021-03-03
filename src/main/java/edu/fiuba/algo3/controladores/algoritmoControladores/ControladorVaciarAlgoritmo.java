@@ -1,6 +1,6 @@
-package edu.fiuba.algo3.controladores;
+package edu.fiuba.algo3.controladores.algoritmoControladores;
 
-import edu.fiuba.algo3.modelo.algortimo.Algoritmo;
+import edu.fiuba.algo3.modelo.Algoritmo;
 import edu.fiuba.algo3.vistas.VistaAlgoritmo;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;

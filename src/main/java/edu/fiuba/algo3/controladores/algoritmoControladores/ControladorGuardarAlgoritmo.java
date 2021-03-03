@@ -1,10 +1,8 @@
-package edu.fiuba.algo3.controladores;
+package edu.fiuba.algo3.controladores.algoritmoControladores;
 
-import edu.fiuba.algo3.excepciones.AlgoritmoVacioError;
 import edu.fiuba.algo3.excepciones.NombreVacioError;
 import edu.fiuba.algo3.modelo.Personaje;
-import edu.fiuba.algo3.modelo.ValidaAlgoritmo;
-import edu.fiuba.algo3.modelo.algortimo.Algoritmo;
+import edu.fiuba.algo3.modelo.Algoritmo;
 import edu.fiuba.algo3.modelo.bloque.BloquePersonalizado;
 import edu.fiuba.algo3.vistas.VistaAlgoritmo;
 import edu.fiuba.algo3.vistas.VistaBloques;

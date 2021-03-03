@@ -1,6 +1,6 @@
 package edu.fiuba.algo3.controladores.bloquesControladores;
 
-import edu.fiuba.algo3.controladores.ControladorEjecutarAlgoritmo;
+import edu.fiuba.algo3.controladores.algoritmoControladores.ControladorEjecutarAlgoritmo;
 import edu.fiuba.algo3.modelo.Personaje;
 import edu.fiuba.algo3.modelo.bloque.BloquePersonalizado;
 import javafx.event.ActionEvent;

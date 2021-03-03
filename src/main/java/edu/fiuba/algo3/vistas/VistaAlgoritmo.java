@@ -1,8 +1,8 @@
 package edu.fiuba.algo3.vistas;
 
-import edu.fiuba.algo3.controladores.ControladorEjecutarAlgoritmo;
-import edu.fiuba.algo3.controladores.ControladorGuardarAlgoritmo;
-import edu.fiuba.algo3.controladores.ControladorVaciarAlgoritmo;
+import edu.fiuba.algo3.controladores.algoritmoControladores.ControladorEjecutarAlgoritmo;
+import edu.fiuba.algo3.controladores.algoritmoControladores.ControladorGuardarAlgoritmo;
+import edu.fiuba.algo3.controladores.algoritmoControladores.ControladorVaciarAlgoritmo;
 import edu.fiuba.algo3.vistas.botones.BotonEjecutarAlgoritmo;
 import edu.fiuba.algo3.vistas.botones.BotonGuardarAlgoritmo;
 import edu.fiuba.algo3.vistas.botones.BotonVaciarAlgoritmo;
@@ -46,6 +46,7 @@ public class VistaAlgoritmo extends BorderPane{
 
     public void vaciarVistaAlgoritmo(){
         this.imagenVBox = new VBox();
+        imagenVBox.setPrefSize(700,600);
         this.dibujar();
     }
 

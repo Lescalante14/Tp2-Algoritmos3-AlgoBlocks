@@ -1,12 +1,11 @@
-package edu.fiuba.algo3.modelo.algortimo;
+package edu.fiuba.algo3.modelo;
 
 import edu.fiuba.algo3.excepciones.AlgoritmoVacioError;
 import edu.fiuba.algo3.excepciones.NombreVacioError;
-import edu.fiuba.algo3.modelo.ValidaAlgoritmo;
-import edu.fiuba.algo3.modelo.ValidaNombre;
+import edu.fiuba.algo3.modelo.validaciones.ValidaAlgoritmo;
 import edu.fiuba.algo3.modelo.bloque.Bloque;
 import edu.fiuba.algo3.modelo.bloque.BloquePersonalizado;
-import edu.fiuba.algo3.modelo.Personaje;
+import edu.fiuba.algo3.modelo.validaciones.ValidaNombre;
 
 import java.util.ArrayList;
 import java.util.List;

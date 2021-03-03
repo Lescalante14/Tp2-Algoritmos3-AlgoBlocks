@@ -1,6 +1,6 @@
 package edu.fiuba.algo3.vistas.botones;
 
-import edu.fiuba.algo3.controladores.ControladorVaciarAlgoritmo;
+import edu.fiuba.algo3.controladores.algoritmoControladores.ControladorVaciarAlgoritmo;
 import javafx.scene.control.Button;
 
 public class BotonVaciarAlgoritmo extends Button {
