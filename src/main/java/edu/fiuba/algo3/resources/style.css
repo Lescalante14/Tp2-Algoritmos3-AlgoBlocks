@@ -27,6 +27,7 @@
 }
 .button{
     -fx-background-color: transparent;
+    -fx-wrap-text: true;
 }
 .button:hover{
     -fx-cursor: hand;
