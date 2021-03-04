@@ -3,7 +3,7 @@ package edu.fiuba.algo3.vistas;
 import edu.fiuba.algo3.controladores.algoritmoControladores.ControladorEjecutarAlgoritmo;
 import edu.fiuba.algo3.controladores.algoritmoControladores.ControladorGuardarAlgoritmo;
 import edu.fiuba.algo3.controladores.algoritmoControladores.ControladorVaciarAlgoritmo;
-import edu.fiuba.algo3.modelo.Personaje;
+import edu.fiuba.algo3.modelo.personaje.Personaje;
 import edu.fiuba.algo3.modelo.Algoritmo;
 import javafx.scene.layout.GridPane;
 

@@ -4,10 +4,11 @@ import edu.fiuba.algo3.controladores.algoritmoControladores.ControladorEjecutarA
 import edu.fiuba.algo3.controladores.algoritmoControladores.ControladorGuardarAlgoritmo;
 import edu.fiuba.algo3.controladores.algoritmoControladores.ControladorVaciarAlgoritmo;
 import edu.fiuba.algo3.controladores.ControladorBreak;
-import edu.fiuba.algo3.vistas.botones.BotonBreak;
-import edu.fiuba.algo3.vistas.botones.BotonEjecutarAlgoritmo;
-import edu.fiuba.algo3.vistas.botones.BotonGuardarAlgoritmo;
-import edu.fiuba.algo3.vistas.botones.BotonVaciarAlgoritmo;
+import edu.fiuba.algo3.vistas.botones.juegoBotones.BotonBreak;
+import edu.fiuba.algo3.vistas.botones.juegoBotones.BotonEjecutarAlgoritmo;
+import edu.fiuba.algo3.vistas.botones.juegoBotones.BotonGuardarAlgoritmo;
+import edu.fiuba.algo3.vistas.botones.juegoBotones.BotonVaciarAlgoritmo;
+import edu.fiuba.algo3.vistas.componentes.Titulo;
 import javafx.geometry.Insets;
 import javafx.scene.layout.*;
 

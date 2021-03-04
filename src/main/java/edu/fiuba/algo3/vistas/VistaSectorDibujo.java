@@ -2,9 +2,10 @@ package edu.fiuba.algo3.vistas;
 
 import edu.fiuba.algo3.controladores.ControladorSectorDibujo;
 import edu.fiuba.algo3.controladores.bloquesControladores.ControladorReiniciarPosicion;
-import edu.fiuba.algo3.modelo.Personaje;
-import edu.fiuba.algo3.modelo.Posicion;
-import edu.fiuba.algo3.vistas.botones.bloquesBotones.BotonReiniciarPosicion;
+import edu.fiuba.algo3.modelo.personaje.Personaje;
+import edu.fiuba.algo3.modelo.personaje.Posicion;
+import edu.fiuba.algo3.vistas.botones.juegoBotones.BotonReiniciarPosicion;
+import edu.fiuba.algo3.vistas.componentes.Titulo;
 import javafx.geometry.Insets;
 import javafx.scene.Group;
 import javafx.scene.canvas.Canvas;

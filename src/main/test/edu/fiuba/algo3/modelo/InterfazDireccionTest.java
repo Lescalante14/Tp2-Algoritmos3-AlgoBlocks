@@ -1,8 +1,9 @@
 package edu.fiuba.algo3.modelo;
-import edu.fiuba.algo3.modelo.direccion.DireccionAbajo;
-import edu.fiuba.algo3.modelo.direccion.DireccionArriba;
-import edu.fiuba.algo3.modelo.direccion.DireccionDerecha;
-import edu.fiuba.algo3.modelo.direccion.DireccionIzquierda;
+import edu.fiuba.algo3.modelo.personaje.direccion.DireccionAbajo;
+import edu.fiuba.algo3.modelo.personaje.direccion.DireccionArriba;
+import edu.fiuba.algo3.modelo.personaje.direccion.DireccionDerecha;
+import edu.fiuba.algo3.modelo.personaje.direccion.DireccionIzquierda;
+import edu.fiuba.algo3.modelo.personaje.Posicion;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertFalse;
