@@ -106,6 +106,19 @@ public class AlgoritmoTest {
         assertTrue(Posicion.compararPosiciones(personaje.getPosicion(), posicionFinal));
     }
 
+    @Test
+    public void seAgreganBloquesAlAlgoritmoYSeVaciaCorrectamente()
+    {
+        Algoritmo algoritmo = new Algoritmo();
+
+        algoritmo.agregarBloque(new BloqueActivarLapiz());
+        algoritmo.agregarBloque(new BloqueDesactivarLapiz());
+        algoritmo.agregarBloque(new BloqueMoverDerecha());
+        algoritmo.vaciarAlgoritmo();
+
+        assertEquals(0 , algoritmo.cantidadBloques());
+    }
+
 }
 
 
