@@ -170,4 +170,19 @@ public class PersonajeTest {
         assertEquals(3,personaje.totalDeCasillasPintadas());
 
     }
+
+    @Test
+    public void seReiniciaposicionDeUnPersonajeDespuesDeMover(){
+
+        Personaje personaje = new Personaje();
+
+        Posicion posicionCero = new Posicion(0,0);
+        personaje.moverHacia(new DireccionDerecha());
+        personaje.moverHacia(new DireccionAbajo());
+        personaje.moverHacia(new DireccionIzquierda());
+        personaje.reiniciarPosicion();
+
+        assertTrue(Posicion.compararPosiciones(posicionCero, personaje.getPosicion()));
+
+    }
 }
