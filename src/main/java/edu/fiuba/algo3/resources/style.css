@@ -9,6 +9,8 @@
     -fx-font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     -fx-letter-spacing: 0.5;
     -fx-effect: dropshadow( gaussian , rgba(255,255,255,0.5) , 0,0,0,1 );
+    -fx-margin-bottom: 5px;
+    
 }
 #titulo{
     -fx-background-color:
@@ -25,9 +27,39 @@
     -fx-margin-bottom: 5px;
     -fx-margin-top: 5px;
 }
+#titulo-dibujo {
+    -fx-background-color: 
+        linear-gradient(#f7eaa6, #ddd79d);
+    -fx-background-radius: 8,7,6;
+    -fx-background-insets: 0,1,2;
+    -fx-text-fill: black;
+    -fx-padding: 5px;
+    -fx-margin-bottom: 5px;
+}
+#titulo-bloques{
+    -fx-background-color: 
+        linear-gradient(#f7eaa6, #ddd79d);
+    -fx-background-radius: 8,7,6;
+    -fx-background-insets: 0,1,2;
+    -fx-text-fill: black;
+    -fx-padding: 5px;
+    -fx-margin-bottom: 5px;
+}
+#titulo-algoritmo{
+    -fx-background-color: 
+        linear-gradient(#f7eaa6, #ddd79d);
+    -fx-background-radius: 8,7,6;
+    -fx-background-insets: 0,1,2;
+    -fx-text-fill: black;
+    -fx-padding: 5px;
+    -fx-margin-bottom: 5px;
+}
 .button{
     -fx-background-color: transparent;
     -fx-wrap-text: true;
+    -fx-margin-top: 5px;
+    -fx-spacing: 5;
+    -fx-padding: 2 1 2 1; 
 }
 .button:hover{
     -fx-cursor: hand;

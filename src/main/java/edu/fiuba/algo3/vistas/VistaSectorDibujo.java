@@ -24,7 +24,9 @@ public class VistaSectorDibujo extends BorderPane {
     public VistaSectorDibujo(Personaje personaje){
         imagenPersonaje = new Image("file:" + System.getProperty("user.dir") + "/src/main/java/edu/fiuba/algo3/resources/imagenes/personaje_lapiz_desactivado.png", 60,60,false, true);
         this.personaje = personaje;
-        this.setTop(new Titulo("Sector de Dibujo"));
+        Titulo titulo = new Titulo("Sector de Dibujo");
+        titulo.setId("titulo-dibujo");
+        this.setTop(titulo);
         crearVistaPrincipal();
         ControladorReiniciarPosicion controladorReiniciarPosicion = new ControladorReiniciarPosicion(personaje, this);
         this.setBottom(new BotonReiniciarPosicion(controladorReiniciarPosicion));

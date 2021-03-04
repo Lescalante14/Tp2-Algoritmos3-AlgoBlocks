@@ -24,7 +24,9 @@ public class VistaBloques extends BorderPane{
         this.controladorEjecutarAlgoritmo = controladorEjecutarAlgoritmo;
         this.bloquesScroll = new ScrollPane();
         this.bloques = new VBox();
-        this.setTop(new Titulo("Sector de Bloques"));
+        Titulo titulo = new Titulo("Sector de Bloques");
+        titulo.setId("titulo-bloques");
+        this.setTop(titulo);
         this.setPadding(new Insets(25));
         this.dibujar();
 
