@@ -1,7 +1,5 @@
 package edu.fiuba.algo3.modelo;
 
-import edu.fiuba.algo3.excepciones.AlgoritmoVacioError;
-import edu.fiuba.algo3.excepciones.NombreVacioError;
 import edu.fiuba.algo3.modelo.bloque.*;
 import edu.fiuba.algo3.modelo.bloque.BloqueRepeticion;
 import edu.fiuba.algo3.modelo.bloque.bloqueDeActivacion.BloqueActivarLapiz;
@@ -108,50 +106,6 @@ public class AlgoritmoTest {
         assertTrue(Posicion.compararPosiciones(personaje.getPosicion(), posicionFinal));
     }
 
-    @Test
-    public void alEjecutaAlgoritmoVacioLanzaExcepcion()
-    {
-        Algoritmo algoritmo = new Algoritmo();
-        Personaje personaje = new Personaje();
-
-        assertThrows(AlgoritmoVacioError.class, ()->{
-            algoritmo.ejecutarAlgoritmo(personaje);
-        });
-    }
-
-    @Test
-    public void alCrearAlgoritmoPersonalizadoConNombreNullLanzaError()
-    {
-        Algoritmo algoritmo = new Algoritmo();
-        algoritmo.agregarBloque(new BloqueMoverAbajo());
-
-
-        assertThrows(NombreVacioError.class, ()->{
-            algoritmo.guardaAlgoritmoPersonalizado(null);
-        });
-    }
-
-    @Test
-    public void alCrearAlgoritmoPersonalizadoConNombreInvalidoLanzaError()
-    {
-        Algoritmo algoritmo = new Algoritmo();
-        algoritmo.agregarBloque(new BloqueMoverAbajo());
-
-
-        assertThrows(NombreVacioError.class, ()->{
-            algoritmo.guardaAlgoritmoPersonalizado("   ");
-        });
-    }
-
-    @Test
-    public void alCrearAlgoritmoPersonalizadoDeUnAlgoritmoVacioSeLanzaError()
-    {
-        Algoritmo algoritmo = new Algoritmo();
-
-        assertThrows(AlgoritmoVacioError.class, ()->{
-            algoritmo.guardaAlgoritmoPersonalizado("Algoritmo vacio");
-        });
-    }
 }
 
 
