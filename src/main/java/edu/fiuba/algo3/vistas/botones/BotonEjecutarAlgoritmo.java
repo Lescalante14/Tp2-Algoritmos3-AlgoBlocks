@@ -8,6 +8,7 @@ public class BotonEjecutarAlgoritmo extends Button {
     public BotonEjecutarAlgoritmo(ControladorEjecutarAlgoritmo controladorEjecutarAlgoritmo) {
         super.setText("Ejecutar");
         super.setOnAction(controladorEjecutarAlgoritmo);
+        super.setId("boton-ejecutar");
     }
 
 }

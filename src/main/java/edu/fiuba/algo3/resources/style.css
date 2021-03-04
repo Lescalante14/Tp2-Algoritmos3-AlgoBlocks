@@ -5,7 +5,26 @@
     -fx-background-position: center;
     -fx-height: 100%;
 }
-
+.label{
+    -fx-font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    -fx-letter-spacing: 0.5;
+    -fx-effect: dropshadow( gaussian , rgba(255,255,255,0.5) , 0,0,0,1 );
+}
+#titulo{
+    -fx-background-color:
+        linear-gradient(#bd5bff, #a500e6),
+        linear-gradient(#b984ff, #7244f2),
+        linear-gradient(#c86aff, #8c22ef),
+        linear-gradient(#bc57ff 0%, #8102f8 50%, #800bee 100%),
+        linear-gradient(from 0% 0% to 15% 50%, rgba(255,255,255,0.9), rgba(255,255,255,0));
+    -fx-background-insets: 0,1,2,3,0;
+    -fx-text-fill: #fcfbf1;
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+    -fx-padding: 10 20 10 20;
+    -fx-margin-bottom: 5px;
+    -fx-margin-top: 5px;
+}
 .button{
     -fx-background-color: transparent;
 }
@@ -29,4 +48,74 @@
     -fx-image-background: url("imagenes/bloque_grande.png");
     -fx-height: 60%;
     -fx-width: 60%;
+}
+#boton-ejecutar{
+    -fx-background-color:
+        linear-gradient(#69ff5b, #13e600),
+        linear-gradient(#99ff84, #61f244),
+        linear-gradient(#76ff6a, #33ef22),
+        linear-gradient(#57ff5f 0%, #02f80e 50%, #0bee0b 100%),
+        linear-gradient(from 0% 0% to 15% 50%, rgba(255,255,255,0.9), rgba(255,255,255,0));
+    -fx-background-radius: 30;
+    -fx-background-insets: 0,1,2,3,0;
+    -fx-text-fill: #00650d;
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+    -fx-padding: 10 20 10 20;
+}
+#boton-vaciar{
+    -fx-background-color:
+        linear-gradient(#ff5b5b, #e60000),
+        linear-gradient(#ff8484, #f24444),
+        linear-gradient(#ff6a6a, #ef2222),
+        linear-gradient(#ff5757 0%, #f80202 50%, #ee0b0b 100%),
+        linear-gradient(from 0% 0% to 15% 50%, rgba(255,255,255,0.9), rgba(255,255,255,0));
+    -fx-background-radius: 30;
+    -fx-background-insets: 0,1,2,3,0;
+    -fx-text-fill: #650000;
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+    -fx-padding: 10 20 10 20;
+}
+#boton-guardar{
+    -fx-background-color:
+            linear-gradient(#ffd65b, #e68400),
+            linear-gradient(#ffef84, #f2ba44),
+            linear-gradient(#ffea6a, #efaa22),
+            linear-gradient(#ffe657 0%, #f8c202 50%, #eea10b 100%),
+            linear-gradient(from 0% 0% to 15% 50%, rgba(255,255,255,0.9), rgba(255,255,255,0));
+        -fx-background-radius: 30;
+        -fx-background-insets: 0,1,2,3,0;
+        -fx-text-fill: #654b00;
+        -fx-font-weight: bold;
+        -fx-font-size: 14px;
+        -fx-padding: 10 20 10 20;
+}
+#boton-reiniciar-posicion{
+    -fx-background-color:
+        linear-gradient(#ff5b92, #e60073),
+        linear-gradient(#ff84ad, #f2446f),
+        linear-gradient(#ff6aa8, #ef2255),
+        linear-gradient(#ff5773 0%, #f80237 50%, #ee0b44 100%),
+        linear-gradient(from 0% 0% to 15% 50%, rgba(255,255,255,0.9), rgba(255,255,255,0));
+    -fx-background-radius: 30;
+    -fx-background-insets: 0,1,2,3,0;
+    -fx-text-fill: #650011;
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+    -fx-padding: 10 20 10 20;
+}
+#boton-break{
+    -fx-background-color:
+        linear-gradient(#7f5bff, #0f00e6),
+        linear-gradient(#8486ff, #4450f2),
+        linear-gradient(#796aff, #2522ef),
+        linear-gradient(#6257ff 0%, #0212f8 50%, #1a0bee 100%),
+        linear-gradient(from 0% 0% to 15% 50%, rgba(255,255,255,0.9), rgba(255,255,255,0));
+    -fx-background-radius: 30;
+    -fx-background-insets: 0,1,2,3,0;
+    -fx-text-fill: #020065;
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+    -fx-padding: 10 20 10 20;
 }

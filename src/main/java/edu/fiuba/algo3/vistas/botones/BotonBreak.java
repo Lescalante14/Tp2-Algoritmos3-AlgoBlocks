@@ -9,5 +9,6 @@ public class BotonBreak extends Button {
         super.setDisable(true);
         super.setText("Break");
         super.setOnAction(controladorBreak);
+        super.setId("boton-break");
     }
 }

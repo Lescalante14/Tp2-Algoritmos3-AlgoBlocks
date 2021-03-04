@@ -8,5 +8,6 @@ public class BotonReiniciarPosicion extends Button {
     public BotonReiniciarPosicion(ControladorReiniciarPosicion controladorReiniciarPosicion){
         super.setText("Reiniciar Posición");
         super.setOnAction(controladorReiniciarPosicion);
+        super.setId("boton-reiniciar-posicion");
     }
 }

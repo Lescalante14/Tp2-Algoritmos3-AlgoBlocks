@@ -35,6 +35,7 @@ public class ContenedorPrincipal extends BorderPane {
 
     private Label crearTitulo() {
         Titulo titulo = new Titulo("ALGOBLOCKS");
+        titulo.setId("titulo");
         titulo.setFont(Font.font(24));
         return titulo;
     }
