@@ -29,10 +29,10 @@ public class ControladorBloqueRepetirX2 implements EventHandler<ActionEvent> {
 			alert.setHeaderText(null);
 			alert.setContentText("No se puede anidar bloques de secuencia. Crea un personalizado e intentelo de nuevo !");
 			alert.showAndWait();
+			return;
+		}
 
-		}finally{
-        	controladorEjecutarAlgoritmo.updateVistaAlgortimo("-------------- [Inicio] Bloque Repeticion x2 --------------");
+		controladorEjecutarAlgoritmo.updateVistaAlgortimo("-------------- [Inicio] Bloque Repeticion x2 --------------");
 		
 		}
-    }
 }

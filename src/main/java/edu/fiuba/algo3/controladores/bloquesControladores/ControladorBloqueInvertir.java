@@ -19,8 +19,7 @@ public class ControladorBloqueInvertir implements EventHandler<ActionEvent> {
 
     @Override
     public void handle(ActionEvent actionEvent) {
-        controladorEjecutarAlgoritmo.updateVistaAlgortimo("-------------- [Inicio] Bloque Inversion --------------");
-       
+
 		try{  
 			controladorEjecutarAlgoritmo.activarBloqueTemporal(new BloqueInvertir());
 		}catch(BloquesDeSecuenciaAnidadosDeError bloquesDeSecuenciaAnidadosDeError){
@@ -28,12 +27,12 @@ public class ControladorBloqueInvertir implements EventHandler<ActionEvent> {
 			Alert alert = new Alert(Alert.AlertType.INFORMATION);
 			alert.setTitle("Information Dialog");
 			alert.setHeaderText(null);
-			alert.setContentText("No se puede anidar bloques de secuencia. Crea un personalizado e intentelo de nuevo!");
+			alert.setContentText("No se pueden anidar bloques de secuencia. ¡Guardá los bloques actuales en uno personalizado y anidalo!");
 			alert.showAndWait();
-	
-		}finally{	
-        	controladorEjecutarAlgoritmo.updateVistaAlgortimo("-------------- [Inicio] Bloque Inversion --------------");
+			return;
+		}
+
+        controladorEjecutarAlgoritmo.updateVistaAlgortimo("-------------- [Inicio] Bloque Inversion --------------");
 	
 		}
-    }
 }

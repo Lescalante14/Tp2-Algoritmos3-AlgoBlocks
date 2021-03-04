@@ -30,6 +30,7 @@ public class ControladorEjecutarAlgoritmo implements EventHandler<ActionEvent> {
         this.algortimo = algoritmo;
         this.vistaAlgoritmo = vistaAlgoritmo;
         this.imagen = new Image("file:" + System.getProperty("user.dir") + "/src/main/java/edu/fiuba/algo3/resources/imagenes/personaje_lapiz_desactivado.png", 60,60,false, true);
+        this.hayBloqueTemporal = false;
     }
 
     public void handle(ActionEvent actionEvent) {
@@ -67,8 +68,8 @@ public class ControladorEjecutarAlgoritmo implements EventHandler<ActionEvent> {
     public void activarBloqueTemporal(BloquesDeSecuencia bloqueTemporal){
         
 		if( this.hayBloqueTemporal ){
-		   throw new BloquesDeSecuenciaAnidadosDeError(); 
-		}
+		   throw new BloquesDeSecuenciaAnidadosDeError();
+        }
 		this.hayBloqueTemporal = true;
         this.bloqueTemporal= bloqueTemporal;
         vistaAlgoritmo.mostrarBotonBreak();
