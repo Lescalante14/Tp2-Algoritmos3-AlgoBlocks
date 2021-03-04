@@ -79,4 +79,8 @@ public class VistaAlgoritmo extends BorderPane{
         imagenHBox.getChildren().remove(imagenHBox.getChildren().size()-1);
 
     }
+
+    public void eliminarBloqueTemporal() {
+        controladorEjecutarAlgoritmo.eliminarBloqueTemporal();
+    }
 }

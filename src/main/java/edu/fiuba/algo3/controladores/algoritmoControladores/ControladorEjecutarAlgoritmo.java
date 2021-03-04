@@ -86,4 +86,8 @@ public class ControladorEjecutarAlgoritmo implements EventHandler<ActionEvent> {
         vistaAlgoritmo.removerBotonBreak();
         vistaAlgoritmo.desactivarBotonEjecutar(false);
     }
+
+    public void eliminarBloqueTemporal() {
+        hayBloqueTemporal = false;
+    }
 }

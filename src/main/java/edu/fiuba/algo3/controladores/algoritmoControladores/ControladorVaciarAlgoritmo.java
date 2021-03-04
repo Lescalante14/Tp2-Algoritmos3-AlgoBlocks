@@ -21,5 +21,6 @@ public class ControladorVaciarAlgoritmo implements EventHandler<ActionEvent> {
         vistaAlgoritmo.vaciarVistaAlgoritmo();
         vistaAlgoritmo.desactivarBotonGuardado(true);
         vistaAlgoritmo.desactivarBotonEjecutar(false);
+        vistaAlgoritmo.eliminarBloqueTemporal();
     }
 }
