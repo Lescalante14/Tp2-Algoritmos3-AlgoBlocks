@@ -44,10 +44,11 @@ Este comando crea el reporte de cobertura para CI y el reporte HTML que pueden a
 
 ## Ejecutando la aplicación
 
--Clonar el repositorio
--Buscar la Clase App.java
--Ejecutarla
--Y disfrutar aprendiendo a programar...
+- **Pasos:**
+    1. Clonar el repositorio
+    2. Buscar la Clase App.java
+    3. Ejecutarla
+    4. Y disfrutar aprendiendo a programar...
 
 ## Convenciones
 
