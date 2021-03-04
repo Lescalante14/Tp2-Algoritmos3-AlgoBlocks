@@ -41,6 +41,10 @@
 #contenedor-de-bloques{
     -fx-background-image: url("imagenes/background4.png");
     -fx-padding: 23px;
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: cover;
+    -fx-background-position: center;
+    -fx-height: 100%;
 }
 #boton-vaciar:hover{
     -fx-background-color: #ad20207a;
