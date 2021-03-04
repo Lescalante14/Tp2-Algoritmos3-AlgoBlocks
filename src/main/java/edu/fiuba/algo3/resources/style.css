@@ -83,14 +83,17 @@
 }
 #boton-bloque-personalizado{
     -fx-background-color:
-            linear-gradient(#69ff5b, #13e600),
-            linear-gradient(#99ff84, #61f244),
-            linear-gradient(#76ff6a, #33ef22),
-            linear-gradient(#57ff5f 0%, #02f80e 50%, #0bee0b 100%),
-            linear-gradient(from 0% 0% to 15% 50%, rgba(255,255,255,0.9), rgba(255,255,255,0));
-    -fx-background-radius: 30;
+        linear-gradient(#afafae, #e68a00),
+        linear-gradient(#caa368, #f29844),
+        linear-gradient(#ffc36a, #ef9d22),
+        linear-gradient(#ffbc57 0%, #f89602 50%, #eeb10b 100%),
+        linear-gradient(from 0% 0% to 15% 50%, rgba(255,255,255,0.9), rgba(255,255,255,0));
+    -fx-border-color:  #422106;
+    -fx-border-width: 2px;
+    -fx-border-style: dashed;
+    -fx-background-radius: 3;
     -fx-background-insets: 0,1,2,3,0;
-    -fx-text-fill: #00650d;
+    -fx-text-fill: #171725;
     -fx-font-weight: bold;
     -fx-font-size: 14px;
     -fx-padding: 10 20 10 20;
