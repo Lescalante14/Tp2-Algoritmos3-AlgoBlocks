@@ -2,7 +2,7 @@ package edu.fiuba.algo3.controladores.bloquesControladores;
 
 
 import edu.fiuba.algo3.controladores.algoritmoControladores.ControladorEjecutarAlgoritmo;
-import edu.fiuba.algo3.modelo.bloque.bloqueDeMovimiento.BloqueMoverIzquierda;
+import edu.fiuba.algo3.modelo.bloque.bloquesDeMovimiento.BloqueMoverIzquierda;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.image.Image;

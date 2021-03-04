@@ -1,4 +1,4 @@
-package edu.fiuba.algo3.modelo.bloque.bloqueDeMovimiento;
+package edu.fiuba.algo3.modelo.bloque.bloquesDeMovimiento;
 
 import edu.fiuba.algo3.modelo.personaje.Personaje;
 import edu.fiuba.algo3.modelo.bloque.Bloque;

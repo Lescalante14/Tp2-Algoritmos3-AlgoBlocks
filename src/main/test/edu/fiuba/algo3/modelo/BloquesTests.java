@@ -1,12 +1,14 @@
 package edu.fiuba.algo3.modelo;
 
 import edu.fiuba.algo3.modelo.bloque.*;
+import edu.fiuba.algo3.modelo.bloque.BloqueInvertir;
+import edu.fiuba.algo3.modelo.bloque.BloqueRepeticion;
 import edu.fiuba.algo3.modelo.bloque.bloqueDeActivacion.BloqueActivarLapiz;
 import edu.fiuba.algo3.modelo.bloque.bloqueDeActivacion.BloqueDesactivarLapiz;
-import edu.fiuba.algo3.modelo.bloque.bloqueDeMovimiento.BloqueMoverAbajo;
-import edu.fiuba.algo3.modelo.bloque.bloqueDeMovimiento.BloqueMoverArriba;
-import edu.fiuba.algo3.modelo.bloque.bloqueDeMovimiento.BloqueMoverDerecha;
-import edu.fiuba.algo3.modelo.bloque.bloqueDeMovimiento.BloqueMoverIzquierda;
+import edu.fiuba.algo3.modelo.bloque.bloquesDeMovimiento.BloqueMoverAbajo;
+import edu.fiuba.algo3.modelo.bloque.bloquesDeMovimiento.BloqueMoverArriba;
+import edu.fiuba.algo3.modelo.bloque.bloquesDeMovimiento.BloqueMoverDerecha;
+import edu.fiuba.algo3.modelo.bloque.bloquesDeMovimiento.BloqueMoverIzquierda;
 import edu.fiuba.algo3.modelo.personaje.direccion.DireccionDerecha;
 import edu.fiuba.algo3.modelo.personaje.lapiz.EstadoActivado;
 import edu.fiuba.algo3.modelo.personaje.Personaje;
