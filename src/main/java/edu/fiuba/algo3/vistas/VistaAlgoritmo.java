@@ -22,7 +22,9 @@ public class VistaAlgoritmo extends BorderPane{
     private BotonBreak botonBreak;
 
     public VistaAlgoritmo() {
-        this.setTop(new Titulo("Sector de Algoritmos"));
+        Titulo titulo = new Titulo("Sector de Algoritmos");
+        titulo.setId("titulo-algoritmo");
+        this.setTop(titulo);
         this.setPadding(new Insets(20));
         imagenHBox = new HBox(100);
         imagenVBox = new VBox();
