@@ -28,7 +28,7 @@ maven 3.6.0
 
 ### Informe
 
-https://www.overleaf.com/2588484426ndpnhdrxxtjs
+Ver codigo de Informe - [Overleaf](https://www.overleaf.com/2588484426ndpnhdrxxtjs)
 
 ## Ejecutando las pruebas
 
