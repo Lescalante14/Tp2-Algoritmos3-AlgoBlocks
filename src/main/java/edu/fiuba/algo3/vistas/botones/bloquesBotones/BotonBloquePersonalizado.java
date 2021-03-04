@@ -7,6 +7,7 @@ public class BotonBloquePersonalizado extends Button {
 
     public BotonBloquePersonalizado(ControladorBloquePerzonalizado controladorBloquePerzonalizado, String nombreDeBloque) {
         super.setText(nombreDeBloque);
+        super.setId("boton-bloque-personalizado");
         super.setPrefSize(100,100);
         super.setOnAction(controladorBloquePerzonalizado);
     }
