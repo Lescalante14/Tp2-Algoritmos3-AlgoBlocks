@@ -1,7 +1,12 @@
 package edu.fiuba.algo3.modelo;
 
+import edu.fiuba.algo3.excepciones.AlgoritmoVacioError;
+import edu.fiuba.algo3.excepciones.NombreVacioError;
+import edu.fiuba.algo3.modelo.personaje.Personaje;
+import edu.fiuba.algo3.modelo.validaciones.ValidaAlgoritmo;
 import edu.fiuba.algo3.modelo.bloque.Bloque;
 import edu.fiuba.algo3.modelo.bloque.BloquePersonalizado;
+import edu.fiuba.algo3.modelo.validaciones.ValidaNombre;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,7 +16,7 @@ public class Algoritmo {
     private List <Bloque> secuenciaBloques;
 
     public Algoritmo(){
-        secuenciaBloques = new ArrayList<Bloque>();
+        secuenciaBloques = new ArrayList<>();
     }
 
     public Algoritmo(List <Bloque> secuencia){
@@ -29,19 +34,29 @@ public class Algoritmo {
     }
 
     public void ejecutarAlgoritmo(Personaje unPersonaje) {
-
-        for (Bloque unBLoque : secuenciaBloques) {
-
-            unBLoque.ejecutar(unPersonaje);
+		try{
+        	ValidaAlgoritmo.algoritmoValido(this.cantidadBloques());
+    		}
+		catch(AlgoritmoVacioError algoritmoVacioError) {
+            throw algoritmoVacioError;
         }
-    }
+		for (Bloque unBLoque : secuenciaBloques) {
+            	unBLoque.ejecutar(unPersonaje);	
+		}
+	}
 
     public BloquePersonalizado guardaAlgoritmoPersonalizado(String nombre) {
 
+        try{
+			ValidaAlgoritmo.algoritmoValido(this.cantidadBloques());
+			ValidaNombre.nombreValido(nombre);
+		}catch(AlgoritmoVacioError algoritmoVacioError){
+            throw algoritmoVacioError;
+		}catch(NombreVacioError nombreVacioError){
+            throw nombreVacioError;
+		}
         BloquePersonalizado personalizado = new BloquePersonalizado(nombre, secuenciaBloques);
-
-        secuenciaBloques = new ArrayList<Bloque>();
-
+        vaciarAlgoritmo();
         return personalizado;
     }
 
@@ -56,4 +71,7 @@ public class Algoritmo {
         return bloquesInvertidos;
     }
 
+    public void vaciarAlgoritmo() {
+        secuenciaBloques = new ArrayList<>();
+    }
 }

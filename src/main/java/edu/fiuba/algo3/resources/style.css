@@ -1,0 +1,171 @@
+.root{
+    -fx-background-image: url("imagenes/background5.jpg");
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: cover;
+    -fx-background-position: center;
+    -fx-height: 100%;
+}
+.label{
+    -fx-font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    -fx-letter-spacing: 0.5;
+    -fx-effect: dropshadow( gaussian , rgba(255,255,255,0.5) , 0,0,0,1 );
+    -fx-margin-bottom: 5px;
+    
+}
+#titulo{
+    -fx-background-color:
+        linear-gradient(#bd5bff, #a500e6),
+        linear-gradient(#b984ff, #7244f2),
+        linear-gradient(#c86aff, #8c22ef),
+        linear-gradient(#bc57ff 0%, #8102f8 50%, #800bee 100%),
+        linear-gradient(from 0% 0% to 15% 50%, rgba(255,255,255,0.9), rgba(255,255,255,0));
+    -fx-background-insets: 0,1,2,3,0;
+    -fx-text-fill: #fcfbf1;
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+    -fx-padding: 10 20 10 20;
+    -fx-margin-bottom: 5px;
+    -fx-margin-top: 5px;
+}
+#titulo-dibujo {
+    -fx-background-color: 
+        linear-gradient(#f7eaa6, #ddd79d);
+    -fx-background-radius: 8,7,6;
+    -fx-background-insets: 0,1,2;
+    -fx-text-fill: black;
+    -fx-padding: 5px;
+    -fx-margin-bottom: 5px;
+}
+#titulo-bloques{
+    -fx-background-color: 
+        linear-gradient(#f7eaa6, #ddd79d);
+    -fx-background-radius: 8,7,6;
+    -fx-background-insets: 0,1,2;
+    -fx-text-fill: black;
+    -fx-padding: 5px;
+    -fx-margin-bottom: 5px;
+}
+#titulo-algoritmo{
+    -fx-background-color: 
+        linear-gradient(#f7eaa6, #ddd79d);
+    -fx-background-radius: 8,7,6;
+    -fx-background-insets: 0,1,2;
+    -fx-text-fill: black;
+    -fx-padding: 5px;
+    -fx-margin-bottom: 5px;
+}
+.button{
+    -fx-background-color: transparent;
+    -fx-wrap-text: true;
+    -fx-margin-top: 5px;
+    -fx-spacing: 5;
+    -fx-padding: 2 1 2 1; 
+}
+.button:hover{
+    -fx-cursor: hand;
+    -fx-background-color: #3e8e4b7a;
+    -fx-box-shadow-offset-y:5px;
+    -fx-box-shadow-color: #666;
+}
+.scroll-pane{
+    -fx-background-color: transparent;
+}
+#contenedor-de-bloques{
+    -fx-background-image: url("imagenes/background4.png");
+    -fx-padding: 23px;
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: cover;
+    -fx-background-position: center;
+    -fx-height: 100%;
+}
+#boton-vaciar:hover{
+    -fx-background-color: #ad20207a;
+}
+#boton-bloque-personalizado{
+    -fx-background-color:
+        linear-gradient(#afafae, #e68a00),
+        linear-gradient(#caa368, #f29844),
+        linear-gradient(#ffc36a, #ef9d22),
+        linear-gradient(#ffbc57 0%, #f89602 50%, #eeb10b 100%),
+        linear-gradient(from 0% 0% to 15% 50%, rgba(255,255,255,0.9), rgba(255,255,255,0));
+    -fx-border-color:  #422106;
+    -fx-border-width: 2px;
+    -fx-border-style: dashed;
+    -fx-background-radius: 3;
+    -fx-background-insets: 0,1,2,3,0;
+    -fx-text-fill: #171725;
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+    -fx-padding: 10 20 10 20;
+
+}
+#boton-ejecutar{
+    -fx-background-color:
+            linear-gradient(#ffd65b, #e68400),
+            linear-gradient(#ffef84, #f2ba44),
+            linear-gradient(#ffea6a, #efaa22),
+            linear-gradient(#ffe657 0%, #f8c202 50%, #eea10b 100%),
+            linear-gradient(from 0% 0% to 15% 50%, rgba(255,255,255,0.9), rgba(255,255,255,0));
+    -fx-background-radius: 30;
+    -fx-background-insets: 0,1,2,3,0;
+    -fx-text-fill: #654b00;
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+    -fx-padding: 10 20 10 20;
+}
+#boton-vaciar{
+    -fx-background-color:
+        linear-gradient(#ff5b5b, #e60000),
+        linear-gradient(#ff8484, #f24444),
+        linear-gradient(#ff6a6a, #ef2222),
+        linear-gradient(#ff5757 0%, #f80202 50%, #ee0b0b 100%),
+        linear-gradient(from 0% 0% to 15% 50%, rgba(255,255,255,0.9), rgba(255,255,255,0));
+    -fx-background-radius: 30;
+    -fx-background-insets: 0,1,2,3,0;
+    -fx-text-fill: #650000;
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+    -fx-padding: 10 20 10 20;
+}
+#boton-guardar{
+    -fx-background-color:
+            linear-gradient(#ffd65b, #e68400),
+            linear-gradient(#ffef84, #f2ba44),
+            linear-gradient(#ffea6a, #efaa22),
+            linear-gradient(#ffe657 0%, #f8c202 50%, #eea10b 100%),
+            linear-gradient(from 0% 0% to 15% 50%, rgba(255,255,255,0.9), rgba(255,255,255,0));
+        -fx-background-radius: 30;
+        -fx-background-insets: 0,1,2,3,0;
+        -fx-text-fill: #654b00;
+        -fx-font-weight: bold;
+        -fx-font-size: 14px;
+        -fx-padding: 10 20 10 20;
+}
+#boton-reiniciar-posicion{
+    -fx-background-color:
+        linear-gradient(#ff5b92, #e60073),
+        linear-gradient(#ff84ad, #f2446f),
+        linear-gradient(#ff6aa8, #ef2255),
+        linear-gradient(#ff5773 0%, #f80237 50%, #ee0b44 100%),
+        linear-gradient(from 0% 0% to 15% 50%, rgba(255,255,255,0.9), rgba(255,255,255,0));
+    -fx-background-radius: 30;
+    -fx-background-insets: 0,1,2,3,0;
+    -fx-text-fill: #650011;
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+    -fx-padding: 10 20 10 20;
+}
+#boton-break{
+    -fx-background-color:
+        linear-gradient(#7f5bff, #0f00e6),
+        linear-gradient(#8486ff, #4450f2),
+        linear-gradient(#796aff, #2522ef),
+        linear-gradient(#6257ff 0%, #0212f8 50%, #1a0bee 100%),
+        linear-gradient(from 0% 0% to 15% 50%, rgba(255,255,255,0.9), rgba(255,255,255,0));
+    -fx-background-radius: 30;
+    -fx-background-insets: 0,1,2,3,0;
+    -fx-text-fill: #020065;
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+    -fx-padding: 10 20 10 20;
+}

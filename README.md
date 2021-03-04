@@ -26,6 +26,18 @@ maven 3.6.0
 ...
 ```
 
+### Informe
+
+<<<<<<< HEAD
+https://www.overleaf.com/read/hcysrfxbcmrm
+
+### Trello
+
+https://trello.com/invite/b/ARYHfo0B/f0742742d8049f954eed1dbb193e3521/tp2-algo-iii
+=======
+Ver codigo de Informe - [Overleaf](https://www.overleaf.com/2588484426ndpnhdrxxtjs)
+>>>>>>> develop
+
 ## Ejecutando las pruebas
 
 ```bash
@@ -40,7 +52,11 @@ Este comando crea el reporte de cobertura para CI y el reporte HTML que pueden a
 
 ## Ejecutando la aplicación
 
-Explicación de como ejecutar la aplicación
+- **Pasos:**
+    1. Clonar el repositorio
+    2. Buscar la Clase App.java
+    3. Ejecutarla
+    4. Y disfrutar aprendiendo a programar...
 
 ## Convenciones
 

@@ -1,7 +1,13 @@
 package edu.fiuba.algo3.modelo;
 
 import edu.fiuba.algo3.modelo.bloque.*;
-import javafx.geometry.Pos;
+import edu.fiuba.algo3.modelo.bloque.BloqueRepeticion;
+import edu.fiuba.algo3.modelo.bloque.bloqueDeActivacion.BloqueActivarLapiz;
+import edu.fiuba.algo3.modelo.bloque.bloqueDeActivacion.BloqueDesactivarLapiz;
+import edu.fiuba.algo3.modelo.bloque.bloquesDeMovimiento.BloqueMoverAbajo;
+import edu.fiuba.algo3.modelo.bloque.bloquesDeMovimiento.BloqueMoverDerecha;
+import edu.fiuba.algo3.modelo.personaje.Personaje;
+import edu.fiuba.algo3.modelo.personaje.Posicion;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -98,6 +104,19 @@ public class AlgoritmoTest {
 
         assertEquals(0 , personaje.totalDeCasillasPintadas());
         assertTrue(Posicion.compararPosiciones(personaje.getPosicion(), posicionFinal));
+    }
+
+    @Test
+    public void seAgreganBloquesAlAlgoritmoYSeVaciaCorrectamente()
+    {
+        Algoritmo algoritmo = new Algoritmo();
+
+        algoritmo.agregarBloque(new BloqueActivarLapiz());
+        algoritmo.agregarBloque(new BloqueDesactivarLapiz());
+        algoritmo.agregarBloque(new BloqueMoverDerecha());
+        algoritmo.vaciarAlgoritmo();
+
+        assertEquals(0 , algoritmo.cantidadBloques());
     }
 
 }
