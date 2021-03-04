@@ -1,5 +1,7 @@
 package edu.fiuba.algo3.controladores.bloquesControladores;
 
+import javafx.scene.control.Alert;
+import edu.fiuba.algo3.excepciones.BloquesDeSecuenciaAnidadosDeError;
 import edu.fiuba.algo3.controladores.algoritmoControladores.ControladorEjecutarAlgoritmo;
 import edu.fiuba.algo3.modelo.bloque.BloqueRepeticion;
 import javafx.event.ActionEvent;
@@ -15,7 +17,19 @@ public class ControladorBloqueRepetirX3 implements EventHandler<ActionEvent> {
 
     @Override
     public void handle(ActionEvent actionEvent) {
-        controladorEjecutarAlgoritmo.updateVistaAlgortimo("-------------- [Inicio] Bloque Repeticion x3 --------------");
-        controladorEjecutarAlgoritmo.activarBloqueTemporal(new BloqueRepeticion(3));
+		try{		
+		
+			controladorEjecutarAlgoritmo.activarBloqueTemporal(new BloqueRepeticion(3));
+		}catch(BloquesDeSecuenciaAnidadosDeError bloquesDeSecuenciaAnidadosDeErro){
+		
+				Alert alert = new Alert(Alert.AlertType.INFORMATION);
+				alert.setTitle("Information Dialog");
+				alert.setHeaderText(null);
+				alert.setContentText("No se puede anidar bloques de secuencia. Crea un personalizado e intentelo de nuevo!");
+				alert.showAndWait();
+
+		}finally{
+        	controladorEjecutarAlgoritmo.updateVistaAlgortimo("-------------- [Inicio] Bloque Repeticion x3 --------------");
+		}
     }
 }

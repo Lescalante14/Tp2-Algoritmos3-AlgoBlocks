@@ -1,6 +1,7 @@
 package edu.fiuba.algo3.controladores.algoritmoControladores;
 
 import edu.fiuba.algo3.excepciones.AlgoritmoVacioError;
+import edu.fiuba.algo3.excepciones.BloquesDeSecuenciaAnidadosDeError;
 import edu.fiuba.algo3.modelo.Personaje;
 import edu.fiuba.algo3.modelo.Algoritmo;
 import edu.fiuba.algo3.modelo.bloque.Bloque;
@@ -64,7 +65,11 @@ public class ControladorEjecutarAlgoritmo implements EventHandler<ActionEvent> {
     }
 
     public void activarBloqueTemporal(BloquesDeSecuencia bloqueTemporal){
-        this.hayBloqueTemporal = true;
+        
+		if( this.hayBloqueTemporal ){
+		   throw new BloquesDeSecuenciaAnidadosDeError(); 
+		}
+		this.hayBloqueTemporal = true;
         this.bloqueTemporal= bloqueTemporal;
         vistaAlgoritmo.mostrarBotonBreak();
         vistaAlgoritmo.desactivarBotonEjecutar(true);

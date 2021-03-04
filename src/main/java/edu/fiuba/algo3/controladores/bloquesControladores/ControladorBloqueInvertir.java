@@ -1,5 +1,7 @@
 package edu.fiuba.algo3.controladores.bloquesControladores;
 
+import javafx.scene.control.Alert;
+import edu.fiuba.algo3.excepciones.BloquesDeSecuenciaAnidadosDeError;
 import edu.fiuba.algo3.controladores.algoritmoControladores.ControladorEjecutarAlgoritmo;
 import edu.fiuba.algo3.modelo.bloque.BloqueInvertir;
 import edu.fiuba.algo3.modelo.bloque.BloqueRepeticion;
@@ -18,6 +20,20 @@ public class ControladorBloqueInvertir implements EventHandler<ActionEvent> {
     @Override
     public void handle(ActionEvent actionEvent) {
         controladorEjecutarAlgoritmo.updateVistaAlgortimo("-------------- [Inicio] Bloque Inversion --------------");
-        controladorEjecutarAlgoritmo.activarBloqueTemporal(new BloqueInvertir());
+       
+		try{  
+			controladorEjecutarAlgoritmo.activarBloqueTemporal(new BloqueInvertir());
+		}catch(BloquesDeSecuenciaAnidadosDeError bloquesDeSecuenciaAnidadosDeError){
+
+			Alert alert = new Alert(Alert.AlertType.INFORMATION);
+			alert.setTitle("Information Dialog");
+			alert.setHeaderText(null);
+			alert.setContentText("No se puede anidar bloques de secuencia. Crea un personalizado e intentelo de nuevo!");
+			alert.showAndWait();
+	
+		}finally{	
+        	controladorEjecutarAlgoritmo.updateVistaAlgortimo("-------------- [Inicio] Bloque Inversion --------------");
+	
+		}
     }
 }
