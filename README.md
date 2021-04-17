@@ -28,15 +28,15 @@ maven 3.6.0
 
 ### Informe
 
-<<<<<<< HEAD
-https://www.overleaf.com/read/hcysrfxbcmrm
+Ver código en  [Overleaf](https://www.overleaf.com/read/hcysrfxbcmrm)
+
 
 ### Trello
 
-https://trello.com/invite/b/ARYHfo0B/f0742742d8049f954eed1dbb193e3521/tp2-algo-iii
-=======
-Ver codigo de Informe - [Overleaf](https://www.overleaf.com/2588484426ndpnhdrxxtjs)
->>>>>>> develop
+Ver tabla de tareas en  [Trello](https://trello.com/invite/b/ARYHfo0B/f0742742d8049f954eed1dbb193e3521/tp2-algo-iii)
+
+
+
 
 ## Ejecutando las pruebas
 

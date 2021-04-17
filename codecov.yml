@@ -7,9 +7,9 @@ coverage:
   round: down
   range: "70...100"
   ignore:
-    - "src/main/java/edu.fiuba.algo3/controladores/**"
-    - "src/main/java/edu.fiuba.algo3/resources/**"
-    - "src/main/java/edu.fiuba.algo3/vistas/**"
+    - "src/main/java/edu/fiuba/algo3/controladores/**"
+    - "src/main/java/edu/fiuba/algo3/resources/**"
+    - "src/main/java/edu/fiuba/algo3/vistas/**"
   status:
     project: yes
     patch: yes
